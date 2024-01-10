@@ -1,12 +1,10 @@
-select rain, serial
-from flood_season_report
-where flood_season_report.safety_environmental is null
-   or flood_season_report.safety_environmental = ''
-;
+select rain, serial, flow_state,corporate_name
+from flood_season_report;
+
 
 delete
 from flood_season_report
-where flow_state = -10
+where filled_by ='-9199873405976231661'
 ;
 
 

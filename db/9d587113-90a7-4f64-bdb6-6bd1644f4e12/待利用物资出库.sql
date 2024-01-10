@@ -8,4 +8,6 @@ order by create_date desc;
 select *
 from business_l1lc
 # where father_id = '85008822338c4f8caa6f8882e4151a2d';
-where wlbm = '1000022800';
+# where wlbm = '1000014117';
+# where  rkd_detail_id= '168fabf698914b3bb52775c2e379f056';
+where wlbm='1000011419'

@@ -241,7 +241,7 @@ FROM business_6j3g dhddmx
 WHERE (dhddmx.rk_temp_zt = '' OR dhddmx.rk_temp_zt IS NULL)
 #   未入库
   AND (dhddmx.zt != 'A18A09A02A05' OR dhddmx.zt IS NULL)
-  and dhddmx.cgjhbh like 'CGJH%'
+  and (dhddmx.cgjhbh like 'CGJH%' or  dhddmx.cgjhbh like 'CGWJ%')
   and (cgdd.sapcgpz1 != null OR cgdd.sapcgpz1 != '')
 #   质检结果合格
   and (dhddmx.sjzt = 'A18A07A17A03' or dhddmx.sfrbjs = 'A03A01A01')
@@ -465,7 +465,6 @@ FROM business_6j3g dhddmx
 WHERE (dhddmx.rk_temp_zt = '' OR dhddmx.rk_temp_zt IS NULL)
   and dhysd.sbwzdhysdbh like 'INV%'
   and (dhddmx.sjzt = 'A18A07A17A03' or dhddmx.sfrbjs = 'A03A01A01')
-and dhysd.sbwzdhysdbh='DHYSD4010202312060003'
 ;
 
 SELECT dhddmx.cgjhbh               AS      jhbm,
@@ -617,11 +616,11 @@ WHERE 1 = 1
 #   and (dhddmx.rk_temp_zt = '' OR dhddmx.rk_temp_zt IS NULL)
 #   未入库
   AND (dhddmx.zt != 'A18A09A02A05' OR dhddmx.zt IS NULL)
-  and dhddmx.cgjhbh like 'CGJH%'
+  and (dhddmx.cgjhbh like 'CGJH%' or    dhddmx.cgjhbh like 'CWJH%')
   and (cgdd.sapcgpz1 != null OR cgdd.sapcgpz1 != '')
 #   质检结果合格
   and (dhddmx.zjjg = 'A15A47A01' or dhddmx.sfrbjs = 'A03A01A01')
-  and dhysd.sbwzdhysdbh = 'DHYSD4010202306150001';
+  and dhysd.sbwzdhysdbh = 'DHYSD4010202311100001';
 # and dhysd.flow_step='归档';
 select *
 from business_hmz1;

@@ -24,7 +24,7 @@ from (((`sap_consignment_stock` `stock` left join `business_50t4` `shelf`
              (`stock`.`lgort` = `shelf`.`ykcdbm`)))) left join `material_average_price` `price`
        on (((`stock`.`matnr` = `price`.`matnr`) and
             (`stock`.`org_id` = `price`.`org_id`)))) left join `sync_werk_org` `swo`
-      on ((`stock`.`org_id` = `swo`.`org_code`)))
+      on ((`stock`.`org_id` = `swo`.`org_code` and stock.werks = swo.werks)))
 union
 select `wait_use_repository`.`id`              AS `id`,
        `wait_use_repository`.`wlbm`            AS `wlbm`,
@@ -50,13 +50,14 @@ select `wait_use_repository`.`id`              AS `id`,
 from (`wait_use_repository` left join `sync_werk_org` `swo` on ((`wait_use_repository`.`org_id` = `swo`.`org_code`)))
 having (`wait_use_repository`.`kcl` > 0);
 
+
 select `stock`.`id`                                                      AS `id`,
        `stock`.`matnr`                                                   AS `wlbm`,
        `stock`.`maktx`                                                   AS `wlms`,
        `shelf`.`yhjxx`                                                   AS `hjxx`,
        `shelf`.`yhjxx`                                                   AS `yhjxx`,
        `shelf`.`xhjxx`                                                   AS `xhjxx`,
-       `shelf`.`ykcdbm`                                                   AS `kcdbm`,
+       `shelf`.`ykcdbm`                                                  AS `kcdbm`,
        `stock`.`lgobe`                                                   AS `kcdmc`,
        `stock`.`meins`                                                   AS `dw`,
        `stock`.`meins_name`                                              AS `dwms`,
@@ -69,13 +70,16 @@ select `stock`.`id`                                                      AS `id`
        '-'                                                               AS `wlbm_last`,
        concat_ws('_', `stock`.`matnr`, `stock`.`lgort`, `shelf`.`xhjxx`) AS `qrcode`
 from (`sap_consignment_stock` `stock` inner join `business_50t4` `shelf`
-        on (((`stock`.`matnr` = `shelf`.`wlbm`)  )))
-where wlbm='1000001902'
+      on (((`stock`.`matnr` = `shelf`.`wlbm`))))
+where wlbm = '1000001902'
 
 
 select *
-from sap_consignment_stock where matnr='1000001902';
+from sap_consignment_stock
+where matnr = '1000001902';
 
 select *
-from business_50t4 where gcdm is null or gcdm =''
+from business_50t4
+where gcdm is null
+   or gcdm = ''
 

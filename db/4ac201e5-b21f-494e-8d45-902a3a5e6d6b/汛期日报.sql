@@ -1,7 +1,8 @@
-select m.*, s.CODE
+select m.*, s.NAME
 from v3x.view_formmain_41324 m
-         left join v3x.view_org_unit s on m.FIELD0001 = s.ID
-where length(s.CODE) = 8;
+         left join v3x.view_org_unit s on m.FIELD0001 = s.ID;
+
+
 
 
 select distinct FIELD0005

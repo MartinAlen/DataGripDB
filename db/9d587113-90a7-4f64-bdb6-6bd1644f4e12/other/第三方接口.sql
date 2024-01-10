@@ -20,21 +20,13 @@ limit 10;
 
 select *
 from business_8b0j
-# where module_name like '%SAP采购订单号同步%'
-# where module_name like '%电子商城采购订单%'
-# where module_name like '%电子商城发货单同步%'
-# where module_name like '%电子商城-创建收货单%'
 where module_name like '%仓储物流%'
-# where module_name like '%电子商城-SAP采购订单号同步%'
-# where module_name like '%电子%'
-# and params like '%PO231110000005%'
-# where params like '%INV231110000003%'
-# and business_8b0j.result like '%SZGC2312050009%'
 #     and  result like '%MTK%'
 # and type='input'
+and status=0
 order by create_date
         desc
-limit 100;
+limit 10;
 
 
 select *

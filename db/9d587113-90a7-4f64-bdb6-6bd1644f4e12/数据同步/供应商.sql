@@ -9,7 +9,7 @@ from m_supplier where create_time < '2023-06-15';
 
 select *
 from m_supplier
-where bukrs ='4110'
+where bukrs ='5000'
 order by create_time desc
 
 

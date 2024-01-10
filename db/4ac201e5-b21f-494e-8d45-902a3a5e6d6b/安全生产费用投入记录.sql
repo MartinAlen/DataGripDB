@@ -16,11 +16,10 @@ from v3x.view_formson_21964 ;
 
 select *
 from v3x.view_form_definition t
-where t.field_info like '%formson_21964%';
+where t.field_info like '%formmain_59004%';
 
 
 
-select * from  v3x.view_org_unit where CODE is not null
 
 -- 枚举
 select *

@@ -1,17 +1,21 @@
-select company,
-       device_name,
-       environmental_protection_facilities_type,
-       environment_design_processing_capacity,
-       environment_treated_pollution_factor,
-       environment_pollutants_after_treatment
-from equipmen_basic_info
-where 1 = 1
-  and environmental_protection_facilities_type is not null
-  and ${if(len(unitCode) = 0,"1 = 1", "org_id like '%" + unitCode + "%'")}
-  and ${if(len(equ_type) = 0,"1 = 1", "environmental_protection_facilities_type
-  in ('" + replace(equ_type,",","','") + "')")}
-order by environmental_protection_facilities_type;
+select *
+from analysis_assay_instrument_inconformity
+where serial = '20240104091432926';
+
+#分析化验室-分析仪器管理
+select *
+from analysis_assay_instrument;
 
 
-select distinct environmental_protection_facilities_type
-from equipmen_basic_info;
+# 分析仪器检查
+select *
+from analytical_instrument_inspection m
+         inner join
+     analytical_instrument_equipment s on m.id = s.father_id
+where m.serial='20240104100125481'
+
+
+# 子表
+select *
+from analytical_instrument_equipment;
+
