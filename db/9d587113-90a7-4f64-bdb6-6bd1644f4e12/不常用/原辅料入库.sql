@@ -53,6 +53,7 @@ select s.dddj,
 from business_hmz1 m
          left join business_qux5 s on m.id = s.father_id
 order by s.zt desc;
+
 select *
 from goods_input_output_account;
 
@@ -65,10 +66,11 @@ where id = 'd205613c74fc4c0aa86e5ae3b348bff5';
 # where wzlx is not null;
 
 # 入库明细
-select m.id,m.zt
+select m.id,m.zt,m.org_id
 from business_9yth m
          inner join business_715z s on m.id = s.father_id
 # where s.id = '8e917eef604846ba83bbb6fef5109b95'
+where m.szgcdd='CGDD00001202401240005'
 order by m.create_date desc;
 
 select *

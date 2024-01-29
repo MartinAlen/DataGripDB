@@ -1,6 +1,7 @@
 # 领用主表
 select id,
        ttwb,
+       aqhbfy,
        ckbm,
        psdd,
        serial,
@@ -12,16 +13,15 @@ select id,
        kcdbm
 from business_ij1g
 # where ckbm is null  or ckbm=''
-where ckbm like '%SBCK4010202401020343%';
-
+where ckbm = 'SBCK4390202401290237';
+# where id = 'e6d984faf68c4f50ae851be843bc472c';
 #     where psdd like '%熔%'
-# where serial = '20240102175828585'
+where serial = '20240105120936050'
 # where business_ij1g.flow_step like '%总经理%';
 # where business_ij1g.create_date = '2023-08-28 16:50:56';
-where id = '2f904bfffb1f423891439f5531bfb67a'
 # where serial = '20231025094042682'
-order by create_date desc;
-
+order by create_date
+        desc;
 
 
 # 领用子表 关联入库单
@@ -29,14 +29,22 @@ select outSlave.id,
        input.hjxx,
        outSlave.cksl,
        input.rksl,
-       input.ckl
+       input.ckl,
+       input.dddj as '入库单价',
+       outSlave.dddj as '出库单价',
+       input.id inputId,
+       outSlave.father_id,
+       outSlave.org_id,
+       outSlave.gcdm,
+       outSlave.rkdid
 from business_m3wc outSlave
-         inner join business_f7hc input on outSlave.rkdid = input.id
-where outSlave.wlbm = '1000034208';
+         left join business_f7hc input on outSlave.rkdid = input.id
+where 1 = 1
+#   and outSlave.wlbm = '1000231020';
 # where jhbm = 'CGJH4010202305080031';
 # where rkdid !=''
 # where id='112a052b8a524e0d84bab1d5f7e01abf';
-# where m.father_id = '8aa364a13659499d96da526f0cb73dca';
+  and outSlave.father_id = '5bea62d2cb0d4004940b638567c86e48';
 
 select s.id, s.hjxx, s.wlbm, s.kcdbm
 from business_ij1g m
@@ -51,9 +59,18 @@ order by m.create_date asc;
 select m.id,
        m.father_id,
        m.kcdbm,
-cbzx,cbzxms
+       gdzc,
+       zzkm,
+       ydlx,
+       fylx,
+       cbzx,
+       cbzxms,
+       nbddh,
+       nbddms
 from business_m3wc m
-where m.father_id = '3542b1ca222e485a97f46cadd7e08f5d';
+where 1 = 1
+  and m.father_id = 'fd122b7651194af1abdb2b65c07edb93';
+#   and rkdid = 'c36a39e6d083914033e123541fda982f';
 
 
 select xhjxx, yhjxx, ykcdbm
@@ -63,12 +80,24 @@ where gcdm = 4010
   and wlbm = '1000098961';
 
 # 领用子表
-select id, jhbm,cksl, father_id,ydlx,ktsl, gcdm, ckpzh,rkdid,cbzx,cbzxms
-from business_m3wc
-# where wlbm = '1000022922';
-where father_id = '48fb1cd30ae44760b9aa2f2cedbbeb6a';
-# where id = '48ab661b9d8442119f584dac1ec55d95';
+select id,
+       jhbm,
+       cklx,
+       ydlx,
+       cksl,
+       sfck,
+       father_id,
+       ktsl,
+       gcdm,
+       ckpzh,
+       rkdid,
+       cbzx,
+       cbzxms
+from business_m3wc;
 
+# where wlbm = '1000022922';
+# where father_id = '4d04cb9870f64fbebce79449c4c95a9b';
+# where id = '48ab661b9d8442119f584dac1ec55d95';
 
 
 select s.wlbm,

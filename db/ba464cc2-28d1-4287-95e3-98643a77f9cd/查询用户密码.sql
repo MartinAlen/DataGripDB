@@ -9,23 +9,27 @@ select user_name,
        sys_user.identity
 from sys_user
          inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
-# where sys_user.id = '4872184467030884711';
-where sys_user.user_code = '10002682';
+# where sys_user.id = '3590293504613697115';
 
-# where sys_user.user_code = '10002863';
+
+# where sys_user.user_code = 'admin_lhyxzx';
+
+# where sys_user.user_code = '10030522';
 # where sys_user.user_code = 'tahgadmin';
 # where sys_user.real_name like '%徐瑾%';
 # where sys_user.real_name like '%张向金%';
-# where sys_user.real_name like '%张子钦%';
+where sys_user.real_name like '%张子钦%';
 # where sys_user.real_name like '%叶凤权%';
 # where sys_user.real_name like '%张颖华%';
 # where sys_user.real_name like '%伏旭东%';
 # where sys_user.real_name like '%丁院巧%';
 # where sys_user.real_name like '%凌宏梅%';
 # where sys_user.real_name like '%赵煜%';
-where sys_user.real_name like '%张向金%'
-where sys_user.real_name like '%巴芳%';
-# where sys_user.real_name like '%夏闯%';
+# where sys_user.real_name like '%张向金%'
+# where sys_user.real_name like '%孙丽%';
+
+# where sys_user.real_name like '%巴芳%';
+where sys_user.real_name like '%夏闯%';
 
 
 select *
@@ -53,12 +57,17 @@ where unit_code = '530180013';
 
 select *
 from sys_unit
-where id = '00008413';
+where id = '10001943';
 
 select *
 from sys_unit
-where id = '3eab0ba2af670fa285d17944a748661d';
+where id = '10000700';
+
+select *
+from sys_unit
+where unit_code = '2015233856688047346';
 
 
 select *
 from sys_unit;
+

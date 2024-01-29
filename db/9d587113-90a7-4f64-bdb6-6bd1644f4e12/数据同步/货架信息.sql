@@ -1,29 +1,29 @@
-select yhjxx, wlbm, ykcdbm, org_id, kclx,create_date,update_date
+select yhjxx,xhjxx, wlbm, ykcdbm, org_id, kclx,create_date,update_date
 from business_50t4
 where 1 = 1
 #   and org_id = '00000287'
-  and kclx = 'SAP'
-  and wlbm = '1000000648'
+#   and kclx = 'SAP'
+  and kclx = 'WAITUSE'
+  and wlbm = '1000248309'
 # and ykcdbm='1521'
 order by create_date desc;
 
 
-select *
+select
 from business_50t4
-where gcdm = '5000'
-  and kclx = 'SAP'
-order by create_date desc;
+# where gcdm = '5000'
+#   and kclx = 'SAP'
+# order by create_date desc;
 
 
-select *
-from business_50t4
-where wlbm = '1000006490';
+delete from business_50t4 where kclx='A18A06A06A02'
 
 
 
-select *
-from business_50t4
-where id = '51d812ec8154018adc8f82db30965e3f';
 
-select *
-from sync_werk_org_copy1 where werks=4390;
+
+# 排查公司货架信息是否重复
+
+select org_id,wlbm,ykcdbm
+from business_50t4  where kclx  ='WAITUSE'
+

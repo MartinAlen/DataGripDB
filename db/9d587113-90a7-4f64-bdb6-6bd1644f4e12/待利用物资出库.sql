@@ -1,7 +1,8 @@
 # 出库
 select id,ckbm
 from business_e9wr
-where ckbm = 'DLYWZCK4010202307040007'
+where ckbm = 'DLYWZCK4010202401150005'
+# where serial = '20240111120147526'
 order by create_date desc;
 
 # 出库 明细

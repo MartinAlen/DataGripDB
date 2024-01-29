@@ -2,10 +2,10 @@
 select title, create_time, request, response, exception
 from sap_execute_log
 where title = '物资出库'
-#   and request like '%黄丽芬领料出库%'
-  and sap_execute_log.response like '%4914560700%'
+  and request like '%付浩辉领料出库%'
+#   and sap_execute_log.response like '%4914560700%'
 order by create_time desc
-limit 10;
+limit 100;
 
 # 发票删除
 select title, create_time, request, response, exception
@@ -25,7 +25,7 @@ limit 10;
 select title, create_time, request, response, exception
 from sap_execute_log
 where title = '收货后冲销'
-#   and request like '%1000221514%'
+  and request like '%4700409114%'
 order by create_time desc
 limit 100;
 
@@ -37,11 +37,11 @@ order by create_time desc
 limit 10;
 
 
-# 物料凭证冲销
+# 寄售物料凭证冲销
 select title, create_time, request, response, exception
 from sap_execute_log
 where title = '物料凭证冲销'
-#                        and request like '%SBCK4010202305260075%'
+and request like '%4700409114%'
 order by create_time desc
 limit 10;
 
@@ -54,8 +54,17 @@ where title = '创建连续采购订单'
 #     出现问题的采购订单
 #   and sap_execute_log.response like '%4500357582%'
 
-  and sap_execute_log.response like '%4700298859%'
+  and sap_execute_log.response like '%4700410024%'
 #   and sap_execute_log.request like '%1000440944%'
+order by create_time desc
+limit 10;
+# 关联采购订单修改删除
+select title, create_time, request, response, exception
+from sap_execute_log
+where title = '关联采购订单修改删除'
+#                        and request like '%YTH-4010-WB-CG-2023-009990-00%'
+#     出现问题的采购订单
+#   and sap_execute_log.request like '%4700409114%'
 order by create_time desc
 limit 10;
 
@@ -63,8 +72,8 @@ limit 10;
 select title, create_time, request, response, exception, time
 from sap_execute_log
 where title = '采购订单连续收货'
-#   and request like '%SBRKD4010202312290011%'
-# sap_execute_log.response like '%4913096500%'
+  and request like '%4700409497%'
+# and sap_execute_log.response like '%4700409114%'
 order by create_time desc
 limit 10;
 
@@ -93,7 +102,7 @@ limit 10;
 select title, create_time, request, response, exception
 from sap_execute_log
 where title = '物资出库'
-# and sap_execute_log.response like '%"I"%'
+and sap_execute_log.request like '%王立春领用出库%'
 # sap_execute_log.response like '%4913096500%'
 order by create_time desc
-limit 10;
+limit 100;

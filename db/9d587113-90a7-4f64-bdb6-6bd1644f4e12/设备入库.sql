@@ -9,34 +9,51 @@ select id,
        rkdbh,
        org_id,
        htbh,
+       kgy,
        htmc,
        dhysdh,
        create_date,
        rkpz,
        wlbmall
 from business_y339
-where id = 'b4c9a2a8e8573bed147b2be544734cd7';
+where 1 = 1
+  and id = '17f44848e47a85d10feccafc277b1a35'
 
 # where serial = '20231226153831855'
-# where sapcgpz1 = '4500357582'
-    where org_id !='00000287'
-# where rkdbh = 'SBRKD4010202312250029'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202401190091'
 # where dhysdh is null
 order by create_date desc;
+
 
 # limit 10;
 
 
 # 子表
-select id, rksl, ckl, sapcgpz1, wlbm, rkpzh, father_id
+select id,
+       ddhxmh,
+       rksl,
+       gcbm,
+       ckl,
+       sapcgpz1,
+       wlbm,
+       dddj,
+       rkpzh,
+       father_id
 from business_f7hc
 where 1 = 1
+    and id='51ebbf67f424fcc915d73711fc18ae9f'
 #   and rksl != ckl
 #   and ckl > 0
-#   and id = '2694928a2b6bf2305eb78c54bacf2b90';
+#   and father_id = '990dcfc482a388d418b7e2558803acc2';
+# and org_id='00008413'
+# and rkpzh='5006306102'
+# and sapcgpz1='4500360355'
+#   and wlbm = '1000394281'
 
-  and wlbm = '1000157656'
-and dddj =135
+
+# and dddj =135
 
 
 select s.id, rksl, ckl, wlbm

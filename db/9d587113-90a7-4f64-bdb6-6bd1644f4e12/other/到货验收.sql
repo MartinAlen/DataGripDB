@@ -1,8 +1,8 @@
 # 到货验收主表
 select id, cgy,org_id,dept_id,user_id,flow_state,flow_step
 from business_hmz1
-# where serial = '20231221132024458';
-where sbwzdhysdbh = 'DHYSD4010202312290029';
+where serial = '20240125143513227';
+where sbwzdhysdbh like '%11020113%';
 # where sbwzdhysdbh = 'DHYSD4010202312090003';
 # where id = 'd977a210b49740d59b946ef58982d434';
 # where org_id = '00000001';
@@ -17,7 +17,7 @@ where sbwzdhysdbh = 'DHYSD4010202312290029';
 select id,zjjg, sjzt, rk_temp_zt, zt, cgddmxid,rkl,dhsl,zt,xxmh
 from business_6j3g
 # where id = '58b784abf338f6444602050c82eaf239';
-where father_id = '4af92c2dc0114d27b3039fffa85f38af'
+where father_id = '24f0f7ed6c75490aafd8699797875d39'
 #   and wlbm='1000043389'
 # where wlms like '%滤布%';
 

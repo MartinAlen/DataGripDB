@@ -1,7 +1,7 @@
 # 主表
 select id
      , org_id
-     ,ddsfgb
+     , ddsfgb
      , sapcgpz1
      , user_id
      , caigouyuan
@@ -22,20 +22,22 @@ select id
      , htmc
      , create_date
 from business_3k66
-where 1=1
+where 1 = 1
 
 # and ddfqlx ='A18A02A11A04';
-and sapcgpz1 = '4500362170'
+#   and sapcgpz1 = '4500365366'
 # and szgcddh like 'PO%'
-# and szgcddh like 'CGDD4010202312070015%'
+and szgcddh like 'CGDD00001202401260121%'
 # and jyms ='A18A05A15A02';
 # and id = '0a92c408dbd74fb5808698dfe75fa8d7';
-# and serial = '20231226161944066';
+# and serial = '20240129092019812';
 # and htbh = 'YTH-4010-NB-GX-2022-001029-00';
 # and jyms='A18A05A15A07'
-and jyms='A18A05A15A06' and sapcgpz1 !='' and gsdm=4010
+#   and jyms = 'A18A05A15A06'
+#   and sapcgpz1 != ''
+#   and gsdm = 4010
 order by create_date
-desc;
+        desc;
 
 
 select count(szgcddh) dd, szgcddh
@@ -51,13 +53,13 @@ where szgcddh = 'PO231103000004';
 
 # 子表
 select id,
+       xxmh,
        zt,
        wlbm,
        ddsl,
        cgdj,
        gzf,
        zxf,
-       xxmh,
        gcrkkw,
        cgdj,
        wlms,
@@ -69,7 +71,7 @@ select id,
 from business_qq7x
 where 1 = 1
 #   and wlbm = '1000385331'
-  and father_id = '2203af33ec1d45708af1fe5df00d6455'
+  and father_id = '75e9f0e9f6574aa0b0a301f59bb16344'
 # where id = 'c2f8cdbb3418d1c74625a7bbf32f5d2d'
 order by create_date desc;
 
