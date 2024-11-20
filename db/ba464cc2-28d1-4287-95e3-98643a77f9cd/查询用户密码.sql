@@ -9,16 +9,20 @@ select user_name,
        sys_user.identity
 from sys_user
          inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
-# where sys_user.id = '3590293504613697115';
+# where sys_user.id = '236435775381458799';
 
 
-# where sys_user.user_code = 'admin_lhyxzx';
+# where sys_user.user_code = '10000297';
 
 # where sys_user.user_code = '10030522';
 # where sys_user.user_code = 'tahgadmin';
 # where sys_user.real_name like '%徐瑾%';
 # where sys_user.real_name like '%张向金%';
-where sys_user.real_name like '%张子钦%';
+# where sys_user.real_name like '%李建疆%';
+# where sys_user.real_name like '%张子钦%';
+# where sys_user.real_name like '%罗旭娟%';
+where sys_user.real_name like '%周时远%';
+# where sys_user.real_name like '%李荣%';
 # where sys_user.real_name like '%叶凤权%';
 # where sys_user.real_name like '%张颖华%';
 # where sys_user.real_name like '%伏旭东%';
@@ -61,7 +65,7 @@ where id = '10001943';
 
 select *
 from sys_unit
-where id = '10000700';
+where id = '00018024';
 
 select *
 from sys_unit

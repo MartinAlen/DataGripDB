@@ -103,4 +103,9 @@ select id,
        sdkc,
        ggkc,
        zbmchwh
-from wzxqjh where wlbm='1000431783'
+from wzxqjh
+where xqjhbh = 'XQJH4010202402220593';
+
+
+select count(xqjhbh) s,xqjhbh
+from wzxqjh group by xqjhbh having s>1

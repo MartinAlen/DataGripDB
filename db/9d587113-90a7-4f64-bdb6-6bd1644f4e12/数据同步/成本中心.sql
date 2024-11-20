@@ -1,3 +1,3 @@
 select *
-from m_cost_center where bukrs=5000
+from m_cost_center where bukrs=4010
 ;

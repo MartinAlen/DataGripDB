@@ -1880,3 +1880,496 @@ from sys_user
 # where sys_user.real_name like '%徐瑾%';
 # where sys_user.real_name like '%张向金%';
 where sys_user.real_name like '%张子钦%';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '3590293504613697115';
+
+
+# where sys_user.user_code = 'admin_lhyxzx';
+
+# where sys_user.user_code = '10030522';
+# where sys_user.user_code = 'tahgadmin';
+# where sys_user.real_name like '%徐瑾%';
+# where sys_user.real_name like '%张向金%';
+# where sys_user.real_name like '%张子钦%';
+where sys_user.real_name like '%彭静%';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+where sys_user.id = '790537872396667465';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '790537872396667465';
+
+
+where sys_user.user_code = '10025141';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '790537872396667465';
+
+
+# where sys_user.user_code = '10025141';
+
+# where sys_user.user_code = '10030522';
+# where sys_user.user_code = 'tahgadmin';
+# where sys_user.real_name like '%徐瑾%';
+# where sys_user.real_name like '%张向金%';
+# where sys_user.real_name like '%张子钦%';
+where sys_user.real_name like '%李荣%';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '790537872396667465';
+
+
+# where sys_user.user_code = '10025141';
+
+# where sys_user.user_code = '10030522';
+# where sys_user.user_code = 'tahgadmin';
+# where sys_user.real_name like '%徐瑾%';
+# where sys_user.real_name like '%张向金%';
+where sys_user.real_name like '%张子钦%';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '790537872396667465';
+
+
+# where sys_user.user_code = '10025141';
+
+# where sys_user.user_code = '10030522';
+# where sys_user.user_code = 'tahgadmin';
+# where sys_user.real_name like '%徐瑾%';
+# where sys_user.real_name like '%张向金%';
+where sys_user.real_name like '%杨梅%';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '790537872396667465';
+
+
+where sys_user.user_code = '10002567';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '790537872396667465';
+
+
+where sys_user.user_code = '10004192';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '790537872396667465';
+
+
+where sys_user.user_code = '10004480';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '790537872396667465';
+
+
+where sys_user.user_code = '11000560';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '790537872396667465';
+
+
+where sys_user.user_code = '10002644';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from sys_unit
+where id = '00012979';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '790537872396667465';
+
+
+where sys_user.user_code = 'yjnadmin';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from sys_unit
+where id = '10003343';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '790537872396667465';
+
+
+where sys_user.user_code = 'admin_smzx';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '790537872396667465';
+
+
+where sys_user.user_code = '10001448';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '790537872396667465';
+
+
+# where sys_user.user_code = '10001448';
+
+# where sys_user.user_code = '10030522';
+# where sys_user.user_code = 'tahgadmin';
+# where sys_user.real_name like '%徐瑾%';
+# where sys_user.real_name like '%张向金%';
+where sys_user.real_name like '%李建疆%';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '790537872396667465';
+
+
+where sys_user.user_code = '13000345';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '790537872396667465';
+
+
+# where sys_user.user_code = '13000345';
+
+# where sys_user.user_code = '10030522';
+# where sys_user.user_code = 'tahgadmin';
+# where sys_user.real_name like '%徐瑾%';
+# where sys_user.real_name like '%张向金%';
+# where sys_user.real_name like '%李建疆%';
+where sys_user.real_name like '%张颖华%';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '790537872396667465';
+
+
+# where sys_user.user_code = '13000345';
+
+# where sys_user.user_code = '10030522';
+# where sys_user.user_code = 'tahgadmin';
+where sys_user.real_name like '%徐瑾%';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+where sys_user.id = '236435775381458799';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '236435775381458799';
+
+
+# where sys_user.user_code = '13000345';
+
+# where sys_user.user_code = '10030522';
+# where sys_user.user_code = 'tahgadmin';
+where sys_user.real_name like '%徐瑾%';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '236435775381458799';
+
+
+# where sys_user.user_code = '13000345';
+
+# where sys_user.user_code = '10030522';
+# where sys_user.user_code = 'tahgadmin';
+# where sys_user.real_name like '%徐瑾%';
+# where sys_user.real_name like '%张向金%';
+# where sys_user.real_name like '%李建疆%';
+where sys_user.real_name like '%张子钦%';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '236435775381458799';
+
+
+where sys_user.user_code = '10001761';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from sys_unit
+where id = '00018024';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '236435775381458799';
+
+
+where sys_user.user_code = 'shadmin';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '236435775381458799';
+
+
+where sys_user.user_code = '10000297';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '236435775381458799';
+
+
+# where sys_user.user_code = '10000297';
+
+# where sys_user.user_code = '10030522';
+# where sys_user.user_code = 'tahgadmin';
+# where sys_user.real_name like '%徐瑾%';
+# where sys_user.real_name like '%张向金%';
+# where sys_user.real_name like '%李建疆%';
+# where sys_user.real_name like '%张子钦%';
+where sys_user.real_name like '%罗旭娟%';
+;-- -. . -..- - / . -. - .-. -.--
+select user_name,
+       password,
+       user_code,
+       phone,
+       sys_user.id,
+       sys_user.org_id,
+       sys_user.real_name,
+       sys_user.unit_id,
+       sys_user.identity
+from sys_user
+         inner join sys_user_ext on sys_user.id = sys_user_ext.user_id
+# where sys_user.id = '236435775381458799';
+
+
+# where sys_user.user_code = '10000297';
+
+# where sys_user.user_code = '10030522';
+# where sys_user.user_code = 'tahgadmin';
+# where sys_user.real_name like '%徐瑾%';
+# where sys_user.real_name like '%张向金%';
+# where sys_user.real_name like '%李建疆%';
+# where sys_user.real_name like '%张子钦%';
+# where sys_user.real_name like '%罗旭娟%';
+where sys_user.real_name like '%周时远%';

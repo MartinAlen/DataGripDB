@@ -1,871 +1,232 @@
-select *
-from all_repository_stock where werks=4390 and wlbm=1000000648;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sap_consignment_stock where werks=4390 and matnr=1000000648;
-;-- -. . -..- - / . -. - .-. -.--
-select yhjxx, wlbm, ykcdbm, org_id, kclx
-from business_50t4
-where 1 = 1
-#   and org_id = '00000287'
-  and kclx = 'SAP'
-  and wlbm = '1000000648'
-# and ykcdbm='1521'
-order by create_date desc;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sync_werk_org_copy1 where werks=4390;
-;-- -. . -..- - / . -. - .-. -.--
-select yhjxx, wlbm, ykcdbm, org_id, kclx,create_date,update_date
-from business_50t4
-where 1 = 1
-#   and org_id = '00000287'
-  and kclx = 'SAP'
-  and wlbm = '1000000648'
-# and ykcdbm='1521'
-order by create_date desc;
-;-- -. . -..- - / . -. - .-. -.--
-select m.id,
-       m.father_id,
-       m.kcdbm,
-       m.hjxx,
-       m.ckpzh,
-       m.zkc,
-       m.cksl,
-       m.ktsl,
-       m.wlbm,
-       m.wlms,
-       m.gcdm,
-       m.jhbm,
-       m.father_id,
-       m.rkdid,
-       m.sfck,
-       m.ydlx
-
-from business_m3wc m
-where m.father_id = '3542b1ca222e485a97f46cadd7e08f5d';
-;-- -. . -..- - / . -. - .-. -.--
-select m.id,
-       m.father_id,
-       m.kcdbm,
-cbzx
-from business_m3wc m
-where m.father_id = '3542b1ca222e485a97f46cadd7e08f5d';
-;-- -. . -..- - / . -. - .-. -.--
-select m.id,
-       m.father_id,
-       m.kcdbm,
-cbzx,cbzxms
-from business_m3wc m
-where m.father_id = '3542b1ca222e485a97f46cadd7e08f5d';
-;-- -. . -..- - / . -. - .-. -.--
-select id, rksl, ckl, sapcgpz1, wlbm, rkpzh, father_id
-from business_f7hc
-where 1 = 1
-#   and rksl != ckl
-#   and ckl > 0
-#   and id = '2694928a2b6bf2305eb78c54bacf2b90';
-
-  and wlbm = '1000157656';
-;-- -. . -..- - / . -. - .-. -.--
-select id, rksl, ckl, sapcgpz1, wlbm, rkpzh, father_id
-from business_f7hc
-where 1 = 1
-#   and rksl != ckl
-#   and ckl > 0
-#   and id = '2694928a2b6bf2305eb78c54bacf2b90';
-
-  and wlbm = '1000157656'
-and dddj =135;
-;-- -. . -..- - / . -. - .-. -.--
-select s.id, rksl, ckl, wlbm
-from business_y339 m
-         inner join business_f7hc s on m.id = s.father_id
-where m.flow_step = '归档'
-#   and rksl != ckl
-#   and ckl > 0
-  and wlbm = '1000034208';
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '退库'
-# and sap_execute_log.response like '%"I"%'
-# sap_execute_log.response like '%4913096500%'
-order by create_time desc
+select module_name,params,result,url
+from business_8b0j
+where module_name = '电子商城-采购申请单审批结果回传'
+order by create_date desc
 limit 10;
 ;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-# where title = '物资出库'
-# and sap_execute_log.response like '%"I"%'
-# sap_execute_log.response like '%4913096500%'
-order by create_time desc
+select module_name,params,result,url,fail_reason
+from business_8b0j
+where module_name = '电子商城-采购申请单审批结果回传'
+order by create_date desc
 limit 10;
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '物资出库'
-# and sap_execute_log.response like '%"I"%'
-# sap_execute_log.response like '%4913096500%'
-order by create_time desc
-limit 10;
-;-- -. . -..- - / . -. - .-. -.--
-select id,
-       ttwb,
-       ckbm,
-       psdd,
-       serial,
-       create_date,
-       update_date,
-       flow_step,
-       flow_state,
-       ckbm,
-       kcdbm
-from business_ij1g
-# where ckbm is null  or ckbm=''
-where ckbm like '%SBCK4010202401020343%';
-;-- -. . -..- - / . -. - .-. -.--
-select id, cksl, ktsl, gcdm, ckpzh,rkdid,cbzx,cbzxms
-from business_m3wc
-# where wlbm = '1000022922';
-where father_id = '3542b1ca222e485a97f46cadd7e08f5d';
-;-- -. . -..- - / . -. - .-. -.--
-select id, cksl, ktsl, gcdm, ckpzh,rkdid,cbzx,cbzxms
-from business_m3wc
-# where wlbm = '1000022922';
-# where father_id = '3542b1ca222e485a97f46cadd7e08f5d';
-where id = '48ab661b9d8442119f584dac1ec55d95';
-;-- -. . -..- - / . -. - .-. -.--
-select id, jhbm,cksl, ktsl, gcdm, ckpzh,rkdid,cbzx,cbzxms
-from business_m3wc
-# where wlbm = '1000022922';
-# where father_id = '3542b1ca222e485a97f46cadd7e08f5d';
-where id = '48ab661b9d8442119f584dac1ec55d95';
-;-- -. . -..- - / . -. - .-. -.--
-select id, jhbm,cksl, ydlx,ktsl, gcdm, ckpzh,rkdid,cbzx,cbzxms
-from business_m3wc
-# where wlbm = '1000022922';
-# where father_id = '3542b1ca222e485a97f46cadd7e08f5d';
-where id = '48ab661b9d8442119f584dac1ec55d95';
-;-- -. . -..- - / . -. - .-. -.--
-select id, jhbm,cksl, father_id,ydlx,ktsl, gcdm, ckpzh,rkdid,cbzx,cbzxms
-from business_m3wc
-# where wlbm = '1000022922';
-# where father_id = '3542b1ca222e485a97f46cadd7e08f5d';
-where id = '48ab661b9d8442119f584dac1ec55d95';
-;-- -. . -..- - / . -. - .-. -.--
-select id, jhbm,cksl, father_id,ydlx,ktsl, gcdm, ckpzh,rkdid,cbzx,cbzxms
-from business_m3wc
-# where wlbm = '1000022922';
-where father_id = '48fb1cd30ae44760b9aa2f2cedbbeb6a';
 ;-- -. . -..- - / . -. - .-. -.--
 select m.id, m.tkdbm, s.*
 from business_c927 m
          inner join business_z6nu s on m.id = s.father_id
 
-where tkdbm='SBTKD4010202401100001';
-;-- -. . -..- - / . -. - .-. -.--
-select id,wlbm,ckdid,ydlx
-from business_z6nu where father_id='15019d58e9ce4031be45d99ccb11b9f9';
-;-- -. . -..- - / . -. - .-. -.--
-SELECT s.jhbm,
-       s.id,
-       s.wlbm,
-       s.wlms,
-       s.dddj,
-       s.kcdbm,
-       s.kcdms,
-       hjxx,
-       s.gysbm,
-       s.gysmc,
-       hgz,
-       czzm,
-       bgd,
-       ccjybg,
-       sysm,
-       tz,
-       bz,
-       s.jldw,
-       s.gcdm,
-       cgddbh,
-       dwms,
-       kclx,
-       s.wzlx,
-       je,
-       s.caigy,
-       m.psy                         cgy,
-       s.cgddhxm,
-       pc,
-       cgylxdh,
-       s.sbr,
-       sbrlxdh,
-       fylx,
-       s.ydlx,
-       cbzx,
-       jgh,
-       s.gdzc,
-       ggxh,
-       wzjb,
-       wztp,
-       s.cksl,
-       s.zjgc,
-       s.zzkm,
-       s.yfdd,
-       m.ckbm,
-       m.dept_id,
-       s.cksl - ifnull(s.ktsl, 0) as ktsl,
-       s.matdoc_item,
-       m.zdr
-FROM business_ij1g AS m
-         LEFT JOIN business_m3wc AS s ON m.id = s.father_id
-where s.ckpzh != ''
-  and m.org_id = '${orgId}'
-having ktsl > 0
-order by m.ckbm desc;
+where tkdbm = 'SBTKD40102024011400';
 ;-- -. . -..- - / . -. - .-. -.--
 select title, create_time, request, response, exception
 from sap_execute_log
-where title = '收货后冲销'
-#   and request like '%1000221514%'
+where title = '物资出库'
+  and sap_execute_log.request like '%1000199970%'
+# sap_execute_log.response like '%4913096500%'
 order by create_time desc
 limit 100;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       jhbm,
+       cklx,
+       ydlx,
+       cksl,
+       sfck,
+       father_id,
+       ktsl,
+       gcdm,
+       ckpzh,
+       rkdid,
+       cbzx,
+       cbzxms
+from business_m3wc
+
+where wlbm = '1000199970';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       ddhxmh,
+       rksl,
+       gcbm,
+       ckl,
+       sapcgpz1,
+       wlbm,
+       dddj,
+       rkpzh,
+       father_id
+from business_f7hc
+where 1 = 1
+#   and id = '51ebbf67f424fcc915d73711fc18ae9f'
+#   and rksl != ckl
+#   and ckl > 0
+#   and father_id = '990dcfc482a388d418b7e2558803acc2';
+# and org_id='00008413'
+and wlbm='1000226730';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       ddhxmh,
+       rksl,
+       gcbm,
+       ckl,
+       sapcgpz1,
+       wlbm,
+       dddj,
+       rkpzh,
+       father_id,
+       hjxx
+from business_f7hc
+where 1 = 1
+#   and id = '51ebbf67f424fcc915d73711fc18ae9f'
+#   and rksl != ckl
+#   and ckl > 0
+#   and father_id = '990dcfc482a388d418b7e2558803acc2';
+# and org_id='00008413'
+and wlbm='1000226730';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       ddhxmh,
+       rksl,
+       gcbm,
+       ckl,
+       sapcgpz1,
+       wlbm,
+       dddj,
+       rkpzh,
+       father_id,
+       hjxx,
+       kmdbm
+from business_f7hc
+where 1 = 1
+#   and id = '51ebbf67f424fcc915d73711fc18ae9f'
+#   and rksl != ckl
+#   and ckl > 0
+#   and father_id = '990dcfc482a388d418b7e2558803acc2';
+# and org_id='00008413'
+  and wlbm = '1000226730';
 ;-- -. . -..- - / . -. - .-. -.--
 select id,
        rkdbh,
        org_id,
        htbh,
+       kgy,
        htmc,
        dhysdh,
        create_date,
        rkpz,
        wlbmall
 from business_y339
-where id = 'b4c9a2a8e8573bed147b2be544734cd7';
-;-- -. . -..- - / . -. - .-. -.--
-select id, rksl, ckl, sapcgpz1, wlbm, rkpzh, father_id
-from business_f7hc
 where 1 = 1
-#   and rksl != ckl
-#   and ckl > 0
-  and father_id = '2694928a2b6bf2305eb78c54bacf2b90';
-;-- -. . -..- - / . -. - .-. -.--
-select id, rksl, ckl, sapcgpz1, wlbm, rkpzh, father_id
-from business_f7hc
-where 1 = 1
-#   and rksl != ckl
-#   and ckl > 0
-  and father_id = 'b4c9a2a8e8573bed147b2be544734cd7';
-;-- -. . -..- - / . -. - .-. -.--
-select id, rksl, ckl, sapcgpz1, wlbm, dddj,rkpzh, father_id
-from business_f7hc
-where 1 = 1
-#   and rksl != ckl
-#   and ckl > 0
-  and father_id = 'b4c9a2a8e8573bed147b2be544734cd7';
+  and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
+
+# where serial = '20231226153831855'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202401190091'
+# where dhysdh is null
+order by create_date desc;
 ;-- -. . -..- - / . -. - .-. -.--
 select id,
-       ttwb,
-       ckbm,
-       psdd,
-       serial,
-       create_date,
+       rkdbh,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
        update_date,
-       flow_step,
-       flow_state,
-       ckbm,
-       kcdbm
-from business_ij1g
-# where ckbm is null  or ckbm=''
-where ckbm like '%SBCK4010202401100073%';
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+  and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
+
+# where serial = '20231226153831855'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202401190091'
+# where dhysdh is null
+order by create_date desc;
 ;-- -. . -..- - / . -. - .-. -.--
-select id, jhbm,cksl,sfck, father_id,ydlx,ktsl, gcdm, ckpzh,rkdid,cbzx,cbzxms
+select id,
+       jhbm,
+       cklx,
+       ydlx,
+       cksl,
+       sfck,
+       father_id,
+       ktsl,
+       gcdm,
+       ckpzh,
+       rkdid,
+       cbzx,
+       cbzxms
 from business_m3wc
-# where wlbm = '1000022922';
-where father_id = '4d04cb9870f64fbebce79449c4c95a9b';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from business_50t4 group by org_id,wlbm,yhjxx,ykcdbm;
-;-- -. . -..- - / . -. - .-. -.--
-select wlbm
-from business_50t4 group by org_id,wlbm,yhjxx,ykcdbm;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s
-from business_50t4 group by org_id,wlbm,yhjxx,ykcdbm having s>0;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s
-from business_50t4 group by org_id,wlbm,yhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id
-from business_50t4 group by org_id,wlbm,yhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm
-from business_50t4 group by org_id,wlbm,yhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm
-from business_50t4 group by org_id,wlbm,yhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm,yhjxx
-from business_50t4 group by org_id,wlbm,yhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from business_50t4
-where wlbm = '1000308314';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from business_50t4
-where wlbm = '1000004099';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sync_werk_org_copy1 where werks=00001;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sync_werk_org_copy1 where werks=0001;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sync_werk_org_copy1 where org_id=00000001;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from business_50t4
-# where wlbm = '1000004099';
-where org_id = '00000001';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from business_50t4
-where wlbm = '1000011903';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from business_50t4
-where gcdm = ''
-   or gcdm is null;
-;-- -. . -..- - / . -. - .-. -.--
-delete
-from business_50t4
-where gcdm = ''
-   or gcdm is null;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from business_50t4
-where wlbm = '1000000956';
-;-- -. . -..- - / . -. - .-. -.--
-delete from business_50t4 where kclx='A18A06A06A02';
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm,yhjxx
-from business_50t4 where kclx !='WAITUSE' group by org_id,wlbm,yhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select yhjxx, wlbm, ykcdbm, org_id, kclx,create_date,update_date
-from business_50t4
-where 1 = 1
-#   and org_id = '00000287'
-  and kclx = 'SAP'
-  and wlbm = '1000248309'
-# and ykcdbm='1521'
-order by create_date desc;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm,yhjxx
-from business_50t4   group by org_id,wlbm,yhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm,yhjxx
-from business_50t4  where kclx !='WAITUSE'group by org_id,wlbm,yhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm,yhjxx
-from business_50t4  where kclx =='WAITUSE' group by org_id,wlbm,yhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm,yhjxx
-from business_50t4  where kclx ='WAITUSE' group by org_id,wlbm,yhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm,yhjxx,create_date
-from business_50t4  where kclx ='WAITUSE' group by org_id,wlbm,yhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select yhjxx, wlbm, ykcdbm, org_id, kclx,create_date,update_date
-from business_50t4
-where 1 = 1
-#   and org_id = '00000287'
-#   and kclx = 'SAP'
-  and kclx = 'WAITUSE'
-  and wlbm = '1000210110'
-# and ykcdbm='1521'
-order by create_date desc;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm,yhjxx,create_date
-from business_50t4  where kclx ='WAITUSE' and create_date <'2023-05-21 10:05:57' group by org_id,wlbm,yhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm,yhjxx
-from business_50t4  where kclx ='WAITUSE' and create_date >'2023-05-21 10:05:57' group by org_id,wlbm,yhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm,yhjxx
-from business_50t4  where kclx ='WAITUSE' and create_date <'2023-05-21 10:05:57' group by org_id,wlbm,yhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm,yhjxx
-from business_50t4  where kclx ='WAITUSE';
-;-- -. . -..- - / . -. - .-. -.--
-select org_id,wlbm,ykcdbm,yhjxx
-from business_50t4  where kclx ='WAITUSE';
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm,yhjxx
-from business_50t4  where kclx ='WAITUSE'  group by org_id,wlbm,xhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm,xhjxx
-from business_50t4  where kclx !='WAITUSE'  group by org_id,wlbm,xhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm,xhjxx
-from business_50t4  where kclx =='WAITUSE'  group by org_id,wlbm,xhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select yhjxx, wlbm, ykcdbm, org_id, kclx,create_date,update_date
-from business_50t4
-where 1 = 1
-#   and org_id = '00000287'
-#   and kclx = 'SAP'
-  and kclx = 'WAITUSE'
-  and wlbm = '1000018422'
-# and ykcdbm='1521'
-order by create_date desc;
-;-- -. . -..- - / . -. - .-. -.--
-select xhjxx, wlbm, ykcdbm, org_id, kclx,create_date,update_date
-from business_50t4
-where 1 = 1
-#   and org_id = '00000287'
-#   and kclx = 'SAP'
-  and kclx = 'WAITUSE'
-  and wlbm = '1000018422'
-# and ykcdbm='1521'
-order by create_date desc;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm,yhjxx
-from business_50t4  where kclx ='WAITUSE'  group by org_id,wlbm,yhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm,xhjxx
-from business_50t4  where kclx ='WAITUSE'  group by org_id,wlbm,yhjxx,xhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm,xhjxx
-from business_50t4  where kclx ='WAITUSE'  group by org_id,wlbm,xhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select xhjxx, wlbm, ykcdbm, org_id, kclx,create_date,update_date
-from business_50t4
-where 1 = 1
-#   and org_id = '00000287'
-#   and kclx = 'SAP'
-  and kclx = 'WAITUSE'
-  and wlbm = '1000248309'
-# and ykcdbm='1521'
-order by create_date desc;
-;-- -. . -..- - / . -. - .-. -.--
-select yhjxx,xhjxx, wlbm, ykcdbm, org_id, kclx,create_date,update_date
-from business_50t4
-where 1 = 1
-#   and org_id = '00000287'
-#   and kclx = 'SAP'
-  and kclx = 'WAITUSE'
-  and wlbm = '1000248309'
-# and ykcdbm='1521'
-order by create_date desc;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm,xhjxx
-from business_50t4  where kclx  !='WAITUSE'  group by org_id,wlbm,xhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm,xhjxx
-from business_50t4  where kclx  !='WAITUSE'  group by org_id,wlbm,yhjxx,xhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm,xhjxx
-from business_50t4  where kclx  !='WAITUSE'  group by org_id,wlbm,yhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm
-from business_50t4  where kclx  !='WAITUSE'  group by org_id,wlbm,yhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm
-from business_50t4  where kclx  !='WAITUSE'  group by org_id,wlbm,xhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm
-from business_50t4  where kclx  ='WAITUSE'  group by org_id,wlbm,xhjxx,ykcdbm having s>1;
-;-- -. . -..- - / . -. - .-. -.--
-select count(wlbm)s,org_id,wlbm,ykcdbm
-from business_50t4  where kclx  ='WAITUSE';
-;-- -. . -..- - / . -. - .-. -.--
-select org_id,wlbm,ykcdbm
-from business_50t4  where kclx  ='WAITUSE';
-;-- -. . -..- - / . -. - .-. -.--
-select outSlave.id,
-       input.hjxx,
-       outSlave.cksl,
-       input.rksl,
-       input.ckl
-from business_m3wc outSlave
-         inner join business_f7hc input on outSlave.rkdid = input.id
-where outSlave.wlbm = '1000231020';
-;-- -. . -..- - / . -. - .-. -.--
-select outSlave.id,
-       input.hjxx,
-       outSlave.cksl,
-       input.rksl,
-       input.ckl,
-       input.id inputId
-from business_m3wc outSlave
-         inner join business_f7hc input on outSlave.rkdid = input.id
-where outSlave.wlbm = '1000231020';
+
+where wlbm = '1000226730';
 ;-- -. . -..- - / . -. - .-. -.--
 select id,
-       ttwb,
-       ckbm,
-       psdd,
-       serial,
-       create_date,
-       update_date,
-       flow_step,
-       flow_state,
-       ckbm,
-       kcdbm
-from business_ij1g
-# where ckbm is null  or ckbm=''
-# where ckbm like '%SBCK4010202401100073%';
-where id='92203f8a0c6b4268bc675eda54de5c57'
-#     where psdd like '%熔%'
-# where serial = '20240102175828585'
-# where business_ij1g.flow_step like '%总经理%';
-# where business_ij1g.create_date = '2023-08-28 16:50:56';
-where id = '2f904bfffb1f423891439f5531bfb67a'
-# where serial = '20231025094042682'
-order by create_date;
-;-- -. . -..- - / . -. - .-. -.--
-select id,
-       ttwb,
-       ckbm,
-       psdd,
-       serial,
-       create_date,
-       update_date,
-       flow_step,
-       flow_state,
-       ckbm,
-       kcdbm
-from business_ij1g
-# where ckbm is null  or ckbm=''
-# where ckbm like '%SBCK4010202401100073%';
-where id = '92203f8a0c6b4268bc675eda54de5c57';
-;-- -. . -..- - / . -. - .-. -.--
-select outSlave.id,
-       input.hjxx,
-       outSlave.cksl,
-       input.rksl,
-       input.ckl,
-       input.id inputId,
-       outSlave.father_id
-from business_m3wc outSlave
-         inner join business_f7hc input on outSlave.rkdid = input.id
-where outSlave.wlbm = '1000231020';
-;-- -. . -..- - / . -. - .-. -.--
-select id,
-       ttwb,
-       ckbm,
-       psdd,
-       serial,
-       create_date,
-       update_date,
-       flow_step,
-       flow_state,
-       ckbm,
-       kcdbm
-from business_ij1g
-# where ckbm is null  or ckbm=''
-# where ckbm like '%SBCK4010202401100073%';
-where id = 'e6d984faf68c4f50ae851be843bc472c';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from form_table_128c473299949c8b;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from form_table_128c473299949c8b where field_h3=241;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from business_1519
-where bukrs = '3140'
-order by create_date desc;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from business_1519
-where bukrs = '4010'
-order by create_date desc;
-;-- -. . -..- - / . -. - .-. -.--
-select id,
-       ttwb,
-       ckbm,
-       psdd,
-       serial,
-       create_date,
-       update_date,
-       flow_step,
-       flow_state,
-       ckbm,
-       kcdbm
-from business_ij1g
-# where ckbm is null  or ckbm=''
-where ckbm ='SBCK4390202401090253';
-;-- -. . -..- - / . -. - .-. -.--
-select m.id,
-       m.father_id,
-       m.kcdbm,
-cbzx,cbzxms
-from business_m3wc m
-where m.father_id = 'cdaa1dbd459f459ba340671366421929';
-;-- -. . -..- - / . -. - .-. -.--
-select m.id,
-       m.father_id,
-       m.kcdbm,
-       cbzx,
-       cbzxms,
-       nbddh,
-       nbddms
-from business_m3wc m
-where m.father_id = 'cdaa1dbd459f459ba340671366421929';
-;-- -. . -..- - / . -. - .-. -.--
-select m.id,
-       m.father_id,
-       m.kcdbm,
-       gdzc,
-       cbzx,
-       cbzxms,
-       nbddh,
-       nbddms
-from business_m3wc m
-where m.father_id = 'cdaa1dbd459f459ba340671366421929';
-;-- -. . -..- - / . -. - .-. -.--
-select m.id,
-       m.father_id,
-       m.kcdbm,
-       gdzc,
+       jhbm,
+       hjxx,
+       cklx,
        ydlx,
+       cksl,
+       sfck,
+       father_id,
+       ktsl,
+       gcdm,
+       ckpzh,
+       rkdid,
        cbzx,
-       cbzxms,
-       nbddh,
-       nbddms
-from business_m3wc m
-where m.father_id = 'cdaa1dbd459f459ba340671366421929';
-;-- -. . -..- - / . -. - .-. -.--
-select `form_table_128c473299949c8b`.`field_h1` AS `field_h1`,
-       `form_table_128c473299949c8b`.`field_h2` AS `field_h2`,
-       `form_table_128c473299949c8b`.`field_h3` AS `field_h3`,
-       `form_table_128c473299949c8b`.`field_h4` AS `field_h4`
+       cbzxms
+from business_m3wc
 
-from `form_table_128c473299949c8b`
-where 1=field_h1
-  and org_id = '${orgId}'
-  and field_h3 is not null
-and field_h3=261
-order by `form_table_128c473299949c8b`.`field_h1`;
-;-- -. . -..- - / . -. - .-. -.--
-select `form_table_128c473299949c8b`.`field_h1` AS `field_h1`,
-       `form_table_128c473299949c8b`.`field_h2` AS `field_h2`,
-       `form_table_128c473299949c8b`.`field_h3` AS `field_h3`,
-       `form_table_128c473299949c8b`.`field_h4` AS `field_h4`
-
-from `form_table_128c473299949c8b`
-where 1=field_h1
-#   and org_id = '${orgId}'
-  and field_h3 is not null
-and field_h3=261
-order by `form_table_128c473299949c8b`.`field_h1`;
-;-- -. . -..- - / . -. - .-. -.--
-select `form_table_128c473299949c8b`.`field_h1` AS `field_h1`,
-       `form_table_128c473299949c8b`.`field_h2` AS `field_h2`,
-       `form_table_128c473299949c8b`.`field_h3` AS `field_h3`,
-       `form_table_128c473299949c8b`.`field_h4` AS `field_h4`
-
-from `form_table_128c473299949c8b`
-where 1=field_h1
-#   and org_id = '${orgId}'
-  and field_h3 is not null
-and field_h4=261
-order by `form_table_128c473299949c8b`.`field_h1`;
-;-- -. . -..- - / . -. - .-. -.--
-select `form_table_128c473299949c8b`.`field_h1` AS `field_h1`,
-       `form_table_128c473299949c8b`.`field_h2` AS `field_h2`,
-       `form_table_128c473299949c8b`.`field_h3` AS `field_h3`,
-       `form_table_128c473299949c8b`.`field_h4` AS `field_h4`
-
-from `form_table_128c473299949c8b`
-where 1=1
-#   and org_id = '${orgId}'
-  and field_h3 is not null
-and field_h4=261
-order by `form_table_128c473299949c8b`.`field_h1`;
-;-- -. . -..- - / . -. - .-. -.--
-select `form_table_128c473299949c8b`.`field_h1` AS `field_h1`,
-       `form_table_128c473299949c8b`.`field_h2` AS `field_h2`,
-       `form_table_128c473299949c8b`.`field_h3` AS `field_h3`,
-       `form_table_128c473299949c8b`.`field_h4` AS `field_h4`
-
-from `form_table_128c473299949c8b`
-where 1=1
-#   and org_id = '${orgId}'
-  and field_h3 is not null
-and field_h3=261
-order by `form_table_128c473299949c8b`.`field_h1`;
-;-- -. . -..- - / . -. - .-. -.--
-select m.id,
-       m.father_id,
-       m.kcdbm,
-       gdzc,
-       ydlx,
-       fylx,
-       cbzx,
-       cbzxms,
-       nbddh,
-       nbddms
-from business_m3wc m
-where m.father_id = 'cdaa1dbd459f459ba340671366421929';
+where wlbm = '1000226730';
 ;-- -. . -..- - / . -. - .-. -.--
 select id,
-       ttwb,
-       ckbm,
-       psdd,
-       serial,
-       create_date,
-       update_date,
-       flow_step,
-       flow_state,
-       ckbm,
-       kcdbm
-from business_ij1g
-# where ckbm is null  or ckbm=''
-where ckbm = 'SBCK4390202401090253';
+       ddhxmh,
+       rksl,
+       gcbm,
+       ckl,
+       sapcgpz1,
+       wlbm,
+       dddj,
+       rkpzh,
+       father_id,
+       hjxx,
+       kmdbm,create_date
+from business_f7hc
+where 1 = 1
+#   and id = '51ebbf67f424fcc915d73711fc18ae9f'
+#   and rksl != ckl
+#   and ckl > 0
+#   and father_id = '990dcfc482a388d418b7e2558803acc2';
+# and org_id='00008413'
+  and wlbm = '1000226730';
 ;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '物资出库'
-and sap_execute_log.request like '%施兴涛领料出库%'
-# sap_execute_log.response like '%4913096500%'
-order by create_time desc
+select create_date,params,result,url,fail_reason
+from business_8b0j
+where module_name = '电子商城-采购申请单审批结果回传'
+order by create_date desc
 limit 10;
 ;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '物资出库'
-and sap_execute_log.request like '%261%'
-# sap_execute_log.response like '%4913096500%'
-order by create_time desc
+select *
+from business_8b0j
+where module_name = '电子商城-接收电子商城采购申请单'
+order by create_date desc
+
 limit 10;
 ;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '物资出库'
-and sap_execute_log.request like '%261%'
-# sap_execute_log.response like '%4913096500%'
-order by create_time desc
-limit 100;
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '物资出库'
-and sap_execute_log.request like '%"MOVE_TYPE": "261"%'
-# sap_execute_log.response like '%4913096500%'
-order by create_time desc
-limit 100;
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '物资出库'
-and sap_execute_log.request like '%"MOVE_TYPE":"261"%'
-# sap_execute_log.response like '%4913096500%'
-order by create_time desc
-limit 100;
-;-- -. . -..- - / . -. - .-. -.--
 select *
-from sync_werk_org_copy1  where werks=3092;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from m_cost_center where bukrs=3092;
-;-- -. . -..- - / . -. - .-. -.--
-select id,ckbm
-from business_e9wr
-# where ckbm = 'DLYWZCK4010202307040007'
-where serial = '20240111120147526'
-order by create_date desc;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sync_werk_org_copy1
-where werks = 3090;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from m_cost_center where bukrs=3090;
-;-- -. . -..- - / . -. - .-. -.--
-select m.cph,
-       m.wlcydbh,
-       m.cgddh,
-       m.shsj,
-       m.fhsj,
-       m.cysbm,
-       m.cysmc,
-       m.shd,
-       m.fhd,
-       s.*
+from business_8b0j
+where module_name = '电子商城-接收电子商城采购申请单'
+and params like '%PR240218000004%'
+order by create_date desc
 
-from wlcyd m
-         inner join wlcydxx s on m.id = s.father_id
-where 1 = 1
-  and m.user_id = '-273664753399085003';
-;-- -. . -..- - / . -. - .-. -.--
-select id
-from wlwtd
-where 1=1
-  and user_id = '-273664753399085003';
-;-- -. . -..- - / . -. - .-. -.--
-select id,wlwtdbh
-from wlwtd
-where 1=1
-  and user_id = '-273664753399085003';
-;-- -. . -..- - / . -. - .-. -.--
-select id,wlwtdbh,org_id
-from wlwtd
-where 1=1;
-;-- -. . -..- - / . -. - .-. -.--
-select id,wlwtdbh,org_id
-from wlwtd
-where 1=1
-  and user_id = '-273664753399085003';
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '物资出库'
-and sap_execute_log.request like '%王立春领用出库%'
-# sap_execute_log.response like '%4913096500%'
-order by create_time desc
-limit 100;
+limit 10;
 ;-- -. . -..- - / . -. - .-. -.--
 select *
-from goods_repository where wlbm='2151501382';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from wait_use_repository where wlbm='2151501382';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from wait_use_repository where wlbm_last='2151501382';
-;-- -. . -..- - / . -. - .-. -.--
-select id,ckbm
-from business_e9wr
-where ckbm = 'DLYWZCK4010202401150005'
-# where serial = '20240111120147526'
-order by create_date desc;
-;-- -. . -..- - / . -. - .-. -.--
-select id,
-       ttwb,
-       ckbm,
-       psdd,
-       serial,
-       create_date,
-       update_date,
-       flow_step,
-       flow_state,
-       ckbm,
-       kcdbm
-from business_ij1g
-# where ckbm is null  or ckbm=''
-# where ckbm = 'SBCK4390202401090253';
-# where id = 'e6d984faf68c4f50ae851be843bc472c';
-#     where psdd like '%熔%'
-where serial = '20240115150011215'
-# where business_ij1g.flow_step like '%总经理%';
-# where business_ij1g.create_date = '2023-08-28 16:50:56';
-# where serial = '20231025094042682'
-order by create_date
-desc;
+from business_8b0j
+where module_name = '电子商城-接收电子商城采购申请单'
+
+order by create_date desc
+
+limit 10;
 ;-- -. . -..- - / . -. - .-. -.--
 select id,
        ttwb,
@@ -881,648 +242,464 @@ select id,
        kcdbm
 from business_ij1g
 # where ckbm is null  or ckbm=''
-# where ckbm = 'SBCK4390202401090253';
-# where id = 'e6d984faf68c4f50ae851be843bc472c';
-#     where psdd like '%熔%'
-where serial = '20240115150011215'
-# where business_ij1g.flow_step like '%总经理%';
-# where business_ij1g.create_date = '2023-08-28 16:50:56';
-# where serial = '20231025094042682'
-order by create_date
-desc;
+where ckbm = 'SBCK4070202402060291';
 ;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception, time
-from sap_execute_log
-where title = '采购订单连续收货'
-#   and request like '%SBRKD4010202312290011%'
-and sap_execute_log.response like '%4500344020 %'
-order by create_time desc
-limit 10;
+select id,
+       father_id,
+       ckpzh,
+       zzkm,
+       ydlx,
+       fylx,
+       nbddh,
+       zjgc,
+       zjgcms,
+       nbddh,
+       nbddms
+from business_m3wc
+where 1 = 1
+  and father_id = 'e5edf4db93404fdcaf5d5cbcd6ebbef1';
 ;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '创建连续采购订单'
-#                        and request like '%YTH-4010-WB-CG-2023-009990-00%'
-#     出现问题的采购订单
-#   and sap_execute_log.response like '%4500357582%'
+select id,
+       father_id,
+       ckpzh,
+       zzkm,
+       dw,
+       ydlx,
+       fylx,
+       nbddh,
+       zjgc,
+       zjgcms,
+       nbddh,
+       nbddms
+from business_m3wc
+where 1 = 1
+  and father_id = 'e5edf4db93404fdcaf5d5cbcd6ebbef1';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       father_id,
+       ckpzh,
+       zzkm,
+       jldw,
+       dwms,
+       ydlx,
+       fylx,
+       nbddh,
+       zjgc,
+       zjgcms,
+       nbddh,
+       nbddms
+from business_m3wc
+where 1 = 1
+  and father_id = 'e5edf4db93404fdcaf5d5cbcd6ebbef1';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from business_66o1
+where 1 = 1
+#                      and serial='20240205132003559'
+  and dh = 'JSZZY4070202402180008';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from sap_consignment_stock where meins='TAO';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from sap_consignment_stock where meins='SET';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from business_iy41
+where father_id = '1759024809295003650';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       ttwb,
+       aqhbfy,
+       ckbm,
+       psdd,
+       serial,
+       create_date,
+       update_date,
+       flow_step,
+       flow_state,
+       ckbm,
+       kcdbm
+from business_ij1g
+# where ckbm is null  or ckbm=''
+where ckbm = 'SBCK4390202402130025';
+;-- -. . -..- - / . -. - .-. -.--
+select create_date,params,result,url,fail_reason
+from business_8b0j
+where module_name = '电子商城-采购申请单审批结果回传'
+order by create_date desc
+limit 100;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
 
-  and sap_execute_log.response like '%4500344020%'
-#   and sap_execute_log.request like '%1000440944%'
-order by create_time desc
+where serial = '20240219103003136'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202401190091'
+# where dhysdh is null
+order by create_date;
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from business_66o1
+where 1 = 1
+#                      and serial='20240205132003559'
+  and dh = 'JSZZY4070202402080008';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from business_iy41
+where father_id = '1755475436065832961';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from business_iy41
+where 1=1 and
+#       father_id = '1755475436065832961';
+and wlbm  = '1000228201';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from business_iy41
+where 1=1 
+#       father_id = '1755475436065832961';
+and wlbm  = '1000228201';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from business_66o1
+where 1 = 1
+#                      and serial='20240205132003559'
+  and dh = 'JSZZY4070202402080017';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from business_iy41
+where 1=1
+      and father_id = '1755477717981118465';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from business_66o1
+where 1 = 1
+#                      and serial='20240205132003559'
+  and dh = 'JSZZY4070202402080019';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from business_iy41
+where 1=1
+      and father_id = '1755479445174534146';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from business_w988 m
+         inner join business_ev48 s on m.id=s.father_id;
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from business_w988 m
+         inner join business_ev48 s on m.id = s.father_id
+where s.id not in (select s1.id
+                   from business_8o89 m1
+                            inner join business_vcch s1 on m1.id = s1.father_id and m1.flow_step = '归档');
+;-- -. . -..- - / . -. - .-. -.--
+select m.xqjhbh,
+       m.sbdw,
+       m.sbr,
+       m.sbbm,
+       m.sbsj,
+       m.shr,
+       m.shrlxfs,
+       m.shdz,
+       m.cgy,
+       s.id,
+       s.wlbm,
+       s.wlms,
+       s.ggxh,
+       s.dw,
+       s.xql,
+       s.bz
+from business_w988 m
+         inner join business_ev48 s on m.id = s.father_id
+where s.id not in (select s1.id
+                   from business_8o89 m1
+                            inner join business_vcch s1 on m1.id = s1.father_id and m1.flow_step = '归档');
+;-- -. . -..- - / . -. - .-. -.--
+select id
+     , org_id
+     , jcdw
+     , gsdm
+     , ddsfgb
+     , sapcgpz1
+     , user_id
+     , caigouyuan
+     , szgcddh
+     , jyms
+     , gysbm
+     , gc
+     , gsdm
+     , shdw
+     , jcdw
+     , ddsfgb
+     , ddfqlx
+     , gysmc
+     , org_id
+     , user_id
+     , sbr
+     , htbh
+     , htmc
+     , create_date
+     , user_id
+from business_3k66
+where 1 = 1
+
+# and ddfqlx ='A18A02A11A04';
+#   and sapcgpz1 = '4500368008'
+#   and szgcddh like 'CGDD00001202401290165%'
+  and szgcddh like 'PR240219000005'
+# and jyms ='A18A05A15A02';
+# and id = 'c38156588b1b4416b9c828ae5ed993f0';
+# and serial = '20240125132619561';
+# and htbh = 'YTH-4010-NB-GX-2022-001029-00';
+# and jyms='A18A05A15A07'
+#   and jyms = 'A18A05A15A06'
+#   and sapcgpz1 != ''
+#   and gsdm = 4010
+order by create_date
+        desc
+limit 10;
+;-- -. . -..- - / . -. - .-. -.--
+select id
+     , org_id
+     , jcdw
+     , gsdm
+     , ddsfgb
+     , sapcgpz1
+     , user_id
+     , caigouyuan
+     , szgcddh
+     , jyms
+     , gysbm
+     , gc
+     , gsdm
+     , shdw
+     , jcdw
+     , ddsfgb
+     , ddfqlx
+     , gysmc
+     , org_id
+     , user_id
+     , sbr
+     , htbh
+     , htmc
+     , create_date
+     , user_id
+from business_3k66
+where 1 = 1
+
+# and ddfqlx ='A18A02A11A04';
+#   and sapcgpz1 = '4500368008'
+#   and szgcddh like 'CGDD00001202401290165%'
+  and szgcddh like 'PR%'
+# and jyms ='A18A05A15A02';
+# and id = 'c38156588b1b4416b9c828ae5ed993f0';
+# and serial = '20240125132619561';
+# and htbh = 'YTH-4010-NB-GX-2022-001029-00';
+# and jyms='A18A05A15A07'
+#   and jyms = 'A18A05A15A06'
+#   and sapcgpz1 != ''
+#   and gsdm = 4010
+order by create_date
+        desc
+limit 10;
+;-- -. . -..- - / . -. - .-. -.--
+select id
+     , org_id
+     , jcdw
+     , gsdm
+     , ddsfgb
+     , sapcgpz1
+     , user_id
+     , caigouyuan
+     , szgcddh
+     , jyms
+     , gysbm
+     , gc
+     , gsdm
+     , shdw
+     , jcdw
+     , ddsfgb
+     , ddfqlx
+     , gysmc
+     , org_id
+     , user_id
+     , sbr
+     , htbh
+     , htmc
+     , create_date
+     , user_id
+from business_3k66
+where 1 = 1
+
+# and ddfqlx ='A18A02A11A04';
+#   and sapcgpz1 = '4500368008'
+#   and szgcddh like 'CGDD00001202401290165%'
+  and szgcddh like 'PO%'
+# and jyms ='A18A05A15A02';
+# and id = 'c38156588b1b4416b9c828ae5ed993f0';
+# and serial = '20240125132619561';
+# and htbh = 'YTH-4010-NB-GX-2022-001029-00';
+# and jyms='A18A05A15A07'
+#   and jyms = 'A18A05A15A06'
+#   and sapcgpz1 != ''
+#   and gsdm = 4010
+order by create_date
+        desc
+limit 10;
+;-- -. . -..- - / . -. - .-. -.--
+select count(xqjhbh)
+from wzxqjh group by xqjhbh;
+;-- -. . -..- - / . -. - .-. -.--
+select count(xqjhbh) s
+from wzxqjh group by xqjhbh having s>1;
+;-- -. . -..- - / . -. - .-. -.--
+select count(xqjhbh) s,create_date
+from wzxqjh group by xqjhbh having s>1;
+;-- -. . -..- - / . -. - .-. -.--
+select count(rkdbh)s
+from business_y339 group by rkdbh  having s>1;
+;-- -. . -..- - / . -. - .-. -.--
+select count(rkdbh)s,rkdbh
+from business_y339 group by rkdbh  having s>1;
+;-- -. . -..- - / . -. - .-. -.--
+select count(ckbm),ckbm
+from business_ij1g group by ckbm  having   s>1;
+;-- -. . -..- - / . -. - .-. -.--
+select count(ckbm)s,ckbm
+from business_ij1g group by ckbm  having   s>1;
+;-- -. . -..- - / . -. - .-. -.--
+select count(xqjhbh) s,xqjhbh
+from wzxqjh group by xqjhbh having s>1;
+;-- -. . -..- - / . -. - .-. -.--
+select id
+     , org_id
+     , jcdw
+     , gsdm
+     , ddsfgb
+     , sapcgpz1
+     , user_id
+     , caigouyuan
+     , szgcddh
+     , jyms
+     , gysbm
+     , gc
+     , gsdm
+     , shdw
+     , jcdw
+     , ddsfgb
+     , ddfqlx
+     , gysmc
+     , org_id
+     , user_id
+     , sbr
+     , htbh
+     , htmc
+     , create_date
+     , user_id
+from business_3k66
+where 1 = 1
+
+# and ddfqlx ='A18A02A11A04';
+#   and sapcgpz1 = '4500368008'
+  and szgcddh like 'CGDD00001202402050023%'
+#   and szgcddh like 'PO%'
+# and jyms ='A18A05A15A02';
+# and id = 'c38156588b1b4416b9c828ae5ed993f0';
+# and serial = '20240125132619561';
+# and htbh = 'YTH-4010-NB-GX-2022-001029-00';
+# and jyms='A18A05A15A07'
+#   and jyms = 'A18A05A15A06'
+#   and sapcgpz1 != ''
+#   and gsdm = 4010
+order by create_date
+        desc
 limit 10;
 ;-- -. . -..- - / . -. - .-. -.--
 select *
-from purchase_sulfur_number_confirm;
+from sync_werk_org where org_code='-2756613158297845069';
 ;-- -. . -..- - / . -. - .-. -.--
-SELECT
-	p.werks,p.matnr wlbm, p.maktx wlms, p.meins dw,p.msehl dwtext,p.matkl wlzbm, p.wgbez wlzms,s.org_code orgId
-FROM
-	p_product_master AS p LEFT JOIN
-	sync_werk_org AS s
-on
-	s.werks = p.werks
-where s.org_code='00023316';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sync_werk_org where sync_werk_org.org_code like '%3390%';
-;-- -. . -..- - / . -. - .-. -.--
-SELECT
-	p.update_date,p.werks,p.matnr wlbm, p.maktx wlms, p.meins dw,p.msehl dwtext,p.matkl wlzbm, p.wgbez wlzms,s.org_code orgId
-FROM
-	p_product_master AS p LEFT JOIN
-	sync_werk_org AS s
-on
-	s.werks = p.werks
-where s.org_code='00023316';
-;-- -. . -..- - / . -. - .-. -.--
-SELECT
-	p.update_date,p.werks,p.matnr wlbm, p.maktx wlms, p.meins dw,p.msehl dwtext,p.matkl wlzbm, p.wgbez wlzms,s.org_code orgId
-FROM
-	p_product_master AS p LEFT JOIN
-	sync_werk_org AS s
-on
-	s.werks = p.werks
-where s.org_code='00023316'
-and p.matnr='1000467202';
-;-- -. . -..- - / . -. - .-. -.--
-SELECT
-	p.update_date,p.werks,p.matnr wlbm, p.maktx wlms, p.meins dw,p.msehl dwtext,p.matkl wlzbm, p.wgbez wlzms,s.org_code orgId
-FROM
-	p_product_master AS p LEFT JOIN
-	sync_werk_org AS s
-on
-	s.werks = p.werks
-where s.org_code='00023316'
-and p.matnr='1000457108';
-;-- -. . -..- - / . -. - .-. -.--
-SELECT
-	p.update_date,p.werks,p.matnr wlbm, p.maktx wlms, p.meins dw,p.msehl dwtext,p.matkl wlzbm, p.wgbez wlzms,s.org_code orgId
-FROM
-	p_product_master AS p LEFT JOIN
-	sync_werk_org AS s
-on
-	s.werks = p.werks
-where s.org_code='00023316'
-and p.matnr='1000457099';
-;-- -. . -..- - / . -. - .-. -.--
-SELECT
-	p.update_date,p.werks,p.matnr wlbm, p.maktx wlms, p.meins dw,p.msehl dwtext,p.matkl wlzbm, p.wgbez wlzms,s.org_code orgId
-FROM
-	p_product_master AS p LEFT JOIN
-	sync_werk_org AS s
-on
-	s.werks = p.werks
-where s.org_code='00023316'
-and p.matnr='1000452062';
-;-- -. . -..- - / . -. - .-. -.--
-SELECT
-	p.update_date,p.werks,p.matnr wlbm, p.maktx wlms, p.meins dw,p.msehl dwtext,p.matkl wlzbm, p.wgbez wlzms,s.org_code orgId
-FROM
-	p_product_master AS p LEFT JOIN
-	sync_werk_org AS s
-on
-	s.werks = p.werks
-where s.org_code='00023316'
-and p.matnr='1000433617';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from p_product_master where werks='3340';
-;-- -. . -..- - / . -. - .-. -.--
-delete from p_product_master where org_id='7adba8c7e7efb32ef05ea22d6b1e5a60';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sync_werk_org where org_name like '%云聚能%';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sync_werk_org
-where 1=1
-#   and  org_name like '%云聚能%';
-and org_code='10000700';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from p_product_master where werks='3340' order by update_date asc;
-;-- -. . -..- - / . -. - .-. -.--
-delete from p_product_master where werks=3340 and org_id='10000700';
-;-- -. . -..- - / . -. - .-. -.--
-delete
-from p_product_master
-where werks = '3340'
-  and org_id = '10000700';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from p_product_master
-where werks = '3340'
-order by update_date asc;
-;-- -. . -..- - / . -. - .-. -.--
-SELECT p.update_date,
-       p.werks,
-       p.matnr    wlbm,
-       p.maktx    wlms,
-       p.meins    dw,
-       p.msehl    dwtext,
-       p.matkl    wlzbm,
-       p.wgbez    wlzms,
-       s.org_code orgId
-FROM p_product_master AS p
-         LEFT JOIN
-     sync_werk_org AS s
-     on
-         s.werks = p.werks
-where s.org_code = '00023316'
-  and p.matnr = '1000433616';
-;-- -. . -..- - / . -. - .-. -.--
-SELECT p.update_date,
-       p.werks,
-       p.matnr    wlbm,
-       p.maktx    wlms,
-       p.meins    dw,
-       p.msehl    dwtext,
-       p.matkl    wlzbm,
-       p.wgbez    wlzms,
-       s.org_code orgId
-FROM p_product_master AS p
-         LEFT JOIN
-     sync_werk_org AS s
-     on
-         s.werks = p.werks
-where s.org_code = '00023316'
-  and p.matnr = '1000433614';
-;-- -. . -..- - / . -. - .-. -.--
-SELECT p.update_date,
-       p.werks,
-       p.matnr    wlbm,
-       p.maktx    wlms,
-       p.meins    dw,
-       p.msehl    dwtext,
-       p.matkl    wlzbm,
-       p.wgbez    wlzms,
-       s.org_code orgId
-FROM p_product_master AS p
-         LEFT JOIN
-     sync_werk_org AS s
-     on
-         s.werks = p.werks
-where s.org_code = '00023316'
-  and p.matnr = '1000433558';
-;-- -. . -..- - / . -. - .-. -.--
-SELECT p.update_date,
-       p.werks,
-       p.matnr    wlbm,
-       p.maktx    wlms,
-       p.meins    dw,
-       p.msehl    dwtext,
-       p.matkl    wlzbm,
-       p.wgbez    wlzms,
-       s.org_code orgId
-FROM p_product_master AS p
-         LEFT JOIN
-     sync_werk_org AS s
-     on
-         s.werks = p.werks
-where s.org_code = '00023316'
-  and p.matnr = '1000433612';
-;-- -. . -..- - / . -. - .-. -.--
-SELECT p.update_date,
-       p.werks,
-       p.matnr    wlbm,
-       p.maktx    wlms,
-       p.meins    dw,
-       p.msehl    dwtext,
-       p.matkl    wlzbm,
-       p.wgbez    wlzms,
-       s.org_code orgId
-FROM p_product_master AS p
-         LEFT JOIN
-     sync_werk_org AS s
-     on
-         s.werks = p.werks
-where s.org_code = '00023316'
-  and p.matnr = '1000433611';
-;-- -. . -..- - / . -. - .-. -.--
-SELECT p.update_date,
-       p.werks,
-       p.matnr    wlbm,
-       p.maktx    wlms,
-       p.meins    dw,
-       p.msehl    dwtext,
-       p.matkl    wlzbm,
-       p.wgbez    wlzms,
-       s.org_code orgId
-FROM p_product_master AS p
-         LEFT JOIN
-     sync_werk_org AS s
-     on
-         s.werks = p.werks
-where s.org_code = '00023316'
-  and p.matnr = '1000433610';
-;-- -. . -..- - / . -. - .-. -.--
-SELECT p.update_date,
-       p.werks,
-       p.matnr    wlbm,
-       p.maktx    wlms,
-       p.meins    dw,
-       p.msehl    dwtext,
-       p.matkl    wlzbm,
-       p.wgbez    wlzms,
-       s.org_code orgId
-FROM p_product_master AS p
-         LEFT JOIN
-     sync_werk_org AS s
-     on
-         s.werks = p.werks
-where s.org_code = '00023316'
-  and p.matnr = '1000433609';
-;-- -. . -..- - / . -. - .-. -.--
-SELECT p.update_date,
-       p.werks,
-       p.matnr    wlbm,
-       p.maktx    wlms,
-       p.meins    dw,
-       p.msehl    dwtext,
-       p.matkl    wlzbm,
-       p.wgbez    wlzms,
-       s.org_code orgId
-FROM p_product_master AS p
-         LEFT JOIN
-     sync_werk_org AS s
-     on
-         s.werks = p.werks
-where s.org_code = '00023316'
-  and p.matnr = '1000433606';
-;-- -. . -..- - / . -. - .-. -.--
-SELECT p.update_date,
-       p.werks,
-       p.matnr    wlbm,
-       p.maktx    wlms,
-       p.meins    dw,
-       p.msehl    dwtext,
-       p.matkl    wlzbm,
-       p.wgbez    wlzms,
-       s.org_code orgId
-FROM p_product_master AS p
-         LEFT JOIN
-     sync_werk_org AS s
-     on
-         s.werks = p.werks
-where s.org_code = '00023316'
-  and p.matnr = '1000433605';
-;-- -. . -..- - / . -. - .-. -.--
-SELECT p.update_date,
-       p.werks,
-       p.matnr    wlbm,
-       p.maktx    wlms,
-       p.meins    dw,
-       p.msehl    dwtext,
-       p.matkl    wlzbm,
-       p.wgbez    wlzms,
-       s.org_code orgId
-FROM p_product_master AS p
-         LEFT JOIN
-     sync_werk_org AS s
-     on
-         s.werks = p.werks
-where s.org_code = '00023316'
-  and p.matnr = '1000467202';
-;-- -. . -..- - / . -. - .-. -.--
-SELECT p.update_date,
-       p.werks,
-       p.matnr    wlbm,
-       p.maktx    wlms,
-       p.meins    dw,
-       p.msehl    dwtext,
-       p.matkl    wlzbm,
-       p.wgbez    wlzms,
-       s.org_code orgId
-FROM p_product_master AS p
-         LEFT JOIN
-     sync_werk_org AS s
-     on
-         s.werks = p.werks
-where s.org_code = '00023316'
-  and p.matnr = '1000457108';
-;-- -. . -..- - / . -. - .-. -.--
-SELECT p.update_date,
-       p.werks,
-       p.matnr    wlbm,
-       p.maktx    wlms,
-       p.meins    dw,
-       p.msehl    dwtext,
-       p.matkl    wlzbm,
-       p.wgbez    wlzms,
-       s.org_code orgId
-FROM p_product_master AS p
-         LEFT JOIN
-     sync_werk_org AS s
-     on
-         s.werks = p.werks
-where s.org_code = '00023316'
-  and p.matnr = '1000457099';
-;-- -. . -..- - / . -. - .-. -.--
-SELECT p.update_date,
-       p.werks,
-       p.matnr    wlbm,
-       p.maktx    wlms,
-       p.meins    dw,
-       p.msehl    dwtext,
-       p.matkl    wlzbm,
-       p.wgbez    wlzms,
-       s.org_code orgId
-FROM p_product_master AS p
-         LEFT JOIN
-     sync_werk_org AS s
-     on
-         s.werks = p.werks
-where s.org_code = '00023316'
-  and p.matnr = '1000452062';
-;-- -. . -..- - / . -. - .-. -.--
-SELECT p.update_date,
-       p.werks,
-       p.matnr    wlbm,
-       p.maktx    wlms,
-       p.meins    dw,
-       p.msehl    dwtext,
-       p.matkl    wlzbm,
-       p.wgbez    wlzms,
-       s.org_code orgId
-FROM p_product_master AS p
-         LEFT JOIN
-     sync_werk_org AS s
-     on
-         s.werks = p.werks
-where s.org_code = '00023316'
-  and p.matnr = '1000433617';
-;-- -. . -..- - / . -. - .-. -.--
-SELECT p.update_date,
-       p.werks,
-       p.matnr    wlbm,
-       p.maktx    wlms,
-       p.meins    dw,
-       p.msehl    dwtext,
-       p.matkl    wlzbm,
-       p.wgbez    wlzms,
-       s.org_code orgId
-FROM p_product_master AS p
-         LEFT JOIN
-     sync_werk_org AS s
-     on
-         s.werks = p.werks
-where 1=1
-#   and s.org_code = '00023316'
-  and p.matnr = '1000433617';
-;-- -. . -..- - / . -. - .-. -.--
-SELECT p.update_date,
-       p.werks,
-       p.matnr    wlbm,
-       p.maktx    wlms,
-       p.meins    dw,
-       p.msehl    dwtext,
-       p.matkl    wlzbm,
-       p.wgbez    wlzms,
-       s.org_code orgId
-FROM p_product_master AS p
-         LEFT JOIN
-     sync_werk_org AS s
-     on
-         s.werks = p.werks
-where 1=1
-#   and s.org_code = '00023316'
-  and p.matnr = '1000457099';
-;-- -. . -..- - / . -. - .-. -.--
-SELECT p.update_date,
-       p.werks,
-       p.matnr    wlbm,
-       p.maktx    wlms,
-       p.meins    dw,
-       p.msehl    dwtext,
-       p.matkl    wlzbm,
-       p.wgbez    wlzms,
-       s.org_code orgId
-FROM p_product_master AS p
-         LEFT JOIN
-     sync_werk_org AS s
-     on
-         s.werks = p.werks
-where 1=1
-#   and s.org_code = '00023316'
-  and p.matnr = '1000452062';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from fixed_assets;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from fixed_assets where  bukrs=4010;
-;-- -. . -..- - / . -. - .-. -.--
-bukrs;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from fixed_assets
-where bukrs = 4010;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from fixed_assets
-where
-    bukrs = 4010 and anln1='120010005736';
-;-- -. . -..- - / . -. - .-. -.--
-select count(1)
-from fixed_assets
-where
-    bukrs = 4010;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from fixed_assets
-where bukrs = 4010
-  and anln1 = '120010005736';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sync_werk_org where org_name like '%磷化集团%';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sulfur_month_avge;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sync_werk_org where org_name like '%红磷化工%';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from business_wgkn;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sync_werk_org where org_name like '%云峰%';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sync_werk_org where org_name like '%联合商务%';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sync_werk_org_copy1;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sync_werk_org_copy1 where org_name like '%联合商务%';
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception, time
-from sap_execute_log
-where title = '采购订单连续收货'
-#   and request like '%SBRKD4010202312290011%'
-and sap_execute_log.response like '%4500344020%'
-order by create_time desc
-limit 10;
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception, time
-from sap_execute_log
-where title = '采购订单连续收货'
-#   and request like '%SBRKD4010202312290011%'
-and sap_execute_log.response like '%8600897720%'
-order by create_time desc
-limit 10;
-;-- -. . -..- - / . -. - .-. -.--
-select id, rksl, ckl, sapcgpz1, wlbm, dddj,rkpzh, father_id
+select id,
+       ddhxmh,
+       rksl,
+       gcbm,
+       ckl,
+       sapcgpz1,
+       wlbm,
+       dddj,
+       rkpzh,
+       father_id,
+       hjxx,
+       kmdbm,create_date
 from business_f7hc
 where 1 = 1
+  and id = '468579929bc2c6a2e3bfad820543a173'
 #   and rksl != ckl
 #   and ckl > 0
-#   and father_id = 'b4c9a2a8e8573bed147b2be544734cd7';
-and org_id='00008413';
-;-- -. . -..- - / . -. - .-. -.--
-select id, rksl,gcbm, ckl, sapcgpz1, wlbm, dddj,rkpzh, father_id
-from business_f7hc
-where 1 = 1
-#   and rksl != ckl
-#   and ckl > 0
-#   and father_id = 'b4c9a2a8e8573bed147b2be544734cd7';
-and org_id='00008413'
-and sapcgpz1='4500360355';
-;-- -. . -..- - / . -. - .-. -.--
-select id, rksl,gcbm, ckl, sapcgpz1, wlbm, dddj,rkpzh, father_id
-from business_f7hc
-where 1 = 1
-#   and rksl != ckl
-#   and ckl > 0
-#   and father_id = 'b4c9a2a8e8573bed147b2be544734cd7';
-and org_id='00008413';
-;-- -. . -..- - / . -. - .-. -.--
-select id, rksl,gcbm, ckl, sapcgpz1, wlbm, dddj,rkpzh, father_id
-from business_f7hc
-where 1 = 1
-#   and rksl != ckl
-#   and ckl > 0
-#   and father_id = 'b4c9a2a8e8573bed147b2be544734cd7';
-and org_id='00008413'
-and rkpzh=5006306102;
-;-- -. . -..- - / . -. - .-. -.--
-select id, rksl,gcbm, ckl, sapcgpz1, wlbm, dddj,rkpzh, father_id
-from business_f7hc
-where 1 = 1
-#   and rksl != ckl
-#   and ckl > 0
-#   and father_id = 'b4c9a2a8e8573bed147b2be544734cd7';
+#   and father_id = '990dcfc482a388d418b7e2558803acc2';
 # and org_id='00008413'
-and rkpzh='5006306102';
+  and wlbm = '1000226730';
 ;-- -. . -..- - / . -. - .-. -.--
-select *
-from sap_consignment_stock where org_id='00008413';
+select id,
+       ddhxmh,
+       rksl,
+       gcbm,
+       ckl,
+       sapcgpz1,
+       wlbm,
+       dddj,
+       rkpzh,
+       father_id,
+       hjxx,
+       kmdbm,create_date
+from business_f7hc
+where 1 = 1
+  and id = '468579929bc2c6a2e3bfad820543a173';
 ;-- -. . -..- - / . -. - .-. -.--
-select werks,create_date
-from sap_consignment_stock where org_id='00008413';
+select id,
+       ttwb,
+       aqhbfy,
+       ckbm,
+       psdd,
+       serial,
+       create_date,
+       update_date,
+       flow_step,
+       flow_state,
+       ckbm,
+       kcdbm
+from business_ij1g
+# where ckbm is null  or ckbm=''
+where ckbm = 'SBCK4010202402070174';
 ;-- -. . -..- - / . -. - .-. -.--
-select *
-from all_repository_stock where
-org_id='00008413';
-;-- -. . -..- - / . -. - .-. -.--
-select `stock`.`id`                                                      AS `id`,
-       `stock`.`matnr`                                                   AS `wlbm`,
-       `stock`.`maktx`                                                   AS `wlms`,
-       `shelf`.`yhjxx`                                                   AS `hjxx`,
-       `shelf`.`yhjxx`                                                   AS `yhjxx`,
-       `shelf`.`xhjxx`                                                   AS `xhjxx`,
-       `stock`.`lgort`                                                   AS `kcdbm`,
-       `stock`.`lgobe`                                                   AS `kcdmc`,
-       `stock`.`meins`                                                   AS `dw`,
-       `stock`.`meins_name`                                              AS `dwms`,
-       `stock`.`charg`                                                   AS `pch`,
-       `stock`.`slabs`                                                   AS `jskc`,
-       `stock`.`clabs`                                                   AS `kcl`,
-       'SAP'                                                             AS `typed`,
-       0                                                                 AS `is_history`,
-       `stock`.`werks`                                                   AS `werks`,
-       `stock`.`org_id`                                                  AS `org_id`,
-       ifnull(`price`.`verpr`, 0)                                        AS `verpr`,
-       '-'                                                               AS `wlbm_last`,
-       `swo`.`org_name`                                                  AS `org_name`,
-       concat_ws('_', `stock`.`matnr`, `stock`.`lgort`, `stock`.`charg`) AS `qrcode`
-from (((`purchase`.`sap_consignment_stock` `stock` left join `purchase`.`business_50t4` `shelf`
-        on (((`stock`.`matnr` = `shelf`.`wlbm`) and (`stock`.`org_id` = `shelf`.`org_id`) and
-             (`shelf`.`kclx` = 'SAP') and
-             (`stock`.`lgort` = `shelf`.`ykcdbm`)))) left join `purchase`.`material_average_price` `price`
-       on (((`stock`.`matnr` = `price`.`matnr`) and
-            (`stock`.`org_id` = `price`.`org_id`)))) left join `purchase`.`sync_werk_org` `swo`
-      on (((`stock`.`org_id` = `swo`.`org_code`) and (`stock`.`werks` = `swo`.`werks`))))
-where swo.org_id='00008413';
-;-- -. . -..- - / . -. - .-. -.--
-select `stock`.`id`                                                      AS `id`,
-       `stock`.`matnr`                                                   AS `wlbm`,
-       `stock`.`maktx`                                                   AS `wlms`,
-       `shelf`.`yhjxx`                                                   AS `hjxx`,
-       `shelf`.`yhjxx`                                                   AS `yhjxx`,
-       `shelf`.`xhjxx`                                                   AS `xhjxx`,
-       `stock`.`lgort`                                                   AS `kcdbm`,
-       `stock`.`lgobe`                                                   AS `kcdmc`,
-       `stock`.`meins`                                                   AS `dw`,
-       `stock`.`meins_name`                                              AS `dwms`,
-       `stock`.`charg`                                                   AS `pch`,
-       `stock`.`slabs`                                                   AS `jskc`,
-       `stock`.`clabs`                                                   AS `kcl`,
-       'SAP'                                                             AS `typed`,
-       0                                                                 AS `is_history`,
-       `stock`.`werks`                                                   AS `werks`,
-       `stock`.`org_id`                                                  AS `org_id`,
-       ifnull(`price`.`verpr`, 0)                                        AS `verpr`,
-       '-'                                                               AS `wlbm_last`,
-       `swo`.`org_name`                                                  AS `org_name`,
-       concat_ws('_', `stock`.`matnr`, `stock`.`lgort`, `stock`.`charg`) AS `qrcode`
-from (((`purchase`.`sap_consignment_stock` `stock` left join `purchase`.`business_50t4` `shelf`
-        on (((`stock`.`matnr` = `shelf`.`wlbm`) and (`stock`.`org_id` = `shelf`.`org_id`) and
-             (`shelf`.`kclx` = 'SAP') and
-             (`stock`.`lgort` = `shelf`.`ykcdbm`)))) left join `purchase`.`material_average_price` `price`
-       on (((`stock`.`matnr` = `price`.`matnr`) and
-            (`stock`.`org_id` = `price`.`org_id`)))) left join `purchase`.`sync_werk_org` `swo`
-      on (((`stock`.`org_id` = `swo`.`org_code`) and (`stock`.`werks` = `swo`.`werks`))))
-where stock.org_id='00008413';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sync_werk_org;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sync_werk_org where werks=3280;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sync_werk_org_copy1 where werks=3280;
-;-- -. . -..- - / . -. - .-. -.--
-delete 
-from sap_consignment_stock where werks=3280;
-;-- -. . -..- - / . -. - .-. -.--
-delete
-from sap_consignment_stock where werks=3280;
-;-- -. . -..- - / . -. - .-. -.--
-delete
- sap_consignment_stock where werks=3280;
-;-- -. . -..- - / . -. - .-. -.--
-delete
-from sap_consignment_stock where werks='3280';
-;-- -. . -..- - / . -. - .-. -.--
-select s.dw, dhysmx.wgjcjsy, dhysmx.update_date, dhysmx.sjzt
-from business_f7hc as s
-         inner join business_6j3g dhysmx
-                    on s.rkdid = dhysmx.id and s.father_id = '541ea66864bb1bdc481ec9d1160064d1';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from fixed_assets where bukrs=3092;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from fixed_assets where bukrs=3090;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sync_werk_org where werks=3092;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sync_werk_org where werks=3090;
+select id,
+       father_id,
+       ddhxmh,
+       rksl,
+       gcbm,
+       ckl,
+       sapcgpz1,
+       wlbm,
+       dddj,
+       rkpzh,
+       father_id,
+       hjxx,
+       kmdbm,create_date
+from business_f7hc
+where 1 = 1
+  and id = '468579929bc2c6a2e3bfad820543a173';
 ;-- -. . -..- - / . -. - .-. -.--
 select o.org_name        as '公司',
        t.ktext           as '资产部门',
@@ -1547,323 +724,369 @@ select o.org_name        as '公司',
        t.herst           as '制造单位',
        t.anlhtxt         as '资产主号文件',
        t.ndabj           as '已使用年限',
-       t.invzu           as '补充库存说明(库存标记 )'
+       t.invzu           as '补充库存说明(库存标记 )',
+       o.org_code,
+       o.werks
 from purchase.fixed_assets t
          left join sync_werk_org o on o.werks = t.bukrs
-where o.org_code = '00008413';
+where anln1 = '100000005571';
 ;-- -. . -..- - / . -. - .-. -.--
-select s.jhbm,
-       s.id,
-       s.wlbm,
-       s.rksl,
-       s.ckl,
-       s.create_date,
-       s.wlms,
-       s.dddj,
-       s.kmdbm,
-       kcdmc,
-       s.hjxx as               yhjxx,
-       ddhxmh,
-       s.gysbm,
-       s.gysmc,
-       wzfj,
-       hgz,
-       czzm,
-       bgd,
-       ccjybg,
-       sysm,
-       tz,
-       s.bz,
-       dw,
-       gcbm,
-       cgddbh,
-       hjbm,
+select o.org_name        as '公司',
+       t.ktext           as '资产部门',
+       t.ktext           as '成本中心描述',
+       t.anln1           as '固定资产编码',
+       t.anln2           as '资产子编号',
+       t.invnr           as '资产实物编码/存货号',
+       t.txa50           as '规格型号',
+       t.txt50           as '固定资产名称',
+       t.txk20           as '资产类别',
+       t.menge           as '数量',
+       t.meins           as '计量单位',
+       format(t.zcyz, 2) as '资产原值',
+       format(t.zmjz, 2) as '资产净值',
+       t.gdlgrp_txt      as '资产来源',
+       t.ordtx           as '资产状态',
+       t.afasl           as '折旧方式代码',
+       t.afaslt          as '折旧方式描述',
+       t.ndjar           as '折旧年限',
+       t.afabg           as '折旧开始时间',
+       t.aktiv           as '入账时间',
+       t.herst           as '制造单位',
+       t.anlhtxt         as '资产主号文件',
+       t.ndabj           as '已使用年限',
+       t.invzu           as '补充库存说明(库存标记 )',
+       o.org_code,
+       o.werks
+from purchase.fixed_assets t
+         left join sync_werk_org o on o.werks = t.bukrs
+where t.menge > 0
+#   and anln1 = '100000005571'
+  and org_code = '0000287';
+;-- -. . -..- - / . -. - .-. -.--
+select o.org_name        as '公司',
+       t.ktext           as '资产部门',
+       t.ktext           as '成本中心描述',
+       t.anln1           as '固定资产编码',
+       t.anln2           as '资产子编号',
+       t.invnr           as '资产实物编码/存货号',
+       t.txa50           as '规格型号',
+       t.txt50           as '固定资产名称',
+       t.txk20           as '资产类别',
+       t.menge           as '数量',
+       t.meins           as '计量单位',
+       format(t.zcyz, 2) as '资产原值',
+       format(t.zmjz, 2) as '资产净值',
+       t.gdlgrp_txt      as '资产来源',
+       t.ordtx           as '资产状态',
+       t.afasl           as '折旧方式代码',
+       t.afaslt          as '折旧方式描述',
+       t.ndjar           as '折旧年限',
+       t.afabg           as '折旧开始时间',
+       t.aktiv           as '入账时间',
+       t.herst           as '制造单位',
+       t.anlhtxt         as '资产主号文件',
+       t.ndabj           as '已使用年限',
+       t.invzu           as '补充库存说明(库存标记 )',
+       o.org_code,
+       o.werks
+from purchase.fixed_assets t
+         left join sync_werk_org o on o.werks = t.bukrs
+where t.menge > 0
+#   and anln1 = '100000005571'
+  and org_code = '00000287';
+;-- -. . -..- - / . -. - .-. -.--
+select xhjxx, yhjxx, ykcdbm
+from business_50t4
+where 1=1 and
+#       gcdm = 4010
+  and kclx = 'SAP'
+  and wlbm = '1000152865';
+;-- -. . -..- - / . -. - .-. -.--
+select xhjxx, yhjxx, ykcdbm
+from business_50t4
+where 1=1
+#   and     gcdm = 4010
+  and kclx = 'SAP'
+  and wlbm = '1000152865';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       father_id,
+       ckpzh,
+       zzkm,
+       jldw,
        dwms,
-       s.kclx,
-       wzlx,
-       je,
-       s.jhlx,
-       caigouddgm,
-       s.cgy,
-       cgddhxmh,
-       pc,
-       cgylxdh,
-       xqjhsbr,
-       sbrlxdh,
-       fylx,
-       syzz,
        ydlx,
-       cbzx,
-       cbzxms,
-       jgh,
-       zch,
-       ggxh,
-       wzjb,
-       wztp,
-       (rksl - IFNULL(ckl, 0)) kcl_temp,
-       m.rkdbh
-from business_f7hc s
-         inner join business_y339 m on s.father_id = m.id
-         left join purchase.business_3k66 b on m.sapcgpz1 = b.sapcgpz1;
+       fylx,
+       nbddh,
+       zjgc,
+       zjgcms,
+       nbddh,
+       nbddms
+from business_m3wc
+where 1 = 1
+and wlbm='1000152865';
 ;-- -. . -..- - / . -. - .-. -.--
-select s.jhbm,
-       s.id,
-       s.wlbm,
-       s.rksl,
-       s.ckl,
-       s.create_date,
-       s.wlms,
-       s.dddj,
-       s.kmdbm,
-       kcdmc,
-       s.hjxx as               yhjxx,
-       ddhxmh,
-       s.gysbm,
-       s.gysmc,
-       wzfj,
-       hgz,
-       czzm,
-       bgd,
-       ccjybg,
-       sysm,
-       tz,
-       s.bz,
-       dw,
-       gcbm,
-       cgddbh,
-       hjbm,
+select id,
+       cklx,
+       father_id,
+       ckpzh,
+       zzkm,
+       jldw,
        dwms,
-       s.kclx,
-       wzlx,
-       je,
-       s.jhlx,
-       caigouddgm,
-       s.cgy,
-       cgddhxmh,
-       pc,
-       cgylxdh,
-       xqjhsbr,
-       sbrlxdh,
-       fylx,
-       syzz,
        ydlx,
-       cbzx,
-       cbzxms,
-       jgh,
-       zch,
-       ggxh,
-       wzjb,
-       wztp,
-       (rksl - IFNULL(ckl, 0)) kcl_temp,
-       m.rkdbh,
-       b.ddfqlx
-from business_f7hc s
-         inner join business_y339 m on s.father_id = m.id
-         left join purchase.business_3k66 b on m.sapcgpz1 = b.sapcgpz1;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sap_consignment_stock
-where matnr ='1000005906';
-;-- -. . -..- - / . -. - .-. -.--
-select `stock`.`id`                                                      AS `id`,
-       `stock`.`matnr`                                                   AS `wlbm`,
-       `stock`.`maktx`                                                   AS `wlms`,
-       `shelf`.`yhjxx`                                                   AS `hjxx`,
-       `shelf`.`yhjxx`                                                   AS `yhjxx`,
-       `shelf`.`xhjxx`                                                   AS `xhjxx`,
-       `stock`.`lgort`                                                   AS `kcdbm`,
-       `stock`.`lgobe`                                                   AS `kcdmc`,
-       `stock`.`charg`                                                   AS `pch`,
-       `stock`.`meins`                                                   AS `dw`,
-       `stock`.`meins_name`                                              AS `dwms`,
-       `stock`.`slabs`                                                   AS `jskc`,
-       `stock`.`clabs`                                                   AS `kcl`,
-       'SAP'                                                             AS `typed`,
-       0                                                                 AS `is_history`,
-       `stock`.`werks`                                                   AS `werks`,
-       `stock`.`org_id`                                                  AS `org_id`,
-       ifnull(`price`.`verpr`, 0)                                        AS `verpr`,
-       '-'                                                               AS `wlbm_last`,
-       `swo`.`org_name`                                                  AS `org_name`,
-       concat_ws('_', `stock`.`matnr`, `stock`.`lgort`, `shelf`.`xhjxx`) AS `qrcode`
-from (((`sap_consignment_stock` `stock` left join `business_50t4` `shelf`
-        on (((`stock`.`matnr` = `shelf`.`wlbm`) and (`stock`.`org_id` = `shelf`.`org_id`) and
-             (`shelf`.`kclx` = 'SAP') and
-             (`stock`.`lgort` = `shelf`.`ykcdbm`)))) left join `material_average_price` `price`
-       on (((`stock`.`matnr` = `price`.`matnr`) and
-            (`stock`.`org_id` = `price`.`org_id`)))) left join `sync_werk_org` `swo`
-      on ((`stock`.`org_id` = `swo`.`org_code`)))
-where stock.matnr='1000005906';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sap_consignment_stock
-where matnr = '1000005906';
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception, time
-from sap_execute_log
-where title = '采购订单连续收货'
-#   and request like '%SBRKD4010202312290011%'
-# and sap_execute_log.response like '%8600897720%'
-order by create_time desc
-limit 10;
-;-- -. . -..- - / . -. - .-. -.--
-select id, cgy,org_id,dept_id,user_id,flow_state,flow_step
-from business_hmz1
-# where serial = '2311020113';
-where sbwzdhysdbh like '%2311020113%';
-;-- -. . -..- - / . -. - .-. -.--
-select id, cgy,org_id,dept_id,user_id,flow_state,flow_step
-from business_hmz1
-# where serial = '2311020113';
-where sbwzdhysdbh like '%11020113%';
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception, time
-from sap_execute_log
-where title = '采购订单连续收货'
-#   and request like '%SBRKD4010202312290011%'
-and sap_execute_log.response like '%4500365366%'
-order by create_time desc
-limit 10;
-;-- -. . -..- - / . -. - .-. -.--
-select id
-     , org_id
-     , ddsfgb
-     , sapcgpz1
-     , user_id
-     , caigouyuan
-     , szgcddh
-     , jyms
-     , gysbm
-     , gc
-     , shdw
-     , jcdw
-     , ddsfgb
-     , ddfqlx
-     , gysmc
-     , gsdm
-     , org_id
-     , user_id
-     , sbr
-     , htbh
-     , htmc
-     , create_date
-from business_3k66
+       fylx,
+       nbddh,
+       zjgc,
+       zjgcms,
+       nbddh,
+       nbddms
+from business_m3wc
 where 1 = 1
-
-# and ddfqlx ='A18A02A11A04';
-  and sapcgpz1 = '4500365366'
-# and szgcddh like 'PO%'
-# and szgcddh like 'CGDD4010202312070015%'
-# and jyms ='A18A05A15A02';
-# and id = '0a92c408dbd74fb5808698dfe75fa8d7';
-# and serial = '20231226161944066';
-# and htbh = 'YTH-4010-NB-GX-2022-001029-00';
-# and jyms='A18A05A15A07'
-#   and jyms = 'A18A05A15A06'
-#   and sapcgpz1 != ''
-#   and gsdm = 4010
-order by create_date
-        desc;
+and wlbm='1000152865';
 ;-- -. . -..- - / . -. - .-. -.--
 select id,
-       zt,
-       wlbm,
-       ddsl,
-       cgdj,
-       gzf,
-       zxf,
-       xxmh,
-       gcrkkw,
-       cgdj,
-       wlms,
-       pch,
-       rkkw,
-       gcrkkw,
-       hang_status
-
-from business_qq7x
+       cksl,
+       father_id,
+       ckpzh,
+       zzkm,
+       jldw,
+       dwms,
+       ydlx,
+       fylx,
+       nbddh,
+       zjgc,
+       zjgcms,
+       nbddh,
+       nbddms
+from business_m3wc
 where 1 = 1
-#   and wlbm = '1000385331'
-  and father_id = '75e9f0e9f6574aa0b0a301f59bb16344'
-# where id = 'c2f8cdbb3418d1c74625a7bbf32f5d2d'
-order by create_date desc;
+and wlbm='1000152865';
 ;-- -. . -..- - / . -. - .-. -.--
 select id,
-       xxmh,
-       zt,
-       wlbm,
-       ddsl,
-       cgdj,
-       gzf,
-       zxf,
-       gcrkkw,
-       cgdj,
-       wlms,
-       pch,
-       rkkw,
-       gcrkkw,
-       hang_status
-
-from business_qq7x
-where 1 = 1
-#   and wlbm = '1000385331'
-  and father_id = '75e9f0e9f6574aa0b0a301f59bb16344'
-# where id = 'c2f8cdbb3418d1c74625a7bbf32f5d2d'
-order by create_date desc;
-;-- -. . -..- - / . -. - .-. -.--
-select id,
-       rkdbh,
        org_id,
-       htbh,
-       htmc,
-       dhysdh,
-       create_date,
-       rkpz,
-       wlbmall
-from business_y339
-where  1=1
-# where id = 'b4c9a2a8e8573bed147b2be544734cd7';
-
-# where serial = '20231226153831855'
-and sapcgpz1 = '4500365366'
-#     where org_id !='00000287'
-# where rkdbh = 'SBRKD4010202312250029'
-# where dhysdh is null
+       cksl,
+       father_id,
+       ckpzh,
+       zzkm,
+       jldw,
+       dwms,
+       ydlx,
+       fylx,
+       nbddh,
+       zjgc,
+       zjgcms,
+       nbddh,
+       nbddms
+from business_m3wc
+where 1 = 1
+and wlbm='1000152865';
+;-- -. . -..- - / . -. - .-. -.--
+select o.org_name        as '公司',
+       t.ktext           as '资产部门',
+       t.ktext           as '成本中心描述',
+       t.anln1           as '固定资产编码',
+       t.anln2           as '资产子编号',
+       t.invnr           as '资产实物编码/存货号',
+       t.txa50           as '规格型号',
+       t.txt50           as '固定资产名称',
+       t.txk20           as '资产类别',
+       t.menge           as '数量',
+       t.meins           as '计量单位',
+       format(t.zcyz, 2) as '资产原值',
+       format(t.zmjz, 2) as '资产净值',
+       t.gdlgrp_txt      as '资产来源',
+       t.ordtx           as '资产状态',
+       t.afasl           as '折旧方式代码',
+       t.afaslt          as '折旧方式描述',
+       t.ndjar           as '折旧年限',
+       t.afabg           as '折旧开始时间',
+       t.aktiv           as '入账时间',
+       t.herst           as '制造单位',
+       t.anlhtxt         as '资产主号文件',
+       t.ndabj           as '已使用年限',
+       t.invzu           as '补充库存说明(库存标记 )',
+       o.org_code,
+       o.werks
+from purchase.fixed_assets t
+         left join sync_werk_org o on o.werks = t.bukrs
+where t.menge > 0
+  and anln1 = '100000005571';
+;-- -. . -..- - / . -. - .-. -.--
+select o.org_name        as '公司',
+       t.ktext           as '资产部门',
+       t.ktext           as '成本中心描述',
+       t.anln1           as '固定资产编码',
+       t.anln2           as '资产子编号',
+       t.invnr           as '资产实物编码/存货号',
+       t.txa50           as '规格型号',
+       t.txt50           as '固定资产名称',
+       t.txk20           as '资产类别',
+       t.menge           as '数量',
+       t.meins           as '计量单位',
+       format(t.zcyz, 2) as '资产原值',
+       format(t.zmjz, 2) as '资产净值',
+       t.gdlgrp_txt      as '资产来源',
+       t.ordtx           as '资产状态',
+       t.afasl           as '折旧方式代码',
+       t.afaslt          as '折旧方式描述',
+       t.ndjar           as '折旧年限',
+       t.afabg           as '折旧开始时间',
+       t.aktiv           as '入账时间',
+       t.herst           as '制造单位',
+       t.anlhtxt         as '资产主号文件',
+       t.ndabj           as '已使用年限',
+       t.invzu           as '补充库存说明(库存标记 )',
+       o.org_code,
+       o.werks
+from purchase.fixed_assets t
+         left join sync_werk_org o on o.werks = t.bukrs
+where 1=1
+#   and t.menge > 0
+  and anln1 = '100000005571';
+;-- -. . -..- - / . -. - .-. -.--
+select o.org_name        as '公司',
+       t.ktext           as '资产部门',
+       t.ktext           as '成本中心描述',
+       t.anln1           as '固定资产编码',
+       t.anln2           as '资产子编号',
+       t.invnr           as '资产实物编码/存货号',
+       t.txa50           as '规格型号',
+       t.txt50           as '固定资产名称',
+       t.txk20           as '资产类别',
+       t.menge           as '数量',
+       t.meins           as '计量单位',
+       format(t.zcyz, 2) as '资产原值',
+       format(t.zmjz, 2) as '资产净值',
+       t.gdlgrp_txt      as '资产来源',
+       t.ordtx           as '资产状态',
+       t.afasl           as '折旧方式代码',
+       t.afaslt          as '折旧方式描述',
+       t.ndjar           as '折旧年限',
+       t.afabg           as '折旧开始时间',
+       t.aktiv           as '入账时间',
+       t.herst           as '制造单位',
+       t.anlhtxt         as '资产主号文件',
+       t.ndabj           as '已使用年限',
+       t.invzu           as '补充库存说明(库存标记 )',
+       o.org_code,
+       o.werks
+from purchase.fixed_assets t
+         left join sync_werk_org o on o.werks = t.bukrs;
+;-- -. . -..- - / . -. - .-. -.--
+select yhjxx,xhjxx, wlbm, ykcdbm, org_id, kclx,create_date,update_date
+from business_50t4
+where 1 = 1
+#   and org_id = '00000287'
+  and kclx = 'SAP'
+#   and kclx = 'WAITUSE'
+  and wlbm = '1000019962'
+# and ykcdbm='1521'
 order by create_date desc;
 ;-- -. . -..- - / . -. - .-. -.--
-select id, rksl,gcbm, ckl, sapcgpz1, wlbm, dddj,rkpzh, father_id
-from business_f7hc
-where 1 = 1
-#   and rksl != ckl
-#   and ckl > 0
-  and father_id = '990dcfc482a388d418b7e2558803acc2';
+select count(rkdbh)  rk,rkdbh
+from
+business_y339 group by rkdbh having rk>1;
 ;-- -. . -..- - / . -. - .-. -.--
-select id,ddhxmh, rksl,gcbm, ckl, sapcgpz1, wlbm, dddj,rkpzh, father_id
-from business_f7hc
-where 1 = 1
-#   and rksl != ckl
-#   and ckl > 0
-  and father_id = '990dcfc482a388d418b7e2558803acc2';
+select count(ckbm) rk, ckbm
+from business_ij1g
+group by ckbm
+having rk > 1;
+;-- -. . -..- - / . -. - .-. -.--
+select count(xqjhbh) bm, xqjhbh
+from wzxqjh
+group by xqjhbh
+having bm > 1;
+;-- -. . -..- - / . -. - .-. -.--
+select count(sbwzdhysdbh) bm, sbwzdhysdbh
+from business_hmz1
+group by sbwzdhysdbh
+having bm > 1;
+;-- -. . -..- - / . -. - .-. -.--
+select count(rkdbh) rk, rkdbh
+from business_y339
+group by rkdbh
+having rk > 1;
+;-- -. . -..- - / . -. - .-. -.--
+select count(ckbm) bm, ckbm
+from business_ij1g
+group by ckbm
+having bm > 1;
+;-- -. . -..- - / . -. - .-. -.--
+select id, cgy, org_id, dept_id, user_id, flow_state, flow_step
+from business_hmz1
+# where serial = '20240125143513227';
+where sbwzdhysdbh like '%DHYSD4070202402010013%';
 ;-- -. . -..- - / . -. - .-. -.--
 select *
-from sap_consignment_stock where matnr='1000394281';
+from all_repository_stock;
 ;-- -. . -..- - / . -. - .-. -.--
-select id,ddhxmh, rksl,gcbm, ckl, sapcgpz1, wlbm, dddj,rkpzh, father_id
-from business_f7hc
-where 1 = 1
-#   and rksl != ckl
-#   and ckl > 0
-#   and father_id = '990dcfc482a388d418b7e2558803acc2';
-# and org_id='00008413'
-# and rkpzh='5006306102'
-# and sapcgpz1='4500360355'
-  and wlbm = '1000394281';
+select m.ckbm, m.flow_step
+from business_ij1g m
+         inner join business_m3wc outs on m.id = outs.father_id
+where wlbm='1000350842';
 ;-- -. . -..- - / . -. - .-. -.--
-select *
-from business_w142 where code='I0002';
+select m.ckbm, m.flow_step,outs.cksl
+from business_ij1g m
+         inner join business_m3wc outs on m.id = outs.father_id
+where wlbm='1000350842';
 ;-- -. . -..- - / . -. - .-. -.--
-select *
-from sap_consignment_stock where matnr='1000246764';
+select m.ckbm, m.flow_step,outs.cksl
+from business_ij1g m
+         inner join business_m3wc outs on m.id = outs.father_id
+where 1=1
+  and wlbm='1000350842'
+and outs.rkdid is not null;
+;-- -. . -..- - / . -. - .-. -.--
+select m.ckbm, m.flow_step,outs.cksl,outs.rkdid
+from business_ij1g m
+         inner join business_m3wc outs on m.id = outs.father_id
+where 1=1
+  and wlbm='1000350842'
+and outs.rkdid is not null;
+;-- -. . -..- - / . -. - .-. -.--
+select m.ckbm, m.flow_step,outs.cksl,outs.rkdid
+from business_ij1g m
+         inner join business_m3wc outs on m.id = outs.father_id
+where 1=1
+  and wlbm='1000350842'
+and outs.rkdid is not null  and outs.rkdid  !='';
+;-- -. . -..- - / . -. - .-. -.--
+select m.ckbm, m.flow_step,outs.cksl,outs.rkdid
+from business_ij1g m
+         inner join business_m3wc outs on m.id = outs.father_id
+where 1=1
+  and wlbm='1000350842'
+and outs.rkdid is not null  and outs.rkdid  !=''
+and rkdid='2aaf09549d4d235a482be9d89e15af6c';
+;-- -. . -..- - / . -. - .-. -.--
+select outs.rkdid,
+       input.ckl as input_ckl,
+       outs.cksl    actual_ckl
+from business_ij1g m
+         inner join business_m3wc outs on m.id = outs.father_id
+         inner join business_f7hc input on outs.rkdid = input.id
+where outs.rkdid='2aaf09549d4d235a482be9d89e15af6c';
+;-- -. . -..- - / . -. - .-. -.--
+select input.id,input.wlbm, rksl, ckl
+from business_f7hc input
+where ckl > input.rksl;
+;-- -. . -..- - / . -. - .-. -.--
+select input.id, rksl, ckl
+from business_f7hc input
+where ckl > input.rksl;
+;-- -. . -..- - / . -. - .-. -.--
+select input_details.id, rksl, ckl
+from business_f7hc input_details
+where ckl > input_details.rksl;
+;-- -. . -..- - / . -. - .-. -.--
+select outs.id,
+    outs.rkdid,
+       input.ckl as input_ckl,
+       outs.cksl    actual_ckl
+from business_ij1g m
+         inner join business_m3wc outs on m.id = outs.father_id
+         inner join business_f7hc input on outs.rkdid = input.id
+where outs.rkdid='2aaf09549d4d235a482be9d89e15af6c';
 ;-- -. . -..- - / . -. - .-. -.--
 select id,
        ttwb,
@@ -1879,757 +1102,1162 @@ select id,
        kcdbm
 from business_ij1g
 # where ckbm is null  or ckbm=''
-# where ckbm = 'SBCK4390202401090253';
-# where id = 'e6d984faf68c4f50ae851be843bc472c';
+# where ckbm = 'SBCK4010202402070174';
+where id = '86a69f8f63084adea39959ff959b8513';
+;-- -. . -..- - / . -. - .-. -.--
+select outs.id,
+       outs.father_id,
+       outs.rkdid,
+       input.ckl as input_ckl,
+       outs.cksl    actual_ckl
+from business_ij1g m
+         inner join business_m3wc outs on m.id = outs.father_id
+         inner join business_f7hc input on outs.rkdid = input.id
+where outs.rkdid = '2aaf09549d4d235a482be9d89e15af6c';
+;-- -. . -..- - / . -. - .-. -.--
+select outs.id,
+       outs.father_id,
+       outs.rkdid,
+       outs.wlbm,
+       input.ckl as input_ckl,
+       outs.cksl    actual_ckl
+from business_ij1g m
+         inner join business_m3wc outs on m.id = outs.father_id
+         inner join business_f7hc input on outs.rkdid = input.id
+where outs.rkdid = '2aaf09549d4d235a482be9d89e15af6c';
+;-- -. . -..- - / . -. - .-. -.--
+select xhjxx, yhjxx, ykcdbm
+from business_50t4
+where 1 = 1
+#   and     gcdm = 4010
+  and kclx = 'SAP'
+  and wlbm = '1000152865';
+;-- -. . -..- - / . -. - .-. -.--
+select s.id, rksl, ckl, wlbm
+from business_y339 m
+         inner join business_f7hc s on m.id = s.father_id
+where m.flow_step = '归档'
+#   and rksl != ckl
+#   and ckl > 0
+  and wlbm = '1000152865';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       father_id,
+       ddhxmh,
+       rksl,
+       gcbm,
+       ckl,
+       sapcgpz1,
+       wlbm,
+       dddj,
+       rkpzh,
+       father_id,
+       hjxx,
+       kmdbm,create_date
+from business_f7hc
+where 1 = 1
+#   and id = '468579929bc2c6a2e3bfad820543a173'
+#   and rksl != ckl
+#   and ckl > 0
+#   and father_id = '990dcfc482a388d418b7e2558803acc2';
+# and org_id='00008413'
+  and wlbm = '1000152865';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from sap_consignment_stock where matnr='1000152865';
+;-- -. . -..- - / . -. - .-. -.--
+select id
+     , org_id
+     , jcdw
+     , gsdm
+     , ddsfgb
+     , sapcgpz1
+     , user_id
+     , caigouyuan
+     , szgcddh
+     , jyms
+     , gysbm
+     , gc
+     , gsdm
+     , shdw
+     , jcdw
+     , ddsfgb
+     , ddfqlx
+     , gysmc
+     , org_id
+     , user_id
+     , sbr
+     , htbh
+     , htmc
+     , create_date
+     , user_id
+from business_3k66
+where 1 = 1
+
+# and ddfqlx ='A18A02A11A04';
+#   and sapcgpz1 = '4500368008'
+  and szgcddh like 'CGDD4010202402220039%'
+#   and szgcddh like 'PO%'
+# and jyms ='A18A05A15A02';
+# and id = 'c38156588b1b4416b9c828ae5ed993f0';
+# and serial = '20240125132619561';
+# and htbh = 'YTH-4010-NB-GX-2022-001029-00';
+# and jyms='A18A05A15A07'
+#   and jyms = 'A18A05A15A06'
+#   and sapcgpz1 != ''
+#   and gsdm = 4010
+order by create_date
+        desc
+limit 10;
+;-- -. . -..- - / . -. - .-. -.--
+select id
+     , org_id
+     , jcdw
+     , gsdm
+     , ddsfgb
+     , sapcgpz1
+     , user_id
+     , caigouyuan
+     , szgcddh
+     , jyms
+     , gysbm
+     , gc
+     , gsdm
+     , shdw
+     , jcdw
+     , ddsfgb
+     , ddfqlx
+     , gysmc
+     , org_id
+     , user_id
+     , sbr
+     , htbh
+     , htmc
+     , create_date
+     , user_id
+from business_3k66
+where 1 = 1
+
+# and ddfqlx ='A18A02A11A04';
+#   and sapcgpz1 = '4500368008'
+  and szgcddh like 'CGDD4010202402220039'
+#   and szgcddh like 'PO%'
+# and jyms ='A18A05A15A02';
+# and id = 'c38156588b1b4416b9c828ae5ed993f0';
+# and serial = '20240125132619561';
+# and htbh = 'YTH-4010-NB-GX-2022-001029-00';
+# and jyms='A18A05A15A07'
+#   and jyms = 'A18A05A15A06'
+#   and sapcgpz1 != ''
+#   and gsdm = 4010
+order by create_date
+        desc
+limit 10;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       szgcddh,
+     , org_id
+     , jcdw
+     , gsdm
+     , ddsfgb
+     , sapcgpz1
+     , user_id
+     , caigouyuan
+     , szgcddh
+     , jyms
+     , gysbm
+     , gc
+     , gsdm
+     , shdw
+     , jcdw
+     , ddsfgb
+     , ddfqlx
+     , gysmc
+     , org_id
+     , user_id
+     , sbr
+     , htbh
+     , htmc
+     , create_date
+     , user_id
+from business_3k66
+where 1 = 1
+
+# and ddfqlx ='A18A02A11A04';
+#   and sapcgpz1 = '4500368008'
+  and szgcddh like 'CGDD4010202402220039'
+#   and szgcddh like 'PO%'
+# and jyms ='A18A05A15A02';
+# and id = 'c38156588b1b4416b9c828ae5ed993f0';
+# and serial = '20240125132619561';
+# and htbh = 'YTH-4010-NB-GX-2022-001029-00';
+# and jyms='A18A05A15A07'
+#   and jyms = 'A18A05A15A06'
+#   and sapcgpz1 != ''
+#   and gsdm = 4010
+order by create_date
+        desc
+limit 10;
+;-- -. . -..- - / . -. - .-. -.--
+select id
+     , szgcddh
+     
+     , org_id
+     , jcdw
+     , gsdm
+     , ddsfgb
+     , sapcgpz1
+     , user_id
+     , caigouyuan
+     , jyms
+     , gysbm
+     , gc
+     , gsdm
+     , shdw
+     , jcdw
+     , ddsfgb
+     , ddfqlx
+     , gysmc
+     , org_id
+     , user_id
+     , sbr
+     , htbh
+     , htmc
+     , create_date
+     , user_id
+from business_3k66
+where 1 = 1
+
+# and ddfqlx ='A18A02A11A04';
+#   and sapcgpz1 = '4500368008'
+  and szgcddh like 'CGDD4010202402220039'
+#   and szgcddh like 'PO%'
+# and jyms ='A18A05A15A02';
+# and id = 'c38156588b1b4416b9c828ae5ed993f0';
+# and serial = '20240125132619561';
+# and htbh = 'YTH-4010-NB-GX-2022-001029-00';
+# and jyms='A18A05A15A07'
+#   and jyms = 'A18A05A15A06'
+#   and sapcgpz1 != ''
+#   and gsdm = 4010
+order by create_date
+        desc
+limit 10;
+;-- -. . -..- - / . -. - .-. -.--
+select id
+     , szgcddh
+     , org_id
+     , jcdw
+     , gsdm
+     , ddsfgb
+     , sapcgpz1
+     , user_id
+     , caigouyuan
+     , jyms
+     , gysbm
+     , gc
+     , gsdm
+     , shdw
+     , jcdw
+     , ddsfgb
+     , ddfqlx
+     , gysmc
+     , org_id
+     , user_id
+     , sbr
+     , htbh
+     , htmc
+     , create_date
+     , user_id
+from business_3k66
+where 1 = 1
+
+# and ddfqlx ='A18A02A11A04';
+#   and sapcgpz1 = '4500368008'
+  and szgcddh = 'CGDD4010202402220039'
+#   and szgcddh like 'PO%'
+# and jyms ='A18A05A15A02';
+# and id = 'c38156588b1b4416b9c828ae5ed993f0';
+# and serial = '20240125132619561';
+# and htbh = 'YTH-4010-NB-GX-2022-001029-00';
+# and jyms='A18A05A15A07'
+#   and jyms = 'A18A05A15A06'
+#   and sapcgpz1 != ''
+#   and gsdm = 4010
+order by create_date
+        desc
+limit 10;
+;-- -. . -..- - / . -. - .-. -.--
+select id
+     , szgcddh
+     , org_id
+     , jcdw
+     , gsdm
+     , ddsfgb
+     , sapcgpz1
+     , user_id
+     , caigouyuan
+     , jyms
+     , gysbm
+     , gc
+     , gsdm
+     , shdw
+     , jcdw
+     , ddsfgb
+     , ddfqlx
+     , gysmc
+     , org_id
+     , user_id
+     , sbr
+     , htbh
+     , htmc
+     , create_date
+     , user_id,
+       org_id
+from business_3k66
+where 1 = 1
+
+# and ddfqlx ='A18A02A11A04';
+#   and sapcgpz1 = '4500368008'
+  and szgcddh = 'CGDD4010202402220039'
+#   and szgcddh like 'PO%'
+# and jyms ='A18A05A15A02';
+# and id = 'c38156588b1b4416b9c828ae5ed993f0';
+# and serial = '20240125132619561';
+# and htbh = 'YTH-4010-NB-GX-2022-001029-00';
+# and jyms='A18A05A15A07'
+#   and jyms = 'A18A05A15A06'
+#   and sapcgpz1 != ''
+#   and gsdm = 4010
+order by create_date
+        desc
+limit 10;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       gsmc,
+       xqjhbh,
+       cgyfpfs,
+       sbr,
+       sbbm,
+       xqbm,
+       sfywlbm,
+       yt,
+       wzlb,
+       wlbm,
+       wlms,
+       wlzbm,
+       wlzms,
+       jldw,
+       xqsl,
+       xqsj,
+       jjcd,
+       sapkc,
+       dlykc,
+       drkkc,
+       jskc,
+       wzjb,
+       sydw,
+       zzmc,
+       sbwh,
+       sbmc,
+       ccpmc,
+       scjh,
+       dh,
+       llxq,
+       xqxzz,
+       scjhdh,
+       fylx,
+       ydlx,
+       cbzx,
+       jgh,
+       zch,
+       jxgdh,
+       xqdwlxr,
+       cgjhsl,
+       gyjhsl,
+       yacgwlbm,
+       yacgwlms,
+       jszbyq,
+       shr,
+       shrlxfs,
+       shdz,
+       yzyq,
+       sjlx,
+       jyxm,
+       bz,
+       spyj,
+       cgms,
+       gccgjhfp,
+       gccgy,
+       jcdw,
+       jcdwjhfp,
+       jcdwcgy,
+       org_id,
+       dept_id,
+       user_id,
+       create_date,
+       update_date,
+       sort,
+       serial,
+       flow_state,
+       sfya,
+       xqly,
+       zd,
+       xqdwlxrfs,
+       sbrlxfs,
+       wllb,
+       sbgsname,
+       sbbmname,
+       sbrname,
+       xqdwmc,
+       xqdwlxrjlxfs,
+       sbrsfmc,
+       xqdwsfmc,
+       xqsjz,
+       flow_step,
+       bczt,
+       fj,
+       sfzdyzj,
+       zdyjy,
+       field_h1,
+       field_h2,
+       field_h3,
+       field_h4,
+       field_h5,
+       field_h6,
+       field_h7,
+       field_h8,
+       field_h9,
+       field_h10,
+       field_h11,
+       field_h12,
+       lcjsr,
+       cbzxmc,
+       cgjhzt,
+       dbzt,
+       sdkc,
+       ggkc,
+       zbmchwh
+from wzxqjh
+where wzxqjh = 'XQJH4010202402220593';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       gsmc,
+       xqjhbh,
+       cgyfpfs,
+       sbr,
+       sbbm,
+       xqbm,
+       sfywlbm,
+       yt,
+       wzlb,
+       wlbm,
+       wlms,
+       wlzbm,
+       wlzms,
+       jldw,
+       xqsl,
+       xqsj,
+       jjcd,
+       sapkc,
+       dlykc,
+       drkkc,
+       jskc,
+       wzjb,
+       sydw,
+       zzmc,
+       sbwh,
+       sbmc,
+       ccpmc,
+       scjh,
+       dh,
+       llxq,
+       xqxzz,
+       scjhdh,
+       fylx,
+       ydlx,
+       cbzx,
+       jgh,
+       zch,
+       jxgdh,
+       xqdwlxr,
+       cgjhsl,
+       gyjhsl,
+       yacgwlbm,
+       yacgwlms,
+       jszbyq,
+       shr,
+       shrlxfs,
+       shdz,
+       yzyq,
+       sjlx,
+       jyxm,
+       bz,
+       spyj,
+       cgms,
+       gccgjhfp,
+       gccgy,
+       jcdw,
+       jcdwjhfp,
+       jcdwcgy,
+       org_id,
+       dept_id,
+       user_id,
+       create_date,
+       update_date,
+       sort,
+       serial,
+       flow_state,
+       sfya,
+       xqly,
+       zd,
+       xqdwlxrfs,
+       sbrlxfs,
+       wllb,
+       sbgsname,
+       sbbmname,
+       sbrname,
+       xqdwmc,
+       xqdwlxrjlxfs,
+       sbrsfmc,
+       xqdwsfmc,
+       xqsjz,
+       flow_step,
+       bczt,
+       fj,
+       sfzdyzj,
+       zdyjy,
+       field_h1,
+       field_h2,
+       field_h3,
+       field_h4,
+       field_h5,
+       field_h6,
+       field_h7,
+       field_h8,
+       field_h9,
+       field_h10,
+       field_h11,
+       field_h12,
+       lcjsr,
+       cbzxmc,
+       cgjhzt,
+       dbzt,
+       sdkc,
+       ggkc,
+       zbmchwh
+from wzxqjh
+where xqjhbh = 'XQJH4010202402220593';
+;-- -. . -..- - / . -. - .-. -.--
+select create_date,params,result,url,fail_reason
+from business_8b0j
+where module_name = '电子商城-采购申请单审批结果回传'
+and params like '%PR240221000003%'
+order by create_date desc
+limit 100;
+;-- -. . -..- - / . -. - .-. -.--
+select create_date,params,result,url,fail_reason
+from business_8b0j
+where module_name = '电子商城-采购申请单审批结果回传'
+and params like '%PR240221000025%'
+order by create_date desc
+limit 100;
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from sap_consignment_stock where matnr='1000212961';
+;-- -. . -..- - / . -. - .-. -.--
+select id
+     , szgcddh
+     , org_id
+     , jcdw
+     , gsdm
+     , ddsfgb
+     , sapcgpz1
+     , user_id
+     , caigouyuan
+     , jyms
+     , gysbm
+     , gc
+     , gsdm
+     , shdw
+     , jcdw
+     , ddsfgb
+     , ddfqlx
+     , gysmc
+     , org_id
+     , user_id
+     , sbr
+     , htbh
+     , htmc
+     , create_date
+     , user_id,
+       org_id
+from business_3k66
+where 1 = 1
+
+# and ddfqlx ='A18A02A11A04';
+#   and sapcgpz1 = '4500368008'
+  and szgcddh = 'CGDD00001202402050023'
+#   and szgcddh like 'PO%'
+# and jyms ='A18A05A15A02';
+# and id = 'c38156588b1b4416b9c828ae5ed993f0';
+# and serial = '20240125132619561';
+# and htbh = 'YTH-4010-NB-GX-2022-001029-00';
+# and jyms='A18A05A15A07'
+#   and jyms = 'A18A05A15A06'
+#   and sapcgpz1 != ''
+#   and gsdm = 4010
+order by create_date
+        desc
+limit 10;
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from sync_werk_org where werks='3390';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       father_id,
+       ddhxmh,
+       rksl,
+       gcbm,
+       ckl,
+       sapcgpz1,
+       wlbm,
+       dddj,
+       rkpzh,
+       father_id,
+       hjxx,
+       kmdbm,create_date
+from business_f7hc
+where 1 = 1
+#   and id = '468579929bc2c6a2e3bfad820543a173'
+#   and rksl != ckl
+#   and ckl > 0
+#   and father_id = '990dcfc482a388d418b7e2558803acc2';
+# and org_id='00008413'
+  and wlbm = '1000039214';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       father_id,
+       ddhxmh,
+       rksl,
+       gcbm,
+       ckl,
+       sapcgpz1,
+       wlbm,
+       dddj,
+       rkpzh,
+       father_id,
+       hjxx,
+       kmdbm,create_date
+from business_f7hc
+where 1 = 1
+#   and id = '468579929bc2c6a2e3bfad820543a173'
+#   and rksl != ckl
+#   and ckl > 0
+#   and father_id = '990dcfc482a388d418b7e2558803acc2';
+# and org_id='00008413'
+  and wlbm = '1000022661';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       father_id,
+       ddhxmh,
+       rksl,
+       gcbm,
+       ckl,
+       sapcgpz1,
+       wlbm,
+       dddj,
+       rkpzh,
+       father_id,
+       hjxx,
+       kmdbm,create_date
+from business_f7hc
+where 1 = 1
+#   and id = '468579929bc2c6a2e3bfad820543a173'
+#   and rksl != ckl
+#   and ckl > 0
+#   and father_id = '990dcfc482a388d418b7e2558803acc2';
+# and org_id='00008413'
+  and wlbm = '1000034816';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       ttwb,
+       llr,
+       aqhbfy,
+       ckbm,
+       psdd,
+       serial,
+       create_date,
+       update_date,
+       flow_step,
+       flow_state,
+       ckbm,
+       kcdbm
+from business_ij1g
+# where ckbm is null  or ckbm=''
+# where ckbm = 'SBCK4010202402070174';
+where id = '86a69f8f63084adea39959ff959b8513';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from goods_input_output_account limit 10;
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from sap_consignment_stock where matnr='1000369556';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from sap_goods_year where matnr='1000369556';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from p_product_master where werks=3092 and matnr=1000369556;
+;-- -. . -..- - / . -. - .-. -.--
+delete 
+from purchase_sulfur_number_confirm;
+;-- -. . -..- - / . -. - .-. -.--
+select factory
+from purchase_sulfur_number_confirm where org_id='10000600';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from purchase_sulfur_number_confirm where org_id='10000600';
+;-- -. . -..- - / . -. - .-. -.--
+delete
+from purchase_sulfur_number_confirm;
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from purchase_sulfur_number_confirm where factory='10000600';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from purchase_sulfur_number_confirm;
+;-- -. . -..- - / . -. - .-. -.--
+select count(1)
+from purchase_sulfur_number_confirm;
+;-- -. . -..- - / . -. - .-. -.--
+select yhjxx,xhjxx, wlbm, ykcdbm, org_id, kclx,create_date,update_date
+from business_50t4
+where 1 = 1
+#   and org_id = '00000287'
+  and kclx = 'SAP'
+#   and kclx = 'WAITUSE'
+  and wlbm = '1000025353'
+# and ykcdbm='1521'
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select yhjxx,xhjxx, wlbm, ykcdbm, org_id, kclx,create_date,update_date
+from business_50t4
+where 1 = 1
+#   and org_id = '00000287'
+#   and kclx = 'SAP'
+#   and kclx = 'WAITUSE'
+  and wlbm = '1000025353'
+# and ykcdbm='1521'
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select m.org_id, s.org_id, s.rk_temp_zt, s.zt, s.rkl
+from business_hmz1 m
+         inner join business_6j3g s
+                    on m.id = s.father_id
+where m.sbwzdhysdbh = 'INV240225000001'
+  and (s.rk_temp_zt = '' OR s.rk_temp_zt IS NULL)
+  AND (s.zt != 'A18A09A02A05' OR s.zt IS NULL or s.zt = '')
+  and (s.cgjhbh is null or s.cgjhbh = '')
+  and (s.sjzt = 'A18A07A17A03' or s.sfrbjs = 'A03A01A01');
+;-- -. . -..- - / . -. - .-. -.--
+select yhjxx,xhjxx, wlbm, ykcdbm, org_id, kclx,create_date,update_date
+from business_50t4
+where 1 = 1
+#   and org_id = '00000287'
+#   and kclx = 'SAP'
+#   and kclx = 'WAITUSE'
+  and wlbm = '1000005197'
+# and ykcdbm='1521'
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select create_date,params,result,url,fail_reason
+from business_8b0j
+where module_name = '电子商城-电子商城发货单同步'
+and params like '%INV240225000001%'
+order by create_date desc
+limit 100;
+;-- -. . -..- - / . -. - .-. -.--
+select id, cgy, org_id, dept_id, user_id, flow_state, flow_step
+from business_hmz1
+# where serial = '20240125143513227';
+where sbwzdhysdbh like '%INV240225000001%';
+;-- -. . -..- - / . -. - .-. -.--
+select id
+     , szgcddh
+     , org_id
+     , jcdw
+     , gsdm
+     , ddsfgb
+     , sapcgpz1
+     , user_id
+     , caigouyuan
+     , jyms
+     , gysbm
+     , gc
+     , gsdm
+     , shdw
+     , jcdw
+     , ddsfgb
+     , ddfqlx
+     , gysmc
+     , org_id
+     , user_id
+     , sbr
+     , htbh
+     , htmc
+     , create_date
+     , user_id,
+       org_id
+from business_3k66
+where 1 = 1
+
+# and ddfqlx ='A18A02A11A04';
+#   and sapcgpz1 = '4500368008'
+  and szgcddh = 'PO240222000023'
+#   and szgcddh like 'PO%'
+# and jyms ='A18A05A15A02';
+# and id = 'c38156588b1b4416b9c828ae5ed993f0';
+# and serial = '20240125132619561';
+# and htbh = 'YTH-4010-NB-GX-2022-001029-00';
+# and jyms='A18A05A15A07'
+#   and jyms = 'A18A05A15A06'
+#   and sapcgpz1 != ''
+#   and gsdm = 4010
+order by create_date
+        desc
+limit 10;
+;-- -. . -..- - / . -. - .-. -.--
+select id
+     , szgcddh
+     ,caigouyuan
+     ,sbr
+     , org_id
+     , jcdw
+     , gsdm
+     , ddsfgb
+     , sapcgpz1
+     , user_id
+     , caigouyuan
+     , jyms
+     , gysbm
+     , gc
+     , gsdm
+     , shdw
+     , jcdw
+     , ddsfgb
+     , ddfqlx
+     , gysmc
+     , org_id
+     , user_id
+     , sbr
+     , htbh
+     , htmc
+     , create_date
+     , user_id,
+       org_id
+from business_3k66
+where 1 = 1
+
+# and ddfqlx ='A18A02A11A04';
+#   and sapcgpz1 = '4500368008'
+  and szgcddh = 'PO240222000023'
+#   and szgcddh like 'PO%'
+# and jyms ='A18A05A15A02';
+# and id = 'c38156588b1b4416b9c828ae5ed993f0';
+# and serial = '20240125132619561';
+# and htbh = 'YTH-4010-NB-GX-2022-001029-00';
+# and jyms='A18A05A15A07'
+#   and jyms = 'A18A05A15A06'
+#   and sapcgpz1 != ''
+#   and gsdm = 4010
+order by create_date
+        desc
+limit 10;
+;-- -. . -..- - / . -. - .-. -.--
+select id
+     , szgcddh
+     ,caigouyuan
+     ,sbr
+     , org_id
+     , jcdw
+     , gsdm
+     , ddsfgb
+     , sapcgpz1
+     , user_id
+     , caigouyuan
+     , jyms
+     , gysbm
+     , gc
+     , gsdm
+     , shdw
+     , jcdw
+     , ddsfgb
+     , ddfqlx
+     , gysmc
+     , org_id
+     , user_id
+     , sbr
+     , htbh
+     , htmc
+     , create_date
+     , user_id,
+       org_id
+from business_3k66
+where 1 = 1
+
+# and ddfqlx ='A18A02A11A04';
+#   and sapcgpz1 = '4500368008'
+#   and szgcddh = 'PO240222000023'/**/
+#   and szgcddh like 'PO%'
+# and jyms ='A18A05A15A02';
+# and id = 'c38156588b1b4416b9c828ae5ed993f0';
+and serial = '20240222084546841';
+;-- -. . -..- - / . -. - .-. -.--
+select create_date,params,result,url,fail_reason
+from business_8b0j
+where module_name = '电子商城-电子商城发货单同步'
+order by create_date desc
+limit 100;
+;-- -. . -..- - / . -. - .-. -.--
+select create_date,params,result,url,fail_reason
+from business_8b0j
+where module_name = '电子商城-电子商城采购订单同步'
+order by create_date desc
+limit 100;
+;-- -. . -..- - / . -. - .-. -.--
+select id
+     , szgcddh
+     ,caigouyuan
+     ,sbr
+     , org_id
+     , jcdw
+     , gsdm
+     , ddsfgb
+     , sapcgpz1
+     , user_id
+     , caigouyuan
+     , jyms
+     , gysbm
+     , gc
+     , gsdm
+     , shdw
+     , jcdw
+     , ddsfgb
+     , ddfqlx
+     , gysmc
+     , org_id
+     , user_id
+     , sbr
+     , htbh
+     , htmc
+     , create_date
+     , user_id,
+       org_id
+from business_3k66
+where 1 = 1
+
+# and ddfqlx ='A18A02A11A04';
+#   and sapcgpz1 = '4500368008'
+#   and szgcddh = 'PO240222000023'/**/
+#   and szgcddh like 'PO%'
+# and jyms ='A18A05A15A02';
+# and id = 'c38156588b1b4416b9c828ae5ed993f0';
+and serial = '20240226133037180';
+;-- -. . -..- - / . -. - .-. -.--
+select id
+     , szgcddh
+     ,org_id
+     ,caigouyuan
+     ,sbr
+     , org_id
+     , jcdw
+     , gsdm
+     , ddsfgb
+     , sapcgpz1
+     , user_id
+     , caigouyuan
+     , jyms
+     , gysbm
+     , gc
+     , gsdm
+     , shdw
+     , jcdw
+     , ddsfgb
+     , ddfqlx
+     , gysmc
+     , org_id
+     , user_id
+     , sbr
+     , htbh
+     , htmc
+     , create_date
+     , user_id,
+       org_id
+from business_3k66
+where 1 = 1
+
+# and ddfqlx ='A18A02A11A04';
+#   and sapcgpz1 = '4500368008'
+#   and szgcddh = 'PO240222000023'/**/
+#   and szgcddh like 'PO%'
+# and jyms ='A18A05A15A02';
+# and id = 'c38156588b1b4416b9c828ae5ed993f0';
+and serial = '20240226133037180';
+;-- -. . -..- - / . -. - .-. -.--
+select id
+     , szgcddh
+     ,org_id
+     ,caigouyuan
+     ,sbr
+     , org_id
+     , jcdw
+     , gsdm
+     , ddsfgb
+     , sapcgpz1
+     , user_id
+     , caigouyuan
+     , jyms
+     , gysbm
+     , gc
+     , gsdm
+     , shdw
+     , jcdw
+     , ddsfgb
+     , ddfqlx
+     , gysmc
+     , org_id
+     , user_id
+     , sbr
+     , htbh
+     , htmc
+     , create_date
+     , user_id,
+       org_id
+from business_3k66
+where 1 = 1
+
+# and ddfqlx ='A18A02A11A04';
+#   and sapcgpz1 = '4500368008'
+#   and szgcddh = 'PO240222000023'/**/
+#   and szgcddh like 'PO%'
+# and jyms ='A18A05A15A02';
+# and id = 'c38156588b1b4416b9c828ae5ed993f0';
+and serial = '20240226134505166';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       ttwb,
+       llr,
+       aqhbfy,
+       ckbm,
+       psdd,
+       serial,
+       create_date,
+       update_date,
+       flow_step,
+       flow_state,
+       ckbm,
+       kcdbm
+from business_ij1g
+# where ckbm is null  or ckbm=''
+# where ckbm = 'SBCK4010202402070174';
+# where id = '86a69f8f63084adea39959ff959b8513';
 #     where psdd like '%熔%'
-where serial = '20240124114216562'
+where serial = '20240226140717141'
 # where business_ij1g.flow_step like '%总经理%';
 # where business_ij1g.create_date = '2023-08-28 16:50:56';
 # where serial = '20231025094042682'
 order by create_date
 desc;
 ;-- -. . -..- - / . -. - .-. -.--
-select outSlave.id,
-       input.hjxx,
-       outSlave.cksl,
-       input.rksl,
-       input.ckl,
-       input.id inputId,
-       outSlave.father_id
-from business_m3wc outSlave
-         inner join business_f7hc input on outSlave.rkdid = input.id
-where 1 = 1
-#   and outSlave.wlbm = '1000231020';
-# where jhbm = 'CGJH4010202305080031';
-# where rkdid !=''
-# where id='112a052b8a524e0d84bab1d5f7e01abf';
-and  m.father_id = '5700d857d29c49cab75495a4286962c9';
-;-- -. . -..- - / . -. - .-. -.--
-select outSlave.id,
-       input.hjxx,
-       outSlave.cksl,
-       input.rksl,
-       input.ckl,
-       input.id inputId,
-       outSlave.father_id
-from business_m3wc outSlave
-         inner join business_f7hc input on outSlave.rkdid = input.id
-where 1 = 1
-#   and outSlave.wlbm = '1000231020';
-# where jhbm = 'CGJH4010202305080031';
-# where rkdid !=''
-# where id='112a052b8a524e0d84bab1d5f7e01abf';
-and  outSlave.father_id = '5700d857d29c49cab75495a4286962c9';
-;-- -. . -..- - / . -. - .-. -.--
-select m.id,
-       m.father_id,
-       m.kcdbm,
-       gdzc,
+select id,
+       org_id,
+       cksl,
+       father_id,
+       ckpzh,
+       zzkm,
+       jldw,
+       dwms,
        ydlx,
        fylx,
-       cbzx,
-       cbzxms,
+       nbddh,
+       zjgc,
+       zjgcms,
        nbddh,
        nbddms
-from business_m3wc m
-where 1 = 1
-#   and m.father_id = 'cdaa1dbd459f459ba340671366421929';
-and rkdid='c36a39e6d083914033e123541fda982f';
-;-- -. . -..- - / . -. - .-. -.--
-select id,ddhxmh, rksl,gcbm, ckl, sapcgpz1, wlbm, dddj,rkpzh, father_id
-from business_f7hc
-where 1 = 1
-#   and rksl != ckl
-#   and ckl > 0
-#   and father_id = '990dcfc482a388d418b7e2558803acc2';
-# and org_id='00008413'
-# and rkpzh='5006306102'
-# and sapcgpz1='4500360355'
-#   and wlbm = '1000394281'
-  and id = 'c36a39e6d083914033e123541fda982f';
-;-- -. . -..- - / . -. - .-. -.--
-select id,
-       jhbm,
-       cklx,
-       cksl,
-       sfck,
-       father_id,
-       ydlx,
-       ktsl,
-       gcdm,
-       ckpzh,
-       rkdid,
-       cbzx,
-       cbzxms
 from business_m3wc
-# where wlbm = '1000022922';
-# where father_id = '4d04cb9870f64fbebce79449c4c95a9b';
-    where cklx;
+where 1 = 1
+# and wlbm='1000152865'
+  and father_id = 'c9e03742f30a44e1b6a2ea2a5b020734';
 ;-- -. . -..- - / . -. - .-. -.--
 select id,
-       jhbm,
-       cklx,
+       org_id,
+       dddj,
        cksl,
-       sfck,
        father_id,
-       ydlx,
-       ktsl,
-       gcdm,
        ckpzh,
-       rkdid,
-       cbzx,
-       cbzxms
-from business_m3wc;
-;-- -. . -..- - / . -. - .-. -.--
-select id,
-       jhbm,
-       cklx,
+       zzkm,
+       jldw,
+       dwms,
        ydlx,
-       cksl,
-       sfck,
-       father_id,
-       ydlx,
-       ktsl,
-       gcdm,
-       ckpzh,
-       rkdid,
-       cbzx,
-       cbzxms
+       fylx,
+       nbddh,
+       zjgc,
+       zjgcms,
+       nbddh,
+       nbddms
 from business_m3wc
-# where wlbm = '1000022922';
-# where father_id = '4d04cb9870f64fbebce79449c4c95a9b';
-    where cklx;
+where 1 = 1
+# and wlbm='1000152865'
+  and father_id = 'c9e03742f30a44e1b6a2ea2a5b020734';
 ;-- -. . -..- - / . -. - .-. -.--
 select id,
-       jhbm,
-       cklx,
-       ydlx,
+       org_id,
+       dddj,
        cksl,
-       sfck,
        father_id,
-       ktsl,
-       gcdm,
        ckpzh,
-       rkdid,
-       cbzx,
-       cbzxms
+       zzkm,
+       jldw,
+       dwms,
+       ydlx,
+       fylx,
+       nbddh,
+       zjgc,
+       zjgcms,
+       nbddh,
+       nbddms,
+       rkdid
 from business_m3wc
-# where wlbm = '1000022922';
-# where father_id = '4d04cb9870f64fbebce79449c4c95a9b';
-    where cklx;
+where 1 = 1
+# and wlbm='1000152865'
+  and father_id = 'c9e03742f30a44e1b6a2ea2a5b020734';
 ;-- -. . -..- - / . -. - .-. -.--
 select id,
-       jhbm,
-       cklx,
-       ydlx,
+       org_id,
+       wlbm,
+       dddj,
        cksl,
-       sfck,
        father_id,
-       ktsl,
-       gcdm,
        ckpzh,
-       rkdid,
-       cbzx,
-       cbzxms
-from business_m3wc;
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '物资出库'
-#   and request like '%黄丽芬领料出库%'
-  and sap_execute_log.response like '%4914560700%'
-order by create_time desc
-limit 10;
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '物资出库'
-#   and request like '%黄丽芬领料出库%'
-#   and sap_execute_log.response like '%4914560700%'
-order by create_time desc
-limit 10;
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '物资出库'
-#   and request like '%黄丽芬领料出库%'
-#   and sap_execute_log.response like '%4914560700%'
-order by create_time desc
-limit 100;
+       zzkm,
+       jldw,
+       dwms,
+       ydlx,
+       fylx,
+       nbddh,
+       zjgc,
+       zjgcms,
+       nbddh,
+       nbddms,
+       rkdid
+from business_m3wc
+where 1 = 1
+# and wlbm='1000152865'
+  and father_id = 'c9e03742f30a44e1b6a2ea2a5b020734';
 ;-- -. . -..- - / . -. - .-. -.--
 select id,
-       ttwb,
-       aqhbfy,
-       ckbm,
-       psdd,
-       serial,
-       create_date,
-       update_date,
-       flow_step,
-       flow_state,
-       ckbm,
-       kcdbm
-from business_ij1g
-# where ckbm is null  or ckbm=''
-# where ckbm = 'SBCK4390202401090253';
-# where id = 'e6d984faf68c4f50ae851be843bc472c';
-#     where psdd like '%熔%'
-where serial = '20240116140217485'
-# where business_ij1g.flow_step like '%总经理%';
-# where business_ij1g.create_date = '2023-08-28 16:50:56';
-# where serial = '20231025094042682'
-order by create_date
-        desc;
-;-- -. . -..- - / . -. - .-. -.--
-select outSlave.id,
-       input.hjxx,
-       outSlave.cksl,
-       input.rksl,
-       input.ckl,
-       input.id inputId,
-       outSlave.father_id
-from business_m3wc outSlave
-         inner join business_f7hc input on outSlave.rkdid = input.id
-where 1 = 1
-#   and outSlave.wlbm = '1000231020';
-# where jhbm = 'CGJH4010202305080031';
-# where rkdid !=''
-# where id='112a052b8a524e0d84bab1d5f7e01abf';
-  and outSlave.father_id = 'fb09e5d287944c369f4f2bca905d45b7';
-;-- -. . -..- - / . -. - .-. -.--
-select outSlave.id,
-       input.hjxx,
-       outSlave.cksl,
-       input.rksl,
-       input.ckl,
-       input.id inputId,
-       outSlave.father_id,
-       gcbm
-from business_m3wc outSlave
-         inner join business_f7hc input on outSlave.rkdid = input.id
-where 1 = 1
-#   and outSlave.wlbm = '1000231020';
-# where jhbm = 'CGJH4010202305080031';
-# where rkdid !=''
-# where id='112a052b8a524e0d84bab1d5f7e01abf';
-  and outSlave.father_id = 'fb09e5d287944c369f4f2bca905d45b7';
-;-- -. . -..- - / . -. - .-. -.--
-select outSlave.id,
-       input.hjxx,
-       outSlave.cksl,
-       input.rksl,
-       input.ckl,
-       input.id inputId,
-       outSlave.father_id,
-       gcbm
-from business_m3wc outSlave
-         left join business_f7hc input on outSlave.rkdid = input.id
-where 1 = 1
-#   and outSlave.wlbm = '1000231020';
-# where jhbm = 'CGJH4010202305080031';
-# where rkdid !=''
-# where id='112a052b8a524e0d84bab1d5f7e01abf';
-  and outSlave.father_id = 'fb09e5d287944c369f4f2bca905d45b7';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sync_werk_org where org_name like '%磷化工%';
-;-- -. . -..- - / . -. - .-. -.--
-select outSlave.id,
-       input.hjxx,
-       outSlave.cksl,
-       input.rksl,
-       input.ckl,
-       input.id inputId,
-       outSlave.father_id,
-       outSlave.org_id,
-       gcbm
-from business_m3wc outSlave
-         left join business_f7hc input on outSlave.rkdid = input.id
-where 1 = 1
-#   and outSlave.wlbm = '1000231020';
-# where jhbm = 'CGJH4010202305080031';
-# where rkdid !=''
-# where id='112a052b8a524e0d84bab1d5f7e01abf';
-  and outSlave.father_id = 'fb09e5d287944c369f4f2bca905d45b7';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sync_werk_org where sync_werk_org.org_code like 'fb09e5d287944c369f4f2bca905d45b7';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sync_werk_org where sync_werk_org.org_code like '%00008413%';
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '物资出库'
-  and request like '%933%'
-#   and sap_execute_log.response like '%4914560700%'
-order by create_time desc
-limit 100;
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '物资出库'
-  and request like '%3280%'
-#   and sap_execute_log.response like '%4914560700%'
-order by create_time desc
-limit 100;
-;-- -. . -..- - / . -. - .-. -.--
-select outSlave.id,
-       input.hjxx,
-       outSlave.cksl,
-       input.rksl,
-       input.ckl,
-       input.id inputId,
-       outSlave.father_id,
-       outSlave.org_id,
-       outSlave.gcdm
-from business_m3wc outSlave
-         left join business_f7hc input on outSlave.rkdid = input.id
-where 1 = 1
-#   and outSlave.wlbm = '1000231020';
-# where jhbm = 'CGJH4010202305080031';
-# where rkdid !=''
-# where id='112a052b8a524e0d84bab1d5f7e01abf';
-  and outSlave.father_id = 'fb09e5d287944c369f4f2bca905d45b7';
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sap_consignment_stock where werks=3280;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sap_consignment_stock where werks=3090;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from sap_consignment_stock where werks=3092;
-;-- -. . -..- - / . -. - .-. -.--
-select id, cgy,org_id,dept_id,user_id,flow_state,flow_step
-from business_hmz1
-where serial = '20240124100419979';
-;-- -. . -..- - / . -. - .-. -.--
-select id,zjjg, sjzt, rk_temp_zt, zt, cgddmxid,rkl,dhsl,zt,xxmh
-from business_6j3g
-# where id = '58b784abf338f6444602050c82eaf239';
-where father_id = 'cc05bde367164082a144e0acb4e23225';
-;-- -. . -..- - / . -. - .-. -.--
-select id,zjjg, sjzt, rk_temp_zt, zt, cgddmxid,rkl,dhsl,zt,xxmh
-from business_6j3g
-# where id = '58b784abf338f6444602050c82eaf239';
-where father_id = 'd3256c5f30369673aa91bb8354a50374';
-;-- -. . -..- - / . -. - .-. -.--
-select id, cgy,org_id,dept_id,user_id,flow_state,flow_step
-from business_hmz1
-where serial = '20240125143513227';
-;-- -. . -..- - / . -. - .-. -.--
-select id,zjjg, sjzt, rk_temp_zt, zt, cgddmxid,rkl,dhsl,zt,xxmh
-from business_6j3g
-# where id = '58b784abf338f6444602050c82eaf239';
-where father_id = '24f0f7ed6c75490aafd8699797875d39';
-;-- -. . -..- - / . -. - .-. -.--
-select m.id,m.zt
-from business_9yth m
-         inner join business_715z s on m.id = s.father_id
-# where s.id = '8e917eef604846ba83bbb6fef5109b95'
-where m.szgcdd='CGDD00001202401240005'
-order by m.create_date desc;
-;-- -. . -..- - / . -. - .-. -.--
-select m.id,m.zt,m.org_id
-from business_9yth m
-         inner join business_715z s on m.id = s.father_id
-# where s.id = '8e917eef604846ba83bbb6fef5109b95'
-where m.szgcdd='CGDD00001202401240005'
-order by m.create_date desc;
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception, time
-from sap_execute_log
-where title = '采购订单连续收货'
-#   and request like '%SBRKD4010202312290011%'
-and sap_execute_log.response like '%4700409114%'
-order by create_time desc
-limit 10;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from receving_rkd_relation;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from receving_rkd_relation where rkd_id='2212f5c962bd1895ab70b39fcf000818';
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '创建连续采购订单'
-#                        and request like '%YTH-4010-WB-CG-2023-009990-00%'
-#     出现问题的采购订单
-#   and sap_execute_log.response like '%4500357582%'
-
-  and sap_execute_log.response like '%4500365366%'
-#   and sap_execute_log.request like '%1000440944%'
-order by create_time desc
-limit 10;
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '创建连续采购订单'
-#                        and request like '%YTH-4010-WB-CG-2023-009990-00%'
-#     出现问题的采购订单
-#   and sap_execute_log.response like '%4500357582%'
-
-#   and sap_execute_log.response like '%4500365366%'
-#   and sap_execute_log.request like '%1000440944%'
-order by create_time desc
-limit 10;
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '关联采购订单修改删除'
-#                        and request like '%YTH-4010-WB-CG-2023-009990-00%'
-#     出现问题的采购订单
-#   and sap_execute_log.response like '%4500357582%'
-
-#   and sap_execute_log.response like '%4500365366%'
-#   and sap_execute_log.request like '%1000440944%'
-order by create_time desc
-limit 10;
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '关联采购订单修改删除'
-#                        and request like '%YTH-4010-WB-CG-2023-009990-00%'
-#     出现问题的采购订单
-  and sap_execute_log.request like '%4700409114%'
-order by create_time desc
-limit 10;
-;-- -. . -..- - / . -. - .-. -.--
-select *
-from receving_rkd_relation order by create_date desc;
-;-- -. . -..- - / . -. - .-. -.--
-select id
-     , org_id
-     , ddsfgb
-     , sapcgpz1
-     , user_id
-     , caigouyuan
-     , szgcddh
-     , jyms
-     , gysbm
-     , gc
-     , shdw
-     , jcdw
-     , ddsfgb
-     , ddfqlx
-     , gysmc
-     , gsdm
-     , org_id
-     , user_id
-     , sbr
-     , htbh
-     , htmc
-     , create_date
-from business_3k66
-where 1 = 1
-
-# and ddfqlx ='A18A02A11A04';
-#   and sapcgpz1 = '4500365366'
-# and szgcddh like 'PO%'
-and szgcddh like 'CGDD00001202401260007%'
-# and jyms ='A18A05A15A02';
-# and id = '0a92c408dbd74fb5808698dfe75fa8d7';
-# and serial = '20231226161944066';
-# and htbh = 'YTH-4010-NB-GX-2022-001029-00';
-# and jyms='A18A05A15A07'
-#   and jyms = 'A18A05A15A06'
-#   and sapcgpz1 != ''
-#   and gsdm = 4010
-order by create_date
-        desc;
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '物料凭证冲销'
-#                        and request like '%SBCK4010202305260075%'
-order by create_time desc
-limit 10;
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '物料凭证冲销'
-                       and request like '%4700409114%'
-order by create_time desc
-limit 10;
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '收货后冲销'
-  and request like '%4700409114%'
-order by create_time desc
-limit 100;
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '关联采购订单修改删除'
-#                        and request like '%YTH-4010-WB-CG-2023-009990-00%'
-#     出现问题的采购订单
-#   and sap_execute_log.request like '%4700409114%'
-order by create_time desc
-limit 10;
-;-- -. . -..- - / . -. - .-. -.--
-select id
-     , org_id
-     , ddsfgb
-     , sapcgpz1
-     , user_id
-     , caigouyuan
-     , szgcddh
-     , jyms
-     , gysbm
-     , gc
-     , shdw
-     , jcdw
-     , ddsfgb
-     , ddfqlx
-     , gysmc
-     , gsdm
-     , org_id
-     , user_id
-     , sbr
-     , htbh
-     , htmc
-     , create_date
-from business_3k66
-where 1 = 1
-
-# and ddfqlx ='A18A02A11A04';
-#   and sapcgpz1 = '4500365366'
-# and szgcddh like 'PO%'
-# and szgcddh like 'CGDD00001202401260007%'
-# and jyms ='A18A05A15A02';
-# and id = '0a92c408dbd74fb5808698dfe75fa8d7';
-and serial = '20240129092019812';
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '创建连续采购订单'
-#                        and request like '%YTH-4010-WB-CG-2023-009990-00%'
-#     出现问题的采购订单
-#   and sap_execute_log.response like '%4500357582%'
-
-  and sap_execute_log.response like '%4500367520%'
-#   and sap_execute_log.request like '%1000440944%'
-order by create_time desc
-limit 10;
-;-- -. . -..- - / . -. - .-. -.--
-select id,
-       rkdbh,
-       org_id,
-       htbh,
-       htmc,
-       dhysdh,
-       create_date,
-       rkpz,
-       wlbmall
-from business_y339
-where  1=1
-# where id = 'b4c9a2a8e8573bed147b2be544734cd7';
-
-# where serial = '20231226153831855'
-# and sapcgpz1 = '4500365366'
-#     where org_id !='00000287'
-and rkdbh = 'SBRKD4010202401190091'
-# where dhysdh is null
-order by create_date desc;
-;-- -. . -..- - / . -. - .-. -.--
-select id,
-       rkdbh,
-       org_id,
-       htbh,
-       kgy,
-       htmc,
-       dhysdh,
-       create_date,
-       rkpz,
-       wlbmall
-from business_y339
-where  1=1
-# where id = 'b4c9a2a8e8573bed147b2be544734cd7';
-
-# where serial = '20231226153831855'
-# and sapcgpz1 = '4500365366'
-#     where org_id !='00000287'
-and rkdbh = 'SBRKD4010202401190091'
-# where dhysdh is null
-order by create_date desc;
-;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '创建连续采购订单'
-#                        and request like '%YTH-4010-WB-CG-2023-009990-00%'
-#     出现问题的采购订单
-#   and sap_execute_log.response like '%4500357582%'
-
-  and sap_execute_log.response like '%4700410024%'
-#   and sap_execute_log.request like '%1000440944%'
-order by create_time desc
-limit 10;
-;-- -. . -..- - / . -. - .-. -.--
-select id,
-       ttwb,
-       aqhbfy,
-       ckbm,
-       psdd,
-       serial,
-       create_date,
-       update_date,
-       flow_step,
-       flow_state,
-       ckbm,
-       kcdbm
-from business_ij1g
-# where ckbm is null  or ckbm=''
-# where ckbm = 'SBCK4390202401090253';
-# where id = 'e6d984faf68c4f50ae851be843bc472c';
-#     where psdd like '%熔%'
-where serial = '20240125161936823'
-# where business_ij1g.flow_step like '%总经理%';
-# where business_ij1g.create_date = '2023-08-28 16:50:56';
-# where serial = '20231025094042682'
-order by create_date
-        desc;
-;-- -. . -..- - / . -. - .-. -.--
-select outSlave.id,
-       input.hjxx,
-       outSlave.cksl,
-       input.rksl,
-       input.ckl,
-       input.id inputId,
-       outSlave.father_id,
-       outSlave.org_id,
-       outSlave.gcdm
-from business_m3wc outSlave
-         left join business_f7hc input on outSlave.rkdid = input.id
-where 1 = 1
-#   and outSlave.wlbm = '1000231020';
-# where jhbm = 'CGJH4010202305080031';
-# where rkdid !=''
-# where id='112a052b8a524e0d84bab1d5f7e01abf';
-  and outSlave.father_id = 'd3cabab46ed54b96885452cd5cc443e9';
-;-- -. . -..- - / . -. - .-. -.--
-select outSlave.id,
-       input.hjxx,
-       outSlave.cksl,
-       input.rksl,
-       input.ckl,
-       input.id inputId,
-       outSlave.father_id,
-       outSlave.org_id,
-       outSlave.gcdm,
-       outSlave.rkdid
-from business_m3wc outSlave
-         left join business_f7hc input on outSlave.rkdid = input.id
-where 1 = 1
-#   and outSlave.wlbm = '1000231020';
-# where jhbm = 'CGJH4010202305080031';
-# where rkdid !=''
-# where id='112a052b8a524e0d84bab1d5f7e01abf';
-  and outSlave.father_id = 'd3cabab46ed54b96885452cd5cc443e9';
-;-- -. . -..- - / . -. - .-. -.--
-select id,
-       ttwb,
-       aqhbfy,
-       ckbm,
-       psdd,
-       serial,
-       create_date,
-       update_date,
-       flow_step,
-       flow_state,
-       ckbm,
-       kcdbm
-from business_ij1g
-# where ckbm is null  or ckbm=''
-# where ckbm = 'SBCK4390202401090253';
-# where id = 'e6d984faf68c4f50ae851be843bc472c';
-#     where psdd like '%熔%'
-where serial = '20240105092616262'
-# where business_ij1g.flow_step like '%总经理%';
-# where business_ij1g.create_date = '2023-08-28 16:50:56';
-# where serial = '20231025094042682'
-order by create_date
-        desc;
-;-- -. . -..- - / . -. - .-. -.--
-select outSlave.id,
-       input.hjxx,
-       outSlave.cksl,
-       input.rksl,
-       input.ckl,
-       input.id inputId,
-       outSlave.father_id,
-       outSlave.org_id,
-       outSlave.gcdm,
-       outSlave.rkdid
-from business_m3wc outSlave
-         left join business_f7hc input on outSlave.rkdid = input.id
-where 1 = 1
-#   and outSlave.wlbm = '1000231020';
-# where jhbm = 'CGJH4010202305080031';
-# where rkdid !=''
-# where id='112a052b8a524e0d84bab1d5f7e01abf';
-  and outSlave.father_id = '097adcea4f4f4495a7a4690af44dde59';
-;-- -. . -..- - / . -. - .-. -.--
-select id,
-       ttwb,
-       aqhbfy,
-       ckbm,
-       psdd,
-       serial,
-       create_date,
-       update_date,
-       flow_step,
-       flow_state,
-       ckbm,
-       kcdbm
-from business_ij1g
-# where ckbm is null  or ckbm=''
-# where ckbm = 'SBCK4390202401090253';
-# where id = 'e6d984faf68c4f50ae851be843bc472c';
-#     where psdd like '%熔%'
-where serial = '20240105120936050'
-# where business_ij1g.flow_step like '%总经理%';
-# where business_ij1g.create_date = '2023-08-28 16:50:56';
-# where serial = '20231025094042682'
-order by create_date
-        desc;
-;-- -. . -..- - / . -. - .-. -.--
-select outSlave.id,
-       input.hjxx,
-       outSlave.cksl,
-       input.rksl,
-       input.ckl,
-       input.id inputId,
-       outSlave.father_id,
-       outSlave.org_id,
-       outSlave.gcdm,
-       outSlave.rkdid
-from business_m3wc outSlave
-         left join business_f7hc input on outSlave.rkdid = input.id
-where 1 = 1
-#   and outSlave.wlbm = '1000231020';
-# where jhbm = 'CGJH4010202305080031';
-# where rkdid !=''
-# where id='112a052b8a524e0d84bab1d5f7e01abf';
-  and outSlave.father_id = '5bea62d2cb0d4004940b638567c86e48';
-;-- -. . -..- - / . -. - .-. -.--
-select id,
-       rkdbh,
-       org_id,
-       htbh,
-       kgy,
-       htmc,
-       dhysdh,
-       create_date,
-       rkpz,
-       wlbmall
-from business_y339
-where  1=1
-and id = '51ebbf67f424fcc915d73711fc18ae9f';
-;-- -. . -..- - / . -. - .-. -.--
-select id,
+       father_id,
        ddhxmh,
        rksl,
        gcbm,
@@ -2638,32 +2266,286 @@ select id,
        wlbm,
        dddj,
        rkpzh,
-       father_id
+       father_id,
+       hjxx,
+       kmdbm,create_date
 from business_f7hc
 where 1 = 1
-    and id='51ebbf67f424fcc915d73711fc18ae9f'
+#   and id = '468579929bc2c6a2e3bfad820543a173'
 #   and rksl != ckl
 #   and ckl > 0
 #   and father_id = '990dcfc482a388d418b7e2558803acc2';
 # and org_id='00008413'
-# and rkpzh='5006306102'
-# and sapcgpz1='4500360355'
-#   and wlbm = '1000394281'
-  and id = 'c36a39e6d083914033e123541fda982f';
+  and wlbm = '1000132699';
+;-- -. . -..- - / . -. - .-. -.--
+select count(1)
+from purchase_sulfur_number_confirm where factory='10000600';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from material_average_price where werks=4070;
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from sync_werk_org_copy1 where werks=4070;
+;-- -. . -..- - / . -. - .-. -.--
+select count(1)
+from purchase_sulfur_number_confirm
+where 1 = 1
+#   and factory = '10000600';
+  and factory = '00000287';
+;-- -. . -..- - / . -. - .-. -.--
+10000600;
+;-- -. . -..- - / . -. - .-. -.--
+select count(1)
+from purchase_sulfur_number_confirm
+where 1 = 1
+  and factory = '10000600';
+;-- -. . -..- - / . -. - .-. -.--
+select supply_date
+from purchase_sulfur_number_confirm
+where 1 = 1
+  and factory = '10000600';
+;-- -. . -..- - / . -. - .-. -.--
+select s.id,s.wlbm
+from business_3k66 m
+         inner join business_qq7x s on m.id = s.father_id
+where m.szgcddh='PO240222000023';
+;-- -. . -..- - / . -. - .-. -.--
+select s.id,s.wlbm,s.wlms
+from business_3k66 m
+         inner join business_qq7x s on m.id = s.father_id
+where m.szgcddh='PO240222000023';
+;-- -. . -..- - / . -. - .-. -.--
+select s.*
+from business_3k66 m
+         inner join business_qq7x s on m.id = s.father_id
+where m.szgcddh='PO240222000023';
+;-- -. . -..- - / . -. - .-. -.--
+select id, apply_item_code, remark, purchase_user_work_number
+from ele_shop_purchase_apply_detail
+where father_id = '036fff8f6c76b0b97721936738f2843a';
+;-- -. . -..- - / . -. - .-. -.--
+select id,cgy_ids,user_id
+from ele_shop_purchase_apply
+where apply_code = 'PR240222000013';
+;-- -. . -..- - / . -. - .-. -.--
+select id,product_name,apply_item_code, remark, purchase_user_work_number
+from ele_shop_purchase_apply_detail
+where father_id = '036fff8f6c76b0b97721936738f2843a';
+;-- -. . -..- - / . -. - .-. -.--
+select s.xxmh, s.apply_item_code, s.apply_code
+from business_3k66 m
+         inner join business_qq7x s on m.id = s.father_id
+where szgcddh = 'PO231110000003';
+;-- -. . -..- - / . -. - .-. -.--
+select s.xxmh, s.apply_item_code, s.apply_code
+from business_3k66 m
+         inner join business_qq7x s on m.id = s.father_id
+where szgcddh = 'PO240222000023';
+;-- -. . -..- - / . -. - .-. -.--
+select s.xxmh, s.apply_item_code, s.apply_code,s.apply_item_code
+from business_3k66 m
+         inner join business_qq7x s on m.id = s.father_id
+where szgcddh = 'PO240222000023';
+;-- -. . -..- - / . -. - .-. -.--
+select s.id,s.wlbm s.xxmh, s.apply_item_code, s.apply_code,s.apply_item_code
+from business_3k66 m
+         inner join business_qq7x s on m.id = s.father_id
+where szgcddh = 'PO240222000023';
+;-- -. . -..- - / . -. - .-. -.--
+select id,apply_item_code,product_name,apply_item_code, remark, purchase_user_work_number
+from ele_shop_purchase_apply_detail
+where father_id = '036fff8f6c76b0b97721936738f2843a';
+;-- -. . -..- - / . -. - .-. -.--
+select s.*
+from business_3k66 m
+         inner join business_qq7x s on m.id = s.father_id
+where m.szgcddh = 'PO240222000023';
+;-- -. . -..- - / . -. - .-. -.--
+select s.id,s.wlbm ,s.xxmh, s.apply_item_code, s.apply_code,s.apply_item_code
+from business_3k66 m
+         inner join business_qq7x s on m.id = s.father_id
+where szgcddh = 'PO240222000023';
+;-- -. . -..- - / . -. - .-. -.--
+select s.id,s.wlbm ,s.xxmh, s.apply_item_code, s.apply_code,s.apply_item_code
+from business_3k66 m
+         inner join business_qq7x s on m.id = s.father_id
+where szgcddh = 'PO240221000037';
+;-- -. . -..- - / . -. - .-. -.--
+select s.id,s.wlbm ,s.xxmh, s.apply_item_code, s.apply_code,s.apply_item_code
+from business_3k66 m
+         inner join business_qq7x s on m.id = s.father_id
+where szgcddh = 'PO240221000038';
+;-- -. . -..- - / . -. - .-. -.--
+select s.id,s.wlbm ,s.xxmh, s.apply_item_code, s.apply_code,s.apply_item_code
+from business_3k66 m
+         inner join business_qq7x s on m.id = s.father_id
+where szgcddh = 'PO240221000006';
+;-- -. . -..- - / . -. - .-. -.--
+select s.id,s.wlbm ,s.xxmh, s.apply_item_code, s.apply_code,s.apply_item_code
+from business_3k66 m
+         inner join business_qq7x s on m.id = s.father_id
+where szgcddh = 'PO240219000001';
+;-- -. . -..- - / . -. - .-. -.--
+select s.id,s.wlbm ,s.xxmh, s.apply_item_code, s.apply_code,s.apply_item_code
+from business_3k66 m
+         inner join business_qq7x s on m.id = s.father_id
+where szgcddh = 'PO240219000003';
+;-- -. . -..- - / . -. - .-. -.--
+select s.id,s.wlbm ,s.xxmh, s.apply_item_code, s.apply_code,s.apply_item_code
+from business_3k66 m
+         inner join business_qq7x s on m.id = s.father_id
+where szgcddh = 'PO240204000008';
+;-- -. . -..- - / . -. - .-. -.--
+select id, cgy, org_id, dept_id, user_id, flow_state, flow_step
+from business_hmz1
+# where serial = '20240125143513227';
+where sbwzdhysdbh like '%INV%';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from business_hmz1 m
+         inner join business_6j3g s on m.id = s.father_id
+where sbwzdhysdbh like '%INV%';
+;-- -. . -..- - / . -. - .-. -.--
+select s.id,s.wlbm,s.wlms
+from business_hmz1 m
+         inner join business_6j3g s on m.id = s.father_id
+where sbwzdhysdbh like '%INV%';
+;-- -. . -..- - / . -. - .-. -.--
+select s.id,s.wlbm,s.wlms,s.xxmh
+from business_hmz1 m
+         inner join business_6j3g s on m.id = s.father_id
+where sbwzdhysdbh like '%INV%';
+;-- -. . -..- - / . -. - .-. -.--
+select s.id,s.wlbm,s.wlms,s.send_order_item_code
+from business_hmz1 m
+         inner join business_6j3g s on m.id = s.father_id
+where sbwzdhysdbh like '%INV%';
+;-- -. . -..- - / . -. - .-. -.--
+select s.id,s.wlbm,s.wlms,s.cgddmxid
+from business_hmz1 m
+         inner join business_6j3g s on m.id = s.father_id
+where sbwzdhysdbh like '%INV%';
+;-- -. . -..- - / . -. - .-. -.--
+select s.id,s.wlbm,s.wlms,s.cgddmxid,dd.wlbm
+from business_hmz1 m
+         inner join business_6j3g s on m.id = s.father_id
+inner join business_qq7x dd on s.cgddmxid=dd.id
+where sbwzdhysdbh like '%INV%';
+;-- -. . -..- - / . -. - .-. -.--
+select s.id,s.wlbm,s.wlms,s.cgddmxid
+from business_hmz1 m
+         inner join business_6j3g s on m.id = s.father_id
+inner join business_qq7x dd on s.cgddmxid=dd.id
+where sbwzdhysdbh like '%INV%';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from business_76uh where cgjhbh='CGJH4110202402260349';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from business_1bl3 where cgwjbh='CGJH4110202402260349';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from business_7twq where cggyjhbh='CGJH4110202402260349';
+;-- -. . -..- - / . -. - .-. -.--
+select id,cgr
+from business_7twq where cggyjhbh='CGJH4110202402260349';
+;-- -. . -..- - / . -. - .-. -.--
+select id
+     , szgcddh
+     ,org_id
+     ,caigouyuan
+     ,sbr
+     , org_id
+     , jcdw
+     , gsdm
+     , ddsfgb
+     , sapcgpz1
+     , user_id
+     , caigouyuan
+     , jyms
+     , gysbm
+     , gc
+     , gsdm
+     , shdw
+     , jcdw
+     , ddsfgb
+     , ddfqlx
+     , gysmc
+     , org_id
+     , user_id
+     , sbr
+     , htbh
+     , htmc
+     , create_date
+     , user_id,
+       org_id
+from business_3k66
+where 1 = 1
+
+# and ddfqlx ='A18A02A11A04';
+#   and sapcgpz1 = '4500368008'
+#   and szgcddh = 'PO240222000023'/**/
+#   and szgcddh like 'PO%'
+# and jyms ='A18A05A15A02';
+# and id = 'c38156588b1b4416b9c828ae5ed993f0';
+and serial = '20240226175844214';
 ;-- -. . -..- - / . -. - .-. -.--
 select id,
-       ddhxmh,
-       rksl,
-       gcbm,
-       ckl,
-       sapcgpz1,
-       wlbm,
-       dddj,
-       rkpzh,
-       father_id
-from business_f7hc
-where 1 = 1
-    and id='51ebbf67f424fcc915d73711fc18ae9f';
+       ttwb,
+       llr,
+       aqhbfy,
+       ckbm,
+       psdd,
+       serial,
+       create_date,
+       update_date,
+       flow_step,
+       flow_state,
+       ckbm,
+       kcdbm
+from business_ij1g
+# where ckbm is null  or ckbm=''
+# where ckbm = 'SBCK4010202402070174';
+# where id = '86a69f8f63084adea39959ff959b8513';
+#     where psdd like '%熔%'
+where serial = '20240227120025202'
+# where business_ij1g.flow_step like '%总经理%';
+# where business_ij1g.create_date = '2023-08-28 16:50:56';
+# where serial = '20231025094042682'
+order by create_date
+desc;
+;-- -. . -..- - / . -. - .-. -.--
+select create_date, params, result, url, fail_reason
+from business_8b0j
+where module_name = '电子商城-电子商城发货单同步'
+and params like '%INV240227000020%'
+order by create_date desc
+limit 100;
+;-- -. . -..- - / . -. - .-. -.--
+select s.id,s.wlbm,s.wlms,s.cgddmxid
+from business_hmz1 m
+         inner join business_6j3g s on m.id = s.father_id
+inner join business_qq7x dd on s.cgddmxid=dd.id
+where sbwzdhysdbh like '%INV240227000020%';
+;-- -. . -..- - / . -. - .-. -.--
+select id,wlbm
+from business_qq7x where id='ef6f304ec5efe2780c51561c1ab4c5fe';
+;-- -. . -..- - / . -. - .-. -.--
+select id, cgy, org_id, dept_id, user_id, flow_state, flow_step
+from business_hmz1
+# where serial = '20240125143513227';
+where sbwzdhysdbh like '%INV240227000020%';
+;-- -. . -..- - / . -. - .-. -.--
+select id, cgy, org_id, create_date,dept_id, user_id, flow_state, flow_step
+from business_hmz1
+# where serial = '20240125143513227';
+where sbwzdhysdbh like '%INV240227000020%';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from business_8b0j
+where module_name = '电子商城-接收电子商城采购申请单'
+order by create_date desc
+limit 10;
 ;-- -. . -..- - / . -. - .-. -.--
 select id,
        rkdbh,
@@ -2672,146 +2554,862 @@ select id,
        kgy,
        htmc,
        dhysdh,
-       create_date,
+       update_date,
        rkpz,
        wlbmall
 from business_y339
 where 1 = 1
-  and id = '17f44848e47a85d10feccafc277b1a35'
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
 
-# where serial = '20231226153831855'
+and serial = '20240219103003136'
 # and sapcgpz1 = '4500365366'
 #     where org_id !='00000287'
 # and rkdbh = 'SBRKD4010202401190091'
 # where dhysdh is null
 order by create_date desc;
 ;-- -. . -..- - / . -. - .-. -.--
-select outSlave.id,
-       input.hjxx,
-       outSlave.cksl,
-       input.rksl,
-       input.ckl,
-       input.dddj,
-       outSlave.dddj,
-       input.id inputId,
-       outSlave.father_id,
-       outSlave.org_id,
-       outSlave.gcdm,
-       outSlave.rkdid
-from business_m3wc outSlave
-         left join business_f7hc input on outSlave.rkdid = input.id
+select id,
+       rkdbh,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
 where 1 = 1
-#   and outSlave.wlbm = '1000231020';
-# where jhbm = 'CGJH4010202305080031';
-# where rkdid !=''
-# where id='112a052b8a524e0d84bab1d5f7e01abf';
-  and outSlave.father_id = '5bea62d2cb0d4004940b638567c86e48';
-;-- -. . -..- - / . -. - .-. -.--
-select outSlave.id,
-       input.hjxx,
-       outSlave.cksl,
-       input.rksl,
-       input.ckl,
-       input.dddj as '入库单价',
-       outSlave.dddj as '出库单价',
-       input.id inputId,
-       outSlave.father_id,
-       outSlave.org_id,
-       outSlave.gcdm,
-       outSlave.rkdid
-from business_m3wc outSlave
-         left join business_f7hc input on outSlave.rkdid = input.id
-where 1 = 1
-#   and outSlave.wlbm = '1000231020';
-# where jhbm = 'CGJH4010202305080031';
-# where rkdid !=''
-# where id='112a052b8a524e0d84bab1d5f7e01abf';
-  and outSlave.father_id = '5bea62d2cb0d4004940b638567c86e48';
-;-- -. . -..- - / . -. - .-. -.--
-select id
-     , org_id
-     , ddsfgb
-     , sapcgpz1
-     , user_id
-     , caigouyuan
-     , szgcddh
-     , jyms
-     , gysbm
-     , gc
-     , shdw
-     , jcdw
-     , ddsfgb
-     , ddfqlx
-     , gysmc
-     , gsdm
-     , org_id
-     , user_id
-     , sbr
-     , htbh
-     , htmc
-     , create_date
-from business_3k66
-where 1 = 1
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
 
-# and ddfqlx ='A18A02A11A04';
-#   and sapcgpz1 = '4500365366'
-# and szgcddh like 'PO%'
-and szgcddh like 'CGDD00001202401260121%'
-# and jyms ='A18A05A15A02';
-# and id = '0a92c408dbd74fb5808698dfe75fa8d7';
-and serial = '20240129092019812';
+# and serial = '20240219103003136'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202401190091'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
+
+# and serial = '20240219103003136'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202401190091'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
+
+# and serial = '20240219103003136'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202401190091'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select m.org_id, s.org_id, s.rk_temp_zt, s.zt, s.rkl
+from business_hmz1 m
+         inner join business_6j3g s
+                    on m.id = s.father_id
+where m.sbwzdhysdbh = 'DHYSD4010202402260017'
+  and (s.rk_temp_zt = '' OR s.rk_temp_zt IS NULL)
+  AND (s.zt != 'A18A09A02A05' OR s.zt IS NULL or s.zt = '')
+  and (s.cgjhbh is null or s.cgjhbh = '')
+  and (s.sjzt = 'A18A07A17A03' or s.sfrbjs = 'A03A01A01');
+;-- -. . -..- - / . -. - .-. -.--
+select m.org_id, s.org_id, s.rk_temp_zt, s.zt, s.rkl
+from business_hmz1 m
+         inner join business_6j3g s
+                    on m.id = s.father_id
+where m.sbwzdhysdbh = 'DHYSD4010202402260017'
+  AND (s.zt != 'A18A09A02A05' OR s.zt IS NULL or s.zt = '')
+  and (s.cgjhbh is null or s.cgjhbh = '')
+  and (s.sjzt = 'A18A07A17A03' or s.sfrbjs = 'A03A01A01');
+;-- -. . -..- - / . -. - .-. -.--
+select m.org_id, s.org_id, s.rk_temp_zt, s.zt, s.rkl
+from business_hmz1 m
+         inner join business_6j3g s
+                    on m.id = s.father_id
+where m.sbwzdhysdbh = 'DHYSD4010202402260017'
+  and (s.cgjhbh is null or s.cgjhbh = '')
+  and (s.sjzt = 'A18A07A17A03' or s.sfrbjs = 'A03A01A01');
+;-- -. . -..- - / . -. - .-. -.--
+select m.org_id, s.org_id, s.rk_temp_zt, s.zt, s.rkl
+from business_hmz1 m
+         inner join business_6j3g s
+                    on m.id = s.father_id
+where m.sbwzdhysdbh = 'DHYSD4010202402260017';
+;-- -. . -..- - / . -. - .-. -.--
+select id,rkl,rk_temp_zt
+from business_6j3g where father_id='6a348224eb474d698fd48f83751c205b';
+;-- -. . -..- - / . -. - .-. -.--
+select id, cgy, org_id, create_date,dept_id, user_id, flow_state, flow_step
+from business_hmz1
+# where serial = '20240125143513227';
+where sbwzdhysdbh like '%DHYSD4010202402260017%';
+;-- -. . -..- - / . -. - .-. -.--
+select id, sbwzdhysdbh,cgy, org_id, create_date,dept_id, user_id, flow_state, flow_step
+from business_hmz1
+# where serial = '20240125143513227';
+where sbwzdhysdbh like '%DHYSD4010202402260017%';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
+
+# and serial = '20240219103003136'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+and rkdbh = 'SBRKD4010202402080011'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
+
+# and serial = '20240219103003136'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+and rkdbh = 'SBRKD4010202306050007'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
+
+and serial = '20230605091702644'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202306050007'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
+
+and serial = '20230519092308964'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202306050007'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
+# and serial = '20230519092308964'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+and rkdbh = 'SBRKD4010202306110001'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id, sbwzdhysdbh,cgy, org_id, create_date,dept_id, user_id, flow_state, flow_step
+from business_hmz1
+# where serial = '20240125143513227';
+where sbwzdhysdbh like '%DHYSD4010202402080021%';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       zjjg,
+       sjzt,
+       rk_temp_zt,
+       zt,
+       cgddmxid,
+       rkl,
+       dhsl,
+       zt,
+       xxmh
+from business_6j3g
+# where id = '58b784abf338f6444602050c82eaf239';
+where father_id = '3da3f1df12ab467cb9777d5b688704c1';
 ;-- -. . -..- - / . -. - .-. -.--
 select *
-from material_average_price where werks=3092;
+from sap_goods_year where org_id='00018024';
 ;-- -. . -..- - / . -. - .-. -.--
-select input.id,input.wlbm, rksl, ckl
-from business_f7hc input
-where ckl > input.rksl;
+select *
+from sap_goods_year;
 ;-- -. . -..- - / . -. - .-. -.--
-show global status;
+select *
+from sap_goods_year where werks='4390';
 ;-- -. . -..- - / . -. - .-. -.--
-show variables like '%slow%';
+select *
+from sap_consignment_stock where org_id='00018024';
 ;-- -. . -..- - / . -. - .-. -.--
-show variables like 'max_connections';
+select *
+from wait_use_repository where org_id='00018024';
 ;-- -. . -..- - / . -. - .-. -.--
-show global status like ‘Max_used_connections’;
+select *
+from sync_werk_org where org_id='00018024';
 ;-- -. . -..- - / . -. - .-. -.--
-show global status like 'Max_used_connections';
+select *
+from sync_werk_org;
 ;-- -. . -..- - / . -. - .-. -.--
-show global status like 'Thread%';
+select *
+from sync_werk_org where org_name like '云';
 ;-- -. . -..- - / . -. - .-. -.--
-select s.dddj,
-       s.zt,
-       m.id,
-       s.wlbm,
-       m.sbwzdhysdbh,
-       m.create_date,
-       m.wlcydh,
-       s.wzlx,
-       s.zt,
-       m.gysbm,
-       m.gysmc,
-       m.htbh,
-       s.fhsl,
-       s.shsl,
-       s.rkl,
-       s.dw,
-       s.cgjhh,
-       s.dddj
-from business_hmz1 m
-         left join business_qux5 s on m.id = s.father_id
-order by s.zt desc;
+select *
+from sync_werk_org where org_name like '%云%';
 ;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception
-from sap_execute_log
-where title = '物资出库'
-  and request like '%付浩辉领料出库%'
-#   and sap_execute_log.response like '%4914560700%'
-order by create_time desc
+select *
+from sync_werk_org where org_name like '%云聚%';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from wait_use_repository
+where org_id = '00018024';
+;-- -. . -..- - / . -. - .-. -.--
+select `wait_use_repository`.`id`                                                                               AS `id`,
+       `wait_use_repository`.`wlbm`                                                                             AS `wlbm`,
+       `wait_use_repository`.`wlms`                                                                             AS `wlms`,
+       `wait_use_repository`.`hjxx`                                                                             AS `hjxx`,
+       `wait_use_repository`.`hjxx`                                                                             AS `yhjxx`,
+       `wait_use_repository`.`hjxx`                                                                             AS `xhjxx`,
+       `wait_use_repository`.`kcdbm`                                                                            AS `kcdbm`,
+       `wait_use_repository`.`kcdmc`                                                                            AS `kcdmc`,
+       `wait_use_repository`.`jldw`                                                                             AS `dw`,
+       `wait_use_repository`.`jldwms`                                                                           AS `dwms`,
+       `wait_use_repository`.`pch`                                                                              AS `pch`,
+       0                                                                                                        AS `jskc`,
+       `wait_use_repository`.`kcl`                                                                              AS `kcl`,
+       'WAITUSE'                                                                                                AS `typed`,
+       `wait_use_repository`.`is_history`                                                                       AS `is_history`,
+       `wait_use_repository`.`werks`                                                                            AS `werks`,
+       `wait_use_repository`.`org_id`                                                                           AS `org_id`,
+       ifnull(`wait_use_repository`.`dj`, 0)                                                                    AS `verpr`,
+       `wait_use_repository`.`wlbm_last`                                                                        AS `wlbm_last`,
+       `swo`.`org_name`                                                                                         AS `org_name`,
+       concat_ws('_', `wait_use_repository`.`wlbm`, `wait_use_repository`.`kcdbm`,
+                 `wait_use_repository`.`pch`)                                                                   AS `qrcode`
+from (`wait_use_repository` left join `sync_werk_org` `swo` on ((`wait_use_repository`.`org_id` = `swo`.`org_code`)))
+where swo.org_id='00018024'
+having (`wait_use_repository`.`kcl` > 0);
+;-- -. . -..- - / . -. - .-. -.--
+select `wait_use_repository`.`id`                                                                               AS `id`,
+       `wait_use_repository`.`wlbm`                                                                             AS `wlbm`,
+       `wait_use_repository`.`wlms`                                                                             AS `wlms`,
+       `wait_use_repository`.`hjxx`                                                                             AS `hjxx`,
+       `wait_use_repository`.`hjxx`                                                                             AS `yhjxx`,
+       `wait_use_repository`.`hjxx`                                                                             AS `xhjxx`,
+       `wait_use_repository`.`kcdbm`                                                                            AS `kcdbm`,
+       `wait_use_repository`.`kcdmc`                                                                            AS `kcdmc`,
+       `wait_use_repository`.`jldw`                                                                             AS `dw`,
+       `wait_use_repository`.`jldwms`                                                                           AS `dwms`,
+       `wait_use_repository`.`pch`                                                                              AS `pch`,
+       0                                                                                                        AS `jskc`,
+       `wait_use_repository`.`kcl`                                                                              AS `kcl`,
+       'WAITUSE'                                                                                                AS `typed`,
+       `wait_use_repository`.`is_history`                                                                       AS `is_history`,
+       `wait_use_repository`.`werks`                                                                            AS `werks`,
+       `wait_use_repository`.`org_id`                                                                           AS `org_id`,
+       ifnull(`wait_use_repository`.`dj`, 0)                                                                    AS `verpr`,
+       `wait_use_repository`.`wlbm_last`                                                                        AS `wlbm_last`,
+       `swo`.`org_name`                                                                                         AS `org_name`,
+       concat_ws('_', `wait_use_repository`.`wlbm`, `wait_use_repository`.`kcdbm`,
+                 `wait_use_repository`.`pch`)                                                                   AS `qrcode`
+from (`wait_use_repository` left join `sync_werk_org` `swo` on ((`wait_use_repository`.`org_id` = `swo`.`org_code`)))
+where swo.werks='4390'
+having (`wait_use_repository`.`kcl` > 0);
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
+and serial = '20230706083850378'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202306110001'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
+and serial = '20230706083836238'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202306110001'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
+and serial = '20230625154033261'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202306110001'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
+and serial = '20230629103533799'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202306110001'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
+and serial = '20230629103525082'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202306110001'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
+and serial = '20230629103515070'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202306110001'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
+and serial = '20230727112423149'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202306110001'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
+and serial = '20230807093233203'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202306110001'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
+and serial = '20230830111050330'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202306110001'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
+and serial = '20230831162931790'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202306110001'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
+and serial = '20230914104847741'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202306110001'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
+and serial = '20231025142646267'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202306110001'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
+and serial = '20231124091535412'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202306110001'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = 'b4989a6684286ccf0a6d1a0c48fcf0a3'
+and serial = '20231124132105027'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202306110001'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from material_average_price where werks=4390;
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from m_supplier order by create_time desc limit 10;
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from fixed_assets order by create_time desc limit 10;
+;-- -. . -..- - / . -. - .-. -.--
+select
+#     count(matnr) sum1,
+matnr,
+maktx,
+clabs,
+lgort,
+charg,
+werks,
+create_date,
+org_id
+from sap_consignment_stock
+where 1 = 1
+  and werks = 3280;
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from material_average_price
+where matnr = '1000455528';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from m_cost_center where bukrs=4010;
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from material_average_price
+where werks = 4070
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from sync_werk_org_copy1;
+;-- -. . -..- - / . -. - .-. -.--
+select create_date, params, result, url, fail_reason
+from business_8b0j
+where module_name = '电子商城-入库数量推送'
+order by create_date desc
+limit 100;
+;-- -. . -..- - / . -. - .-. -.--
+select create_date, params, result, url, fail_reason
+from business_8b0j
+where module_name like '电子商城'
+order by create_date desc
+limit 100;
+;-- -. . -..- - / . -. - .-. -.--
+select create_date, params, result, url, fail_reason
+from business_8b0j
+where module_name like '%电子商城%'
+order by create_date desc
+limit 100;
+;-- -. . -..- - / . -. - .-. -.--
+select type,create_date, params, result, url, fail_reason
+from business_8b0j
+where module_name like '%电子商城%'
+order by create_date desc
+limit 100;
+;-- -. . -..- - / . -. - .-. -.--
+select type,create_date, params, result, url, fail_reason
+from business_8b0j
+where module_name like '%电子商城%'
+and  business_8b0j.type = 'out'
+order by create_date desc
+limit 100;
+;-- -. . -..- - / . -. - .-. -.--
+select type,create_date, params, result, url, fail_reason
+from business_8b0j
+where module_name like '%电子商城%'
+and  business_8b0j.type = 'out'
+and url like '%outDigitalaFactoryResultSync%'
+order by create_date desc
+limit 100;
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from sync_werk_org_copy1 where werks='5000';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from fixed_assets
+where bukrs = 5000;
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from form_table_128c473299949c8b where org_id ='00000287';
+;-- -. . -..- - / . -. - .-. -.--
+select fylx,ydlx
+from business_m3wc where org_id='10000600' group by ydlx;
+;-- -. . -..- - / . -. - .-. -.--
+select ydlx
+from business_m3wc where org_id='10000600' group by ydlx;
+;-- -. . -..- - / . -. - .-. -.--
+select ydlx,fylx
+from business_m3wc where org_id='10000600' and ydlx='935';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from business_rq69;
+;-- -. . -..- - / . -. - .-. -.--
+select wzlb
+from business_rq69;
+;-- -. . -..- - / . -. - .-. -.--
+select wzlb,yt
+from business_rq69;
+;-- -. . -..- - / . -. - .-. -.--
+select
+#     count(matnr) sum1,
+matnr,
+maktx,
+clabs,
+lgort,
+charg,
+werks,
+create_date,
+org_id
+from sap_consignment_stock
+where 1 = 1
+  and werks = 5000;
+;-- -. . -..- - / . -. - .-. -.--
+select type,create_date, params, result, url, fail_reason
+from business_8b0j
+where module_name like '%电子商城%'
+and  business_8b0j.type = 'out'
+and url like '%create%'
+order by create_date desc
 limit 100;
 ;-- -. . -..- - / . -. - .-. -.--
 select id,
+       jhbm,
+       hjxx,
+       cklx,
+       ydlx,
+       cksl,
+       sfck,
+       father_id,
+       ktsl,
+       gcdm,
+       ckpzh,
+       rkdid,
+       cbzx,
+       cbzxms
+from business_m3wc
+
+where wlbm = '1000230997';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       jhbm,
+       hjxx,
+       cklx,
+       ydlx,
+       cksl,
+       sfck,
+       father_id,
+       ktsl,
+       gcdm,
+       ckpzh,
+       rkdid,
+       cbzx,
+       cbzxms
+from business_m3wc
+
+where wlbm = '1000003209';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       jhbm,
+       hjxx,
+       cklx,
+       ydlx,
+       cksl,
+       sfck,
+       father_id,
+       ktsl,
+       gcdm,
+       ckpzh,
+       rkdid,
+       cbzx,
+       cbzxms
+from business_m3wc
+
+where wlbm = '1000146850';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       jhbm,
+       father_id,
+       hjxx,
+       cklx,
+       ydlx,
+       cksl,
+       sfck,
+       father_id,
+       ktsl,
+       gcdm,
+       ckpzh,
+       rkdid,
+       cbzx,
+       cbzxms
+from business_m3wc
+
+where wlbm = '1000146850';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
        ttwb,
+       llr,
        aqhbfy,
        ckbm,
        psdd,
@@ -2824,67 +3422,472 @@ select id,
        kcdbm
 from business_ij1g
 # where ckbm is null  or ckbm=''
-where ckbm = 'SBCK4390202401290237';
+# where ckbm = 'SBCK4010202402070174';
+where id = '06d2e07a156043d8a641e22f7af2bb71';
 ;-- -. . -..- - / . -. - .-. -.--
-select m.id,
-       m.father_id,
-       m.kcdbm,
-       gdzc,
-       zzkm,
+select id,
+       jhbm,
+       father_id,
+       hjxx,
+       cklx,
        ydlx,
-       fylx,
+       cksl,
+       sfck,
+       father_id,
+       ktsl,
+       gcdm,
+       ckpzh,
+       rkdid,
        cbzx,
-       cbzxms,
-       nbddh,
-       nbddms
-from business_m3wc m
-where 1 = 1
-  and m.father_id = 'fd122b7651194af1abdb2b65c07edb93';
-;-- -. . -..- - / . -. - .-. -.--
-select id
-     , org_id
-     , ddsfgb
-     , sapcgpz1
-     , user_id
-     , caigouyuan
-     , szgcddh
-     , jyms
-     , gysbm
-     , gc
-     , shdw
-     , jcdw
-     , ddsfgb
-     , ddfqlx
-     , gysmc
-     , gsdm
-     , org_id
-     , user_id
-     , sbr
-     , htbh
-     , htmc
-     , create_date
-from business_3k66
-where 1 = 1
+       cbzxms
+from business_m3wc
 
-# and ddfqlx ='A18A02A11A04';
-#   and sapcgpz1 = '4500365366'
-# and szgcddh like 'PO%'
-and szgcddh like 'CGDD00001202401260121%'
-# and jyms ='A18A05A15A02';
-# and id = '0a92c408dbd74fb5808698dfe75fa8d7';
-# and serial = '20240129092019812';
-# and htbh = 'YTH-4010-NB-GX-2022-001029-00';
-# and jyms='A18A05A15A07'
-#   and jyms = 'A18A05A15A06'
-#   and sapcgpz1 != ''
-#   and gsdm = 4010
-order by create_date
-        desc;
+where wlbm = '1000230997';
 ;-- -. . -..- - / . -. - .-. -.--
-select title, create_time, request, response, exception, time
-from sap_execute_log
-where title = '采购订单连续收货'
-  and request like '%4700409497%'
-# and sap_execute_log.response like '%4700409114%'
-order by create_time desc
-limit 10;
+select id, sbwzdhysdbh,cgy, org_id, create_date,dept_id, user_id, flow_state, flow_step
+from business_hmz1
+# where serial = '20240125143513227';
+where sbwzdhysdbh like '%INV240226000016%';
+;-- -. . -..- - / . -. - .-. -.--
+select id, szgcddh,sbwzdhysdbh,cgy, org_id, create_date,dept_id, user_id, flow_state, flow_step
+from business_hmz1
+# where serial = '20240125143513227';
+where sbwzdhysdbh like '%INV240226000016%';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       jhbm,
+       father_id,
+       hjxx,
+       cklx,
+       ydlx,
+       cksl,
+       sfck,
+       father_id,
+       ktsl,
+       gcdm,
+       ckpzh,
+       rkdid,
+       cbzx,
+       cbzxms
+from business_m3wc
+where wlbm = '1000230997';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       jhbm,
+       father_id,
+       hjxx,
+       cklx,
+       ydlx,
+       cksl,
+       sfck,
+       father_id,
+       ktsl,
+       gcdm,
+       ckpzh,
+       rkdid,
+       cbzx,
+       cbzxms
+from business_m3wc
+where wlbm = '1000003209';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       father_id,
+       ddhxmh,
+       rksl,
+       gcbm,
+       ckl,
+       sapcgpz1,
+       wlbm,
+       dddj,
+       rkpzh,
+       father_id,
+       hjxx,
+       kmdbm,create_date
+from business_f7hc
+where 1 = 1
+#   and id = '468579929bc2c6a2e3bfad820543a173'
+#   and rksl != ckl
+#   and ckl > 0
+#   and father_id = '990dcfc482a388d418b7e2558803acc2';
+# and org_id='00008413'
+  and wlbm = '1000430654';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+  and id = '259ba9cf927a0e68f1857167448ab92b'
+# and serial = '20231124132105027'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202306110001'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       dhysdh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+  and id = '259ba9cf927a0e68f1857167448ab92b'
+# and serial = '20231124132105027'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+# and rkdbh = 'SBRKD4010202306110001'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select type,create_date, params, result, url, fail_reason
+from business_8b0j
+where module_name = '%SAP采购订单号同步%'
+order by create_date desc
+limit 100;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       dhysdh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = '259ba9cf927a0e68f1857167448ab92b'
+# and serial = '20231124132105027'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+and rkdbh = 'SBRKD4010202403010009'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       father_id,
+       ddhxmh,
+       rksl,
+       gcbm,
+       ckl,
+       sapcgpz1,
+       wlbm,
+       dddj,
+       rkpzh,
+       father_id,
+       hjxx,
+       kmdbm,create_date
+from business_f7hc
+where 1 = 1
+#   and id = '468579929bc2c6a2e3bfad820543a173'
+#   and rksl != ckl
+#   and ckl > 0
+  and father_id = '259ba9cf927a0e68f1857167448ab92b';
+;-- -. . -..- - / . -. - .-. -.--
+select type,create_date, params, result, url, fail_reason
+from business_8b0j
+where module_name = '电子商城-SAP采购订单号同步'
+order by create_date desc
+limit 100;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       dhysdh,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = '259ba9cf927a0e68f1857167448ab92b'
+# and serial = '20231124132105027'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+and rkdbh = 'SBRKD4390202403030001'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       dhysdh,
+       sapcgpz1,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = '259ba9cf927a0e68f1857167448ab92b'
+# and serial = '20231124132105027'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+and rkdbh = 'SBRKD4390202403030001'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       father_id,
+       ddhxmh,
+       rksl,
+       gcbm,
+       ckl,
+       sapcgpz1,
+       wlbm,
+       dddj,
+       rkpzh,
+       father_id,
+       hjxx,
+       kmdbm,create_date
+from business_f7hc
+where 1 = 1
+#   and id = '468579929bc2c6a2e3bfad820543a173'
+#   and rksl != ckl
+#   and ckl > 0
+  and father_id = '67c031ab09b7dc07d08d8e50403786f4';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       father_id,
+       ddhxmh,
+       rksl,
+        rkpzh,
+       gcbm,
+       ckl,
+       sapcgpz1,
+       wlbm,
+       dddj,
+       rkpzh,
+       father_id,
+       hjxx,
+       kmdbm,create_date
+from business_f7hc
+where 1 = 1
+#   and id = '468579929bc2c6a2e3bfad820543a173'
+#   and rksl != ckl
+#   and ckl > 0
+  and father_id = '67c031ab09b7dc07d08d8e50403786f4';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       father_id,
+       ddhxmh,
+       rksl,
+       rkpzh,
+       gcbm,
+       ckl,
+       sapcgpz1,
+       wlbm,
+       dddj,
+       father_id,
+       hjxx,
+       kmdbm,
+       create_date
+from business_f7hc
+where 1 = 1
+#   and id = '468579929bc2c6a2e3bfad820543a173'
+#   and rksl != ckl
+#   and ckl > 0
+  and father_id = '67c031ab09b7dc07d08d8e50403786f4';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from gys_gc where gysbm='0020000034';
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from gys_gc where;
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from gys_gc;
+;-- -. . -..- - / . -. - .-. -.--
+select *
+from gys_gc where gysbm='20000034';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       ttwb,
+       llr,
+       aqhbfy,
+       ckbm,
+       psdd,
+       serial,
+       create_date,
+       update_date,
+       flow_step,
+       flow_state,
+       ckbm,
+       kcdbm
+from business_ij1g
+# where ckbm is null  or ckbm=''
+where ckbm = 'SBRKD4390202403030001';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       ttwb,
+       llr,
+       aqhbfy,
+       ckbm,
+       psdd,
+       serial,
+       create_date,
+       update_date,
+       flow_step,
+       flow_state,
+       ckbm,
+       kcdbm
+from business_ij1g
+# where ckbm is null  or ckbm=''
+where ckbm = 'SBCK4390202403040183';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       rkdbh,
+       dhysdh,
+       sapcgpz1,
+       kgy,
+       flow_step,
+       org_id,
+       htbh,
+       kgy,
+       htmc,
+       dhysdh,
+       update_date,
+       rkpz,
+       wlbmall
+from business_y339
+where 1 = 1
+#   and id = '259ba9cf927a0e68f1857167448ab92b'
+# and serial = '20231124132105027'
+# and sapcgpz1 = '4500365366'
+#     where org_id !='00000287'
+  and rkdbh = 'SBRKD4390202403030001'
+# where dhysdh is null
+order by create_date desc;
+;-- -. . -..- - / . -. - .-. -.--
+select id, szgcddh,sbwzdhysdbh,cgy, org_id, create_date,dept_id, user_id, flow_state, flow_step
+from business_hmz1
+# where serial = '20240125143513227';
+where sbwzdhysdbh like '%INV240227000020%';
+;-- -. . -..- - / . -. - .-. -.--
+select id, szgcddh,sbwzdhysdbh,cgy, org_id, create_date,dept_id, user_id, flow_state, flow_step
+from business_hmz1
+# where serial = '20240125143513227';
+where sbwzdhysdbh like '%INV240226000035%';
+;-- -. . -..- - / . -. - .-. -.--
+select type,create_date,status, params, result, url, fail_reason
+from business_8b0j
+where module_name = '电子商城-SAP采购订单号同步'
+order by create_date desc
+limit 100;
+;-- -. . -..- - / . -. - .-. -.--
+select m.id, m.tkdbm, s.*
+from business_c927 m
+         inner join business_z6nu s on m.id = s.father_id
+
+# where tkdbm = 'SBTKD40102024011400-';
+where m.serial='20240304110717734';
+;-- -. . -..- - / . -. - .-. -.--
+select m.id,tkpzh, m.tkdbm, s.*
+from business_c927 m
+         inner join business_z6nu s on m.id = s.father_id
+
+# where tkdbm = 'SBTKD40102024011400-';
+where m.serial='20240304105838052';
+;-- -. . -..- - / . -. - .-. -.--
+select m.id,tkpzh, m.tkdbm, s.*
+from business_c927 m
+         inner join business_z6nu s on m.id = s.father_id
+
+# where tkdbm = 'SBTKD40102024011400-';
+where m.serial='20240304110717734';
+;-- -. . -..- - / . -. - .-. -.--
+select wzlb,yt
+
+from business_rq69 where xqjhbh='XQJH5000202403050042';
+;-- -. . -..- - / . -. - .-. -.--
+select create_date, params, result, url, fail_reason
+from business_8b0j
+where module_name = '电子商城-采购申请单审批结果回传'
+  and params like '%PR240221000025%'
+order by create_date desc
+limit 100;
+;-- -. . -..- - / . -. - .-. -.--
+show global status like 'Thread%';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       father_id,
+       ddhxmh,
+       rksl,
+       rkpzh,
+       gcbm,
+       ckl,
+       sapcgpz1,
+       wlbm,
+       dddj,
+       father_id,
+       hjxx,
+       kmdbm,
+       create_date
+from business_f7hc
+where 1 = 1
+#   and id = '468579929bc2c6a2e3bfad820543a173'
+#   and rksl != ckl
+#   and ckl > 0
+#   and father_id = '67c031ab09b7dc07d08d8e50403786f4';
+# and org_id='00008413'
+and  wlbm = '1000003645';
+;-- -. . -..- - / . -. - .-. -.--
+select id,
+       father_id,
+       ddhxmh,
+       rksl,
+       rkpzh,
+       gcbm,
+       ckl,
+       sapcgpz1,
+       wlbm,
+       dddj,
+       father_id,
+       hjxx,
+       kmdbm,
+       create_date
+from business_f7hc
+where 1 = 1
+#   and id = '468579929bc2c6a2e3bfad820543a173'
+#   and rksl != ckl
+#   and ckl > 0
+#   and father_id = '67c031ab09b7dc07d08d8e50403786f4';
+# and org_id='00008413'
+  and wlbm = '1000003645'
+having rksl != business_f7hc.ckl;
+;-- -. . -..- - / . -. - .-. -.--
+select id,wzlb,yt
+
+from business_rq69 where xqjhbh='XQJH5000202403050042';

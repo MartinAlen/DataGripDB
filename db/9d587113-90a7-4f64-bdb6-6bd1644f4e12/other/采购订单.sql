@@ -1,43 +1,52 @@
 # 主表
 select id
+     , szgcddh
+     ,org_id
+     ,caigouyuan
+     ,sbr
      , org_id
+     , jcdw
+     , gsdm
      , ddsfgb
      , sapcgpz1
      , user_id
      , caigouyuan
-     , szgcddh
      , jyms
      , gysbm
      , gc
+     , gsdm
      , shdw
      , jcdw
      , ddsfgb
      , ddfqlx
      , gysmc
-     , gsdm
      , org_id
      , user_id
      , sbr
      , htbh
      , htmc
      , create_date
+     , user_id,
+       org_id
 from business_3k66
 where 1 = 1
 
 # and ddfqlx ='A18A02A11A04';
-#   and sapcgpz1 = '4500365366'
-# and szgcddh like 'PO%'
-and szgcddh like 'CGDD00001202401260121%'
+#   and sapcgpz1 = '4500368008'
+#   and szgcddh = 'PO240222000023'/**/
+#   and szgcddh like 'PO%'
 # and jyms ='A18A05A15A02';
-# and id = '0a92c408dbd74fb5808698dfe75fa8d7';
-# and serial = '20240129092019812';
+# and id = 'c38156588b1b4416b9c828ae5ed993f0';
+and serial = '20240226175844214';
 # and htbh = 'YTH-4010-NB-GX-2022-001029-00';
 # and jyms='A18A05A15A07'
 #   and jyms = 'A18A05A15A06'
 #   and sapcgpz1 != ''
 #   and gsdm = 4010
 order by create_date
-        desc;
+        desc
+limit 10;
+
 
 
 select count(szgcddh) dd, szgcddh
@@ -47,12 +56,14 @@ having dd > 1;
 
 
 
+
 select id, caigouyuan
 from business_3k66
 where szgcddh = 'PO231103000004';
 
 # 子表
 select id,
+       father_id,
        xxmh,
        zt,
        wlbm,
@@ -70,8 +81,8 @@ select id,
 
 from business_qq7x
 where 1 = 1
-#   and wlbm = '1000385331'
-  and father_id = '75e9f0e9f6574aa0b0a301f59bb16344'
+  and wlbm = '1000472075'
+#   and father_id = '15b5d3c212e4426b83059af7d197eac5'
 # where id = 'c2f8cdbb3418d1c74625a7bbf32f5d2d'
 order by create_date desc;
 
@@ -83,18 +94,20 @@ having su > 100;
 
 select id, jldw
 from business_qq7x
-where id = '7d20debead1a43e4bb528fa92a942841'
+where id = '7d20debead1a43e4bb528fa92a942841';
+
 
 
 select m.szgcddh, s.cgdj, s.wlbm, s.wlms
 from business_3k66 m
          inner join business_qq7x s on m.id = s.father_id
-where s.wlbm = '1000166565'
+where s.wlbm = '1000166565';
 
 
 
 select hb
-from business_3k66
+from business_3k66;
+
 # where ddfqlx ='A18A02A11A04';
 # where sapcgpz1 ='4700384353';
 # where szgcddh ='PO231020000006';

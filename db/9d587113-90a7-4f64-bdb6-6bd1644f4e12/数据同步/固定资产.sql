@@ -1,4 +1,4 @@
-select  count(1) from (select o.org_name        as '公司',
+select o.org_name        as '公司',
        t.ktext           as '资产部门',
        t.ktext           as '成本中心描述',
        t.anln1           as '固定资产编码',
@@ -26,13 +26,24 @@ select  count(1) from (select o.org_name        as '公司',
        o.werks
 from purchase.fixed_assets t
          left join sync_werk_org o on o.werks = t.bukrs
-where t.menge > 0
-#   and anln1 = '120010005725'
-and
-    org_code='00010499')a group by a.固定资产编码
+where 1=1
+#   and t.menge > 0
+  and anln1 = '100000005571'
+#   and org_code = '00000287';
+
 
 select *
-from sync_werk_org where werks=5000;
+from sync_werk_org
+where org_name like '%大为%';
 
 select *
-from fixed_assets where bukrs=5000;
+from fixed_assets
+where bukrs = 5000;
+
+
+select count(1)
+from fixed_assets
+where bukrs = 4390;
+
+
+

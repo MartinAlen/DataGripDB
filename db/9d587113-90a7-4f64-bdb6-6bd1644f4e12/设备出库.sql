@@ -1,6 +1,7 @@
 # 领用主表
 select id,
        ttwb,
+       llr,
        aqhbfy,
        ckbm,
        psdd,
@@ -13,16 +14,21 @@ select id,
        kcdbm
 from business_ij1g
 # where ckbm is null  or ckbm=''
-where ckbm = 'SBCK4390202401290237';
-# where id = 'e6d984faf68c4f50ae851be843bc472c';
+where ckbm = 'SBCK4390202403040183';
+
+where id = '06d2e07a156043d8a641e22f7af2bb71';
 #     where psdd like '%熔%'
-where serial = '20240105120936050'
+where serial = '20240227120025202'
 # where business_ij1g.flow_step like '%总经理%';
 # where business_ij1g.create_date = '2023-08-28 16:50:56';
 # where serial = '20231025094042682'
 order by create_date
-        desc;
+desc;
 
+select count(ckbm) s, ckbm
+from business_ij1g
+group by ckbm
+having s > 1;
 
 # 领用子表 关联入库单
 select outSlave.id,
@@ -30,9 +36,9 @@ select outSlave.id,
        outSlave.cksl,
        input.rksl,
        input.ckl,
-       input.dddj as '入库单价',
+       input.dddj    as '入库单价',
        outSlave.dddj as '出库单价',
-       input.id inputId,
+       input.id         inputId,
        outSlave.father_id,
        outSlave.org_id,
        outSlave.gcdm,
@@ -56,32 +62,45 @@ order by m.create_date asc;
 
 
 # 领用子表
-select m.id,
-       m.father_id,
-       m.kcdbm,
-       gdzc,
+select id,
+       org_id,
+       wlbm,
+       dddj,
+       cksl,
+       father_id,
+       ckpzh,
        zzkm,
+       jldw,
+       dwms,
        ydlx,
        fylx,
-       cbzx,
-       cbzxms,
        nbddh,
-       nbddms
-from business_m3wc m
+       zjgc,
+       zjgcms,
+       nbddh,
+       nbddms,
+       rkdid
+from business_m3wc
 where 1 = 1
-  and m.father_id = 'fd122b7651194af1abdb2b65c07edb93';
+# and wlbm='1000152865'
+  and father_id = 'c9e03742f30a44e1b6a2ea2a5b020734';
+#     and ydlx=261
+#     and fylx like '%有关资产%'
 #   and rkdid = 'c36a39e6d083914033e123541fda982f';
 
-
+# 库位及货架表
 select xhjxx, yhjxx, ykcdbm
 from business_50t4
-where gcdm = 4010
+where 1 = 1
+#   and     gcdm = 4010
   and kclx = 'SAP'
-  and wlbm = '1000098961';
+  and wlbm = '1000152865';
 
 # 领用子表
 select id,
        jhbm,
+       father_id,
+       hjxx,
        cklx,
        ydlx,
        cksl,
@@ -93,48 +112,11 @@ select id,
        rkdid,
        cbzx,
        cbzxms
-from business_m3wc;
-
-# where wlbm = '1000022922';
+from business_m3wc
+where wlbm = '1000003209';
 # where father_id = '4d04cb9870f64fbebce79449c4c95a9b';
 # where id = '48ab661b9d8442119f584dac1ec55d95';
 
 
-select s.wlbm,
-       s.wlms,
-       s.hjxx,
-       s.rkdid,
-       s.zkc,
-       s.jhbm,
-       s.kcdbm as ckkcdbm,
-       s.cksl,
-       s.sfck
-
-from business_ij1g m
-         left join business_m3wc s on m.id = s.father_id
-where m.flow_step != '归档'
-  and (s.hjxx = null or s.hjxx = '')
-  and s.rkdid is not null
-  and rkdid != '';
-
-
-
-# where s.wlbm = '1000002669';
-# where m.id = '8fad034462f35239add2fcc54a68329a';
-# where m.ckbm = '8fad034462f35239add2fcc54a68329a';
-
-# 领用主表
-select ckbm, count(1) ss
-from business_ij1g
-# where ckbm='SBCK4010202306150041';
-# where business_ij1g.flow_step like '%总经理%';
-group by ckbm
-having ss > 1;
-
-
-
-where 1=1
-#   and    business_m3wc.wlbm = '1000231020'
-#       fylx like '%大师%'
-group by  father_id
- having ss >20
+select ydlx,fylx
+from business_m3wc where org_id='10000600' and ydlx='935'

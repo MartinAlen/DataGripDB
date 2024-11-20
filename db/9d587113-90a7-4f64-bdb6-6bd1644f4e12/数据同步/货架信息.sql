@@ -3,8 +3,8 @@ from business_50t4
 where 1 = 1
 #   and org_id = '00000287'
 #   and kclx = 'SAP'
-  and kclx = 'WAITUSE'
-  and wlbm = '1000248309'
+#   and kclx = 'WAITUSE'
+  and wlbm = '1000005197'
 # and ykcdbm='1521'
 order by create_date desc;
 

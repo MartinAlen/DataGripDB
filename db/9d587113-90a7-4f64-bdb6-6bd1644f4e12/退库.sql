@@ -1,10 +1,9 @@
-select m.id, m.tkdbm, s.*
+select m.id,tkpzh, m.tkdbm, s.*
 from business_c927 m
          inner join business_z6nu s on m.id = s.father_id
 
-where tkdbm = 'SBTKD4010202401100001';
-# where m.serial='20230706152240404';
-917
+# where tkdbm = 'SBTKD40102024011400-';
+where m.serial='20240304110717734';
 # 子表
 select id, wlbm, ckdid, ydlx
 from business_z6nu

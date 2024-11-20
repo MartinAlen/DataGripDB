@@ -385,7 +385,6 @@ SELECT dhddmx.cgjhbh          AS           jhbm,
        dhysd.jyfl,
        dhysd.id                            dhysdid,
        dhysd.kgy
-
 FROM business_6j3g dhddmx
          inner join business_hmz1 dhysd on dhddmx.father_id = dhysd.id
          inner join business_qq7x cgddmx on dhddmx.cgddmxid = cgddmx.id and dhddmx.cgddmxid = cgddmx.id
@@ -395,7 +394,6 @@ WHERE (dhddmx.rk_temp_zt = '' OR dhddmx.rk_temp_zt IS NULL)
   and (dhddmx.cgjhbh is null or dhddmx.cgjhbh = '')
   and (cgdd.sapcgpz1 != null or cgdd.sapcgpz1 != '')
   and (dhddmx.sjzt = 'A18A07A17A03' or dhddmx.sfrbjs = 'A03A01A01')
-
 
 # 电子商城订单 无sap采购凭证
 union
@@ -464,8 +462,7 @@ FROM business_6j3g dhddmx
          inner join business_qq7x cgddmx on dhddmx.cgddmxid = cgddmx.id
 WHERE (dhddmx.rk_temp_zt = '' OR dhddmx.rk_temp_zt IS NULL)
   and dhysd.sbwzdhysdbh like 'INV%'
-  and (dhddmx.sjzt = 'A18A07A17A03' or dhddmx.sfrbjs = 'A03A01A01')
-;
+  and (dhddmx.sjzt = 'A18A07A17A03' or dhddmx.sfrbjs = 'A03A01A01');
 
 SELECT dhddmx.cgjhbh               AS      jhbm,
        dhddmx.id,

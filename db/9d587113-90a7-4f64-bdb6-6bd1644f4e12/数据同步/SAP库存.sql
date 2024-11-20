@@ -10,7 +10,7 @@ create_date,
 org_id
 from sap_consignment_stock
 where 1 = 1
-  and werks = 3280
+  and werks = 5000
 #   and org_id = '00000287'
 #   and matnr = '1000340448'
 # group by matnr;
@@ -45,9 +45,6 @@ where wlbm = '1000455528';
 select *
 from material_average_price
 where matnr = '1000455528';
-select *
-from sync_werk_org_copy1
-where werks = 3390;
 
 select *
 from sync_werk_org
